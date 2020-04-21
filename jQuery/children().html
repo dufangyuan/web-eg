@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			h3{
+				width:40px;
+				height:40px;
+				background-color: yellow;
+			}
+			p{
+				width:40px;
+				height:40px;
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			棉棉是只猫
+			<h3></h3>
+			<h3></h3>
+			<h3></h3>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	$(".box").children("h3").css("background-color","paleturquoise");
+	    	$(".box").children("p").css("background-color","hotpink");
+	    	//alert($(".box").children().size());
+	    	$(".box").find("*").eq(2).css("background-color","tomato");
+	    </script>
+	</body>
+</html>

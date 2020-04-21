@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrap {
+            width: 1000px;
+            height: 600px;
+            border: 1px solid black;
+            margin: 100px auto;
+            position: relative;
+
+        }
+
+        .boxD {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .kuaiTop {
+            height: 20px;
+            border-radius: 20px;
+            display: inline-block;
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+
+        .box {
+            width: 200px;
+            height: 20px;
+            border-radius: 20px;
+            background: skyblue;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .boxK {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #000;
+            position: absolute;
+            left: 75px;
+            top: 550px;
+        }
+        .kai,.chong,.kaiX{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            background: rgba(0,0,0,.5);
+            z-index: 3;
+            color: orange;
+            font-size: 80px;
+            text-align: center;
+            padding-top: 25%;
+            cursor: pointer;
+        }
+        .chong{
+            display: none;
+        }
+        .kaiX{
+            display: none;
+        }
+        .hhh{
+            position: absolute;
+        }
+        .hhh div{
+            position: absolute;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="kai">开始游戏</div>
+        <div class="chong">重新开始</div>
+        <div class="kaiX">下一关</div>
+        <div class="Tbox"></div>
+        <div class="box"></div>
+        <div class="boxK"></div>
+    </div>
+
+    <script>
+        //获取元素
+        var wrap = document.querySelector(".wrap");
+        var box = document.querySelector(".box");
+        var boxK = document.querySelector(".boxK");
+        var kai = document.querySelector(".kai");
+        var chong  = document.querySelector(".chong");
+        var kaiX = document.querySelector(".kaiX")
+        var Tbox = document.querySelector(".Tbox")
+        var boxKuan = 200;
+        
+        var xqLeft = -5;//小球left移动的速度
+        var xqTop = -5;//小球top移动的速度
+        var timer;//控制小球动起来的计时器
+        var kuaiArr = [];//创建放上面条的数组
+        var a =0;//设置一个控制left值的变量
+        var b =0;//设置一个控制top值的变量
+        var o = 3
+        //给接受条绑定移动事件
+        box.onmousedown = function (ev) {
+            //事件对象
+            var e = ev || window.event;
+            //当鼠标点击时，鼠标距离挡板边框的距离
+            var offsetX = e.offsetX;
+            //文档流的移动事件
+            document.onmousemove = function (evn) {
+                //事件对象
+                var ee = evn || window.event;
+                //当移动时，挡板距离可视窗口的距离
+                var mouseX = ee.clientX;
+                //让挡板X轴移动
+                box.style.left = mouseX - offsetX - wrap.offsetLeft + "px";
+                //判断挡板 不能出wrap
+                if (box.offsetLeft <= 0) {
+                    box.style.left = 0 + "px";
+                }
+                if (box.offsetLeft >= wrap.offsetWidth - box.offsetWidth) {
+                    box.style.left = wrap.offsetWidth - box.offsetWidth + "px"
+                }
+
+            }
+        }
+        document.onmouseup = function () {
+            document.onmousemove = '';
+        }
+        //循环创建块的函数
+        function createFn() {
+            var num = Math.floor(wrap.offsetWidth / boxKuan);
+            // for (var i = 0; i < num * o; i++) {
+            //     var newKuai = document.createElement("div");
+            //     newKuai.className = "kuaiTop";
+            //     if(a%num==0&&a>0){
+            //         newKuai.style.left=a*boxKuan+"px"
+            //         b += newKuai.offsetHeight+30;
+            //         a=0;
+            //     }
+            //     newKuai.style.left=a*boxKuan+"px"
+            //     newKuai.style.top = b+"px";
+            //     a++;
+            //     newKuai.style.width = boxKuan + "px"
+            //     newKuai.style.backgroundColor = "#" + String(Math.random()).substr(2, 6);
+            //     Tbox.appendChild(newKuai);
+            //     kuaiArr.push(newKuai)
+            // }
+            for(var i =0;i<o;i++){
+                var newDiv = document.createElement("div");
+                newDiv.className='hhh';
+                newDiv.style.top = i*30+"px";
+                Tbox.appendChild(newDiv)
+                for(var j =0;j<num;j++){
+                    var newDiv1 = document.createElement("div");
+                    newDiv1.style.width = boxKuan+"px";
+                    newDiv1.style.height = 30+'px';
+                    newDiv1.style.left = j*boxKuan+"px";
+                    newDiv1.style.background = "#"+String(Math.random()).substr(2,6)
+                    newDiv.appendChild(newDiv1);
+                    kuaiArr.push(newDiv1)
+                }
+            }
+        }
+        createFn();
+
+        //让小球动起来的函数
+        function xqFn() {
+            timer = setInterval(() => {
+                //获取当前left/top值
+                var nowLeft = boxK.offsetLeft;
+                var nowTop = boxK.offsetTop;
+                //判断是否到达边界
+                if (nowLeft == wrap.clientWidth - boxK.clientWidth || nowLeft == 0) {
+                    xqLeft *= -1;
+                }
+                if (nowTop == wrap.clientHeight - boxK.clientHeight || nowTop == 0) {
+                    xqTop *= -1
+                }
+
+                boxK.style.left = xqLeft + nowLeft + "px";
+                boxK.style.top = xqTop + nowTop + "px";
+                for(var i =0;i<kuaiArr.length;i++){
+                    zjFn(kuaiArr[i]);
+                }
+                pdFn();
+                if(kuaiArr.length==0){
+                        alert("恭喜通关")
+                        kaiX.style.display = "inline-block";
+                        clearInterval(timer)
+                }
+            }, 16);
+        }
+        //判断的函数
+        function pdFn() {
+            //结束判断
+            if (boxK.offsetTop + boxK.offsetHeight == wrap.clientHeight) {
+                clearInterval(timer)
+                alert("失败")
+                chong.style.display="inline-block"
+            }
+            //接受条判断
+            if (boxK.offsetTop + boxK.offsetWidth == box.offsetTop &&
+                boxK.offsetLeft >= box.offsetLeft - boxK.offsetWidth &&
+                boxK.offsetLeft <= box.offsetLeft + box.offsetWidth) {
+                xqTop *= -1
+            }
+        }
+        //判断撞击的函数
+        function zjFn(x) {
+            var t = x.offsetHeight + x.parentNode.offsetTop >= boxK.offsetTop;
+            var b = boxK.offsetHeight + boxK.offsetTop >= x.parentNode.offsetTop
+            var l = x.offsetWidth + x.offsetLeft >= boxK.offsetLeft;
+            var r = boxK.offsetWidth + boxK.offsetLeft >= x.offsetLeft;
+            //碰撞检测
+            if (t && b && l && r) {
+                xqTop*=-1;
+                x.remove();
+                var p =kuaiArr.indexOf(x);
+                kuaiArr.splice(p,1);
+            }
+        }
+        //给开始绑定点击事件
+        kai.onclick = function(){
+            kai.style.display = "none";
+            xqFn();
+        }
+        chong.onclick = function(){
+            chong.style.display="none";
+            xqFn();
+            csFn();
+            createFn();
+        }
+        kaiX.onclick = function(){
+            kaiX.style.display="none";
+            boxKuan/=2;
+            o++;
+            csFn();
+            createFn();
+            xqFn();
+        }
+        //初始样式
+        function csFn(){
+            boxK.style.left=75+"px";
+            boxK.style.top = 540+"px"
+            box.style.left = 0+"px";
+            box.style.bottom = 0+"px";
+            Tbox.innerHTML = "";
+            b=0;
+            a=0;
+        }
+    </script>
+</body>
+
+</html>
+

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon"  href="img/标题图.PNG"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="js/jquery-1.12.3.min.js"></script>
+		<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<title>天天购，天天都想购</title>
+		<style type="text/css">
+			.biaoti{
+				float: right;
+				margin-top:15px ;
+			}
+			.denglu{
+				width:400px;
+				overflow: hidden;
+				border: 1px solid #ccc;
+				border-radius: 5px;
+				position: relative;
+				margin: 20px auto;
+			}
+			.dtop{
+				text-align: center;
+			}
+			.centen{
+				position: relative;
+			}
+			.centen input{
+				width:300px;
+				height:50px;
+				outline: none;
+				border-radius: 3px;
+				border:1px solid #ccc;
+				margin: 10px 49px;
+				text-indent: 2em;
+			}
+			/*.centen::-webkit-input-placeholder{
+				text-indent:2em;
+				font-size:28px ;
+			}*/
+			.yanzheng{
+				margin:8px 46px;
+			}
+			.yanzheng a{
+				text-decoration: none;
+				color: #333;
+			}
+			.yanzheng a:hover{
+				color: #E5000C;
+			}
+			.yanzheng a:nth-child(2){
+				float: right;
+				margin-right: 5px;
+			}
+			.btn input{
+				background-color:#E5000C;
+				color: white;
+				font-size: 20px;
+			}
+			/*#sub{
+				position: absolute;
+				top:200px;
+				left: 100px;
+			}*/
+			.bottom{
+				margin:10px 46px;
+			}
+			.bottom a{
+				color: #333;
+				margin:0px 10px ;
+				text-decoration: none;
+			}
+			.bottom a:hover{
+				color:#E5000C ;
+			}
+			.glyphicon-user{
+				position: absolute;
+				top:28px;
+				left:60px;
+			}
+			.glyphicon-lock{
+				position: absolute;
+				top:98px;
+				left:60px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="container">
+				<div class="top">
+				<img src="../img/logo.jpg"/>
+			    </div>
+			    <div class="denglu">
+			    	<div class="dtop">
+			    		<h3>账户登录</h3>
+			    	</div>
+			    	<div class="centen">
+			    		<span class="glyphicon glyphicon-user"></span>
+			    		<input type="text" name="" id="num" value="" placeholder="请输入账号"/>
+			    		<span class="glyphicon glyphicon-lock"></span>
+			    		<input type="password" name="" id="pwd" value="" placeholder="请输入密码"/>
+			    		<div class="yanzheng">
+			    			<a href="javascript:;">短信验证登录</a>
+			    			<a href="javascript:;">忘记密码</a>
+			    		</div>
+			    		<div class="btn">
+			    			<a href="首页.html"><input type="submit" name="" id="sub" value="登录" /></a>
+			    		</div>
+			    	</div>
+			    	<div class="bottom">
+			    		<a href="javascript:;">微信登录</a>
+			    		<a href="javascript:;">QQ登录</a>
+			    		<a href="javascript:;">更多</a>
+			    		<a href="javascript:;">免费注册</a>
+			    	</div>
+			    </div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var num=document.getElementById("num");
+			var pwd=document.getElementById("pwd");
+			sub.onsubmit=function(){
+				var numV=num.value;
+				var pwdV=pwd.value;
+				if (!/^1[\d]{10}$/.test(numV)) {
+						alert("请收入正确的手机号");
+						return false;
+					}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				width: 30px;
+				height: 30px;
+				background-color: #CCCCCC;
+			}
+		</style>
+	</head>
+	<body id="body">
+		<div id="box">
+			<p></p>
+			<p></p>
+			<p></p>
+			<p class="aa" id="aa">op！</p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+		<script type="text/javascript">
+			var box=document.getElementById("box");
+			var ps=document.getElementsByTagName("p");
+			//alert(box.childNodes[0].nodeType);//3
+			//alert(box.childNodes.length);//23
+			//box.childNodes[3].style.backgroundColor="red";
+			/*var childs=[];
+			for (var i=0;i<box.childNodes.length;i++) {
+				if (box.childNodes[i].nodeType==1) {
+					childs.push(box.childNodes[i]);
+				} 
+			}
+			childs[1].style.backgroundColor="red";*/
+			//parentNode只有一个
+			//alert(ps[2].parentNode.id);//box 
+			//console.log(ps[2].previousSibling)
+			//在高级浏览器中任务是空文本，在低级浏览器ps[2]会被任务是第二p标签元素
+			//ps[2].previousSibling.style.background="red";
+			var aa=document.getElementById("aa");
+			/*var prev=aa;
+			while(prev=prev.previousSibling){
+				if (prev.nodeType==1) {
+					prev.style.background="red";
+				}
+				console.log(11);
+			}*/
+			var next=aa;
+			while (next=next.nextSibling){
+				if (next.nodeType==1) {
+					next.style.backgroundColor="yellowgreen";
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			img{
+				border: none;
+			}
+			.rolling{
+				width: 800px;
+				height: 130px;
+				border: 10px solid #ccc;
+				margin: 100px auto;
+				position:relative;
+				overflow:hidden;
+			}
+			.m_unit{
+				width:5000px;
+				position:absolute;
+				top:0;
+				left:0;
+			}
+			.m_unit ul{
+				list-style: none;
+			}
+			.m_unit ul li{
+				float: left;
+				margin-right: 10px;
+				background: url(img/shuzi/loading.gif)l;
+			}
+		</style>
+	</head>
+	<body>
+		<script src="js/rolling.js" type="text/javascript" charset="utf-8"></script>
+		<div class="rolling" id="rolling1">
+			<div class="m_unit" id="m_unit1">
+				<ul>
+					<li><a href=""> <img src="img/shuzi/0.png"/> </a></li>
+					<li><a href=""> <img src="img/shuzi/1.png"/> </a></li>
+					<li><a href=""> <img src="img/shuzi/pangzi.png"/> </a></li>
+					<li><a href=""> <img src="img/shuzi/pangzi.png"/> </a></li>
+					<li><a href=""> <img src="img/shuzi/pangzi.png"/> </a></li>
+					<li><a href=""> <img src="img/shuzi/2.png"/> </a></li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+			rolling("rolling1","m_unit1",1,10);
+			
+		</script>
+		<div class="rolling" id="rolling2">
+			<div class="m_unit" id="m_unit2">
+				<ul>
+					<li><a href=""> <img src="img/shuzi/0.png"/> </a></li>
+					<li><a href=""> <img src="img/shuzi/1.png"/> </a></li>
+					<li><a href=""> <img src="img/shuzi/pangzi.png"/> </a></li>
+					<li><a href=""> <img src="img/shuzi/pangzi.png"/> </a></li>
+					<li><a href=""> <img src="img/shuzi/pangzi.png"/> </a></li>
+					<li><a href=""> <img src="img/shuzi/2.png"/> </a></li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+			rolling("rolling2","m_unit2",4,10);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		body{
+			width: 5000px;
+		}
+		.back{
+			position: fixed;
+			right: 10px;
+			bottom: 30px;
+			width: 100px;
+			height: 100px;
+			text-align: center;
+			line-height: 100px;
+			box-shadow: 0px 0px 0px #000;
+			cursor: pointer;
+			background-color: cornflowerblue;
+			display: none;
+		}
+	</style>
+	<body>
+		<div class="back" id="btn">
+			回到顶部
+		</div>
+		<script type="text/javascript">
+			var btn=document.getElementById('btn');
+			window.onscroll=function(){
+				var jd=document.body.scrollTop||document.documentElement.scrollTop;
+				if (jd>500) {
+					btn.style.display="block";
+				}else{
+					btn.style.display="none";
+				}
+			}
+			btn.onclick=function(){
+			
+			timer = setInterval(function () {
+                var jd=document.body.scrollTop||document.documentElement.scrollTop;
+                var busu = jd/4;
+                if (document.body.scrollTop!=0) {
+                    document.body.scrollTop=document.body.scrollTop-busu;
+                } else {
+                        document.documentElement.scrollTop=document.documentElement.scrollTop-busu;
+                        }
+                if (jd==0) {
+                    clearInterval(timer);
+                }
+            }, 300);
+			}
+		</script>
+	</body>
+<ml>

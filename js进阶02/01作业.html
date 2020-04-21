@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.carousel{
+				width: 380px;
+				height: 280px;
+				border: 1px solid #000;
+				margin: 100px auto;
+			}
+			.imagesList{
+				height: 230px;
+				overflow: hidden;
+				position: relative;
+			}
+			.imagesList ul{
+				list-style: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.imagesList ul li{
+				width: 380px;
+				height: 230px;
+			}
+			.imagesList ul li img{
+				width: 100%;
+				height: 100%;
+			}
+			.samllImage ul{
+				list-style: none;
+			}
+			.samllImage ul li{
+				float: left;
+				width: 70px;
+				height: 40px;
+				border: 3px solid #333;
+			}
+			.samllImage ul li:hover{
+				border-color: #ccc;
+			}
+			.samllImage ul li.cur{
+				border-color: orange;
+			}
+			.samllImage ul li img{
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="carousel">
+			<div class="imagesList">
+				<ul>
+					<li> <a href="#"> <img src="img/homework2/0.jpg"/> </a> </li>
+					<li> <a href="#"> <img src="img/homework2/1.jpg"/> </a> </li>
+					<li> <a href="#"> <img src="img/homework2/2.jpg"/> </a> </li>
+					<li> <a href="#"> <img src="img/homework2/3.jpg"/> </a> </li>
+					<li> <a href="#"> <img src="img/homework2/4.jpg"/> </a> </li>
+				</ul>
+			</div>
+			<div class="samllImage">
+				<ul>
+					<li class="cur"> <a href="javascript:;"> <img src="img/homework2/0.jpg"/> </a> </li>
+					<li> <a href="javascript:;"> <img src="img/homework2/1.jpg"/> </a> </li>
+					<li> <a href="javascript:;"> <img src="img/homework2/2.jpg"/> </a> </li>
+					<li> <a href="javascript:;"> <img src="img/homework2/3.jpg"/> </a> </li>
+					<li> <a href="javascript:;"> <img src="img/homework2/4.jpg"/> </a> </li>
+				</ul>
+			</div>
+		</div>
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(".imagesList ul li:first").clone().appendTo($(".imagesList ul"));
+			var $m_unit=$(".imagesList ul");
+			var idx=0;
+			var timer=setInterval(move,2000);
+			$(".carousel").mouseenter(function(){
+				clearInterval(timer);
+			})
+			$(".carousel").mouseleave(function(){
+				timer=setInterval(move,2000);
+			})
+			//动一次,相当于右按钮
+			function move(){
+				idx++;
+				$m_unit.animate({"top":-230*idx},600,function(){
+					if (idx>4) {
+						idx=0;
+						$m_unit.css("top",0);
+					}
+				})
+			}
+			//监听小图的点击事件
+			$(".samllImage ul li").click(function(){
+				//信号量变成自己序号
+				idx=$(this).index();
+				$m_unit.stop(true).animate({"top":-230*idx},600);
+				changeCur();
+			})
+			//hover 小图的渲染样式
+			function changeCur(){
+				var n = idx > 4 ? 0 :idx;
+				$(".samllImage ul li").eq(n).addClass("cur").siblings().removeClass("cur");
+			}
+		</script>
+	</body>
+</html>

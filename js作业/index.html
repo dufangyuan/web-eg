@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			1
+            console.log((123+45*78)/(34+543)-9*(324-34));
+            /*2表示气温有两种方法：摄氏度和华氏度。两者的关系是： 编写程序，让用户输入摄氏度，弹出对应的华氏温度。*/
+            var she=(prompt("请输入摄氏度："));
+            var hua=9/5*she+32;
+            alert(hua);
+//          3
+            alert(Math.pow(((23+Math.pow(5,7))/45),2));
+//          4 编写程序，提示用户输入六边形的边长，然后弹出它的面积，计算六边形面积的公式是：
+            var h=(prompt("请输入边长："));
+            var s=((3*Math.sqrt(3))/2)*(Math.pow(h,2));
+            alert(s);
+//         5 如果今天是星期二，那么1000天后是星期几？用户输入一个天数，计算这个天数后是星期几。
+            var shuru=(prompt("请输入一个天数："));
+            var weed=(2+shuru%7)%7;
+            alert(shuru+"天后是星期："+weed);
+            var xingqi=((2+1000%7)%7);
+            alert("1000天后是星期："+xingqi);
+           /*6 用户输入一个三位数，弹出各个数位的和。比如：
+				用户输入155，就弹出11
+				用户输入316，就弹出10
+				用户输入989，就弹出26
+				用户输入678，就弹出21 */
+				var he=(prompt("请输入一个三位数："));
+				var ge=parseInt(he%10);
+				var shi=parseInt(he/10%10);
+				var bai=parseInt(he/100);
+				var sum=ge+shi+bai;
+				alert(sum);
+				
+            
+		</script>
+	</body>
+</html>

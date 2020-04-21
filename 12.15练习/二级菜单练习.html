@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin:0;
+			}
+			ul{
+				width:500px;
+				height:300px;
+				border:1px solid red;
+				margin: auto;
+			}
+			ul li{
+				width:100px;
+				height:80px;
+				border:1px solid black;
+				float:left;
+				list-style: none;
+                line-height:80px;
+			}
+			.li{
+				width:100px;
+				height:50px;
+				border:1px solid red;
+				text-align: center;
+				display:none;
+			}
+			ul li:hover .li{
+				display:block;
+			}
+		</style>
+	</head>
+	<body>
+	<ul>
+		<li>1
+		<div class="li">q</div>
+		<div class="li">r</div>
+		<div class="li">g</div>
+		<div class="li">u</div>
+		</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+	</body>
+</html>

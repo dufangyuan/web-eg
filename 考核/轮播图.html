@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.box{
+				width:121px;
+				height:121px;
+				margin: 100px auto;
+				position: relative;
+				overflow: hidden;
+			}
+			.box ul{
+				list-style: none;	
+			}
+			.box ul li{
+				display: none;
+			}
+			.box ul li img{
+				width:121px;
+				height:121px;
+			}
+			.box ul li.img1{
+				display: block;
+			}
+			.box span{
+				width:20px;
+				height:20px;
+				position: absolute;
+				top:55px;
+				background-color:red;
+				cursor: pointer;
+			}
+			.btn_left{
+				left:0px;
+			}
+			.btn_right{
+				right:0px;
+			}
+			.circles{
+				position: absolute;
+				bottom:0px;
+				width:121px;
+				height:20px;
+				left:50%;
+				margin-left: -45px;
+			}
+			.circles ol{
+				list-style: none;
+			}
+			.circles ol li{
+				width:10px;
+				height:10px;
+				background-color: yellow;
+				border-radius: 50%;
+				cursor: pointer;
+				margin-right:10px;
+				float: left;
+			}
+			.circles ol li.img1{
+				background-color: peru;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="imgs" id="images">
+				<ul>
+					<li class="img1">
+						<a href="#"><img src="img/cat1.jpg"/></a>
+					</li>
+					<li>
+						<a href="#"><img src="img/cat2.jpg"/></a>
+					</li>
+					<li>
+						<a href="#"><img src="img/cat3.jpg"/></a>
+					</li>
+					<li>
+						<a href="#"><img src="img/cat4.jpg"/></a>
+					</li>
+					<li>
+						<a href="#"><img src="img/cat5.jpg"/></a>
+					</li>
+				</ul>
+			</div>
+			<div class="btns">
+				<span class="btn_left" id="left_btn"></span>
+				<span class="btn_right" id="right_btn"></span>
+			</div>
+			<div class="circles" id="circles">
+				<ol>
+					<li class="img1"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var left_btn=document.getElementById("left_btn");
+			var right_btn=document.getElementById("right_btn");
+			var circlesLis=document.getElementById("circles").getElementsByTagName("li");
+			var images=document.getElementById("images").getElementsByTagName("li");
+		    var img_index=0;
+		    right_btn.onclick=function(){
+		    	img_index++;
+		    	if(img_index>4){
+		    		img_index=0;
+		    	}
+		    	change();
+		    }
+		     left_btn.onclick=function(){
+		    	img_index--;
+		    	if(img_index<0){
+		    		img_index=4;
+		    	}
+		    	change();
+		    }
+		    for(var i=0;i<circlesLis.length;i++){
+		    	(function(a){
+		    		circlesLis[a].onmouseover=function(){
+		    			img_index=a;
+		    			change();
+		    		}
+		    	})(i)
+		    }
+		    function change(){
+		    	for(var i=0;i<images.length;i++){
+		    		images[i].className="";
+		    	}
+		    	images[img_index].className="img1";
+		    	for(var i=0;i<circlesLis.length;i++){
+		    		circlesLis[i].className="";
+		    	}
+		    	circlesLis[img_index].className="img1";
+		    }
+		</script>
+	</body>
+</html>

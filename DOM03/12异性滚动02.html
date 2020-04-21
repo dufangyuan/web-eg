@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.yixing{
+				width: 670px;
+				height: 221px;
+				background: url(img/pic_bg.gif);
+				margin: 100px auto;
+				border: 1px solid #000;
+				position: relative; 
+				overflow: hidden;
+			}
+			.yixing ul{
+				list-style: none;
+			}
+			.yixing ul li{
+				position: absolute;
+			}
+			.yixing ul li img{
+				height: 100%;
+				width: 100%;
+			}
+			.yixing ul li.stateA{width: 55px;height: 37px;left: -55px;top: 84px;}
+			
+			.yixing ul li.stateB{width: 71px;height: 54px;left: 16px;top: 67px;}
+
+			.yixing ul li.stateC{width: 122px;height: 86px;left: 104px;top: 35px;}
+			.yixing ul li.stateD{width: 161px;height: 112px;left: 247px;top: 16px;}
+			.yixing ul li.stateE{width: 122px;height: 86px;left: 436px;top: 35px;}
+			.yixing ul li.stateF{width: 71px;height: 54px;left: 583px;top: 67px;}
+			.yixing ul li.stateG{width: 55px;height: 37px;left: 678px;top: 84px;}
+			.rightBtn{
+				position: absolute;
+				top: 151px;
+				right: 20px;
+				width: 40px;
+				height: 40px;
+				background-color: red;
+			}
+			.leftBtn{
+				position: absolute;
+				top: 151px;
+				width: 40px;
+				height: 40px;
+				left: 20px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="yixing">
+			<ul>
+				<li class="stateA"><img src="img/0.png"/></li>
+				<li class="stateB"><img src="img/1.png"/></li>
+				<li class="stateC"><img src="img/2.png"/></li>
+				<li class="stateD"><img src="img/3.png"/></li>
+				<li class="stateE"><img src="img/4.png"/></li>
+				<li class="stateF"><img src="img/5.png"/></li>
+				<li class="stateG"><img src="img/6.png"/></li>
+			</ul>
+			<div class="btns">
+				<a href="#" id="leftBtn" class="leftBtn"></a>
+				
+				<a href="#" id="rightBtn" class="rightBtn"></a>
+			</div>
+		</div>
+		<script src="js/animate-2.0.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/fetchComputedStyle.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var lis=document.getElementsByTagName("li");
+			var rightBtn=document.getElementById("rightBtn");
+			var leftBtn=document.getElementById("leftBtn");
+			//getElementsByTagName得到的元素是一个类数组对象,不是数组
+			//类数组对象没有pop和unshift方法
+			var JSONarr=[];
+			var liArray=[];//放每一个li的数组
+			//fetchComputedStyle(obj,”padding-left”); 这个函数返回的是这个属性值的计算后的样式。
+			//吧所有的状态都推数组
+			for(var i=0;i<lis.length;i++){
+				JSONarr.push({
+					"width":parseInt(fetchComputedStyle(lis[i],"width")),
+					"height":parseInt(fetchComputedStyle(lis[i],"height")),
+					"left":parseInt(fetchComputedStyle(lis[i],"left")),
+					"top":parseInt(fetchComputedStyle(lis[i],"top")),
+				})
+				//liArray和lis是一样的结果;lis是类数组 liArray是数组
+				liArray.push(lis[i]);
+			}
+			console.log(JSONarr);
+			console.log(liArray)
+			rightBtn.onclick=function(){
+				for (var i=1;i<=6;i++) {
+					animate(liArray[i],JSONarr[i-1],600,"BounceEaseOut");
+				}
+				//让0移走
+				for (var k in JSONarr[6]) {
+					liArray[0].style[k]=JSONarr[6][k]+"px";
+				}
+				//交换身份
+				liArray.push(liArray.shift());
+			}
+			leftBtn.onclick=function(){
+				for (var i=0;i<=5;i++) {
+					animate(liArray[i],JSONarr[i+1],600,"BounceEaseOut");
+					
+				}
+				//让0移走
+				for (var k in JSONarr[0]) {
+					liArray[6].style[k]=JSONarr[0][k]+"px";
+				}
+				liArray.unshift(liArray.pop());
+			}
+		</script>
+	</body>
+</html>

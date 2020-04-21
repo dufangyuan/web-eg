@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.father{
+				width:800px;
+				height:300px;
+				overflow:hidden;
+				margin: 30px auto;
+				border: 1px solid red;
+			}
+			ul{
+				width:510px;
+				margin: 10px auto;
+				border: 1px solid red;
+			}
+			ul li{
+				width:100px;
+				height:50px;
+				border: 1px solid red;
+				list-style:none;
+				float:left;
+				text-align: center;
+				line-height:50px;
+			}
+			p{
+				width:100px;
+				height:30px;
+				border: 1px solid red;
+			}
+			.son{
+					display: none;
+			}
+			ul li:hover .son{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="father">
+			<ul>
+				<li>1
+				<div class="son">
+					<p>w</p>
+					<p>s</p>
+					<p>a</p>
+					<p>x</p>
+				</div>
+				</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+		</div>
+	</body>
+</html>

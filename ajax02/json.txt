@@ -1,0 +1,22 @@
+fun({
+	"result" : [
+		{
+			"xuehao" 	: 20160001,
+			"xingming" 	: "小明",
+			"nianling" 	: 22,
+			"xingbie" 	: "男"
+		},
+		{
+			"xuehao" 	: 20160002,
+			"xingming" 	: "小红",
+			"nianling" 	: 12,
+			"xingbie" 	: "女"
+		},
+		{
+			"xuehao" 	: 20160003,
+			"xingming" 	: "小蓝",
+			"nianling" 	: 14,
+			"xingbie" 	: "男"
+		},
+	]
+})

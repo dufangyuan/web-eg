@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>吃饭 <a href="#">删除</a></li>
+			<li>睡觉<a href="#">删除</a></li>
+			<li>打豆豆<a href="#">删除</a></li>
+		</ul>
+		<div>
+			<p>张三</p>
+			<p id="aa">李四</p>
+			<p>王麻子</p>
+		</div>
+		<script type="text/javascript">
+//			removeChild
+			var ul=document.getElementsByTagName("ul")[0];
+			var lis=ul.getElementsByTagName("li");
+			var oas=ul.getElementsByTagName("a");
+			for (var i=0;i<oas.length;i++) {
+				oas[i].onclick=function(){
+					ul.removeChild(this.parentNode);
+				}
+			}
+			//replaceChild
+			var oDiv=document.getElementsByTagName("div")[0];
+			var aa=document.getElementById("aa");
+//			创建节点
+			var oP=document.createElement("p");
+			oP.innerHTML="王五";
+			oDiv.replaceChild(oP,aa);
+		</script>
+	</body>
+</html>

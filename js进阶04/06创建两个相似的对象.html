@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*xiaoming  xiaomeng 相同属性名和方法名字
+			创建起来不方便,解决办法,期待.....*/
+			var xiaoming={
+				name:"小明",
+				sex:"男",
+				age:18,
+				sayhello:function(){
+					alert("你好，我叫"+this.name);
+					alert("我今年"+this.age+"岁了");
+					alert("我是一个"+this.sex+"生");
+				},
+				zhangda:function(){
+					this.age++;
+				}
+			}
+			var xiaomeng={
+				name:"萌萌",
+				sex:"女",
+				age:17,
+				sayhello:function(){
+					alert("你好，我叫"+this.name);
+					alert("我今年"+this.age+"岁了");
+					alert("我是一个"+this.sex+"生");
+				},
+				zhangda:function(){
+					this.age++;
+				}
+			}
+			xiaoming.zhangda();
+			xiaoming.zhangda();
+			xiaoming.zhangda();
+			xiaomeng.zhangda();
+			xiaoming.sayhello();
+			xiaomeng.sayhello();
+		</script>
+	</body>
+</html>

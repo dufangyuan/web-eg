@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<script type="text/javascript">
+			/*绑定事件,三个参数
+			1,需要绑定事件的元素
+			2,事件名,没有on
+			3,事件处理函数*/
+			
+			//DOM0 DOM2 IE
+			function addEvent(obj,eventtype,fn){
+				if (obj.addEventListener) {
+					obj.addEventListener(eventtype,fn,false);
+				}else if(obj.attachEvent){
+					obj.attachEvent("on"+eventtype,function(){
+						fn.call(obj);
+					})
+				}else{
+					obj["on"+eventtype]=fn;
+				}
+			}
+			var oDiv=document.getElementsByTagName("div")[0];
+			addEvent(oDiv,"click",function(){
+				this.style.backgroundColor="red";
+			})
+		</script>
+	</body>
+</html>

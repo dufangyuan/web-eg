@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.accordion{
+				width: 500px;
+				margin: 100px auto;
+				border: 1px solid #000;
+			}
+			.accordion ul{
+				list-style: none;
+			}
+			.accordion ul li.cur h3{
+				background-color: orange;
+			}
+			.accordion ul li h3{
+				line-height: 40px;
+				background-color: skyblue;
+				padding: 0 10px;
+				border-bottom: 1px solid #000;
+				color: white;
+				cursor: pointer;
+				position: relative;
+			}
+			.accordion ul li .content{
+				padding: 10px;
+				font-size: 16px;
+				line-height: 150%;
+				display: none;
+			}
+			.accordion ul li.first .content{
+				display: block;
+			}
+			.accordion ul li i{
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				width: 16px;
+				height: 16px;
+				background: url(img/jt.png);
+				transition: all 1s ease 0s;
+			}
+			.accordion ul li.cur i{
+				transform: rotate(90deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="accordion">
+			<ul>
+				<li class="cur first">
+					<h3>今天是星期一  <i></i></h3>
+					<div class="content">
+						<p>
+							早上起床上班、吃饭、下班、睡觉早上起床上班、吃饭、下班、睡觉
+							早上起床上班、吃饭、下班、睡觉早上起床上班、吃饭、下班、睡觉
+						</p>
+					</div>
+				</li>
+				<li>
+					<h3>今天是星期二 <i></i></h3>
+					<div class="content">
+						<p>
+							早上起床上班、吃饭、下班、睡觉早上起床上班、吃饭、下班、睡觉
+							早上起床上班、吃饭、下班、睡觉早上起床上班、吃饭、下班、睡觉
+						</p>
+					</div>
+				</li>
+				<li>
+					<h3>今天是星期三 <i></i></h3>
+					<div class="content">
+						<p>
+							早上起床上班、吃饭、下班、睡觉早上起床上班、吃饭、下班、睡觉
+							早上起床上班、吃饭、下班、睡觉早上起床上班、吃饭、下班、睡觉
+						</p>
+					</div>
+				</li>
+				<li>
+					<h3>今天是星期四<i></i></h3>
+					<div class="content">
+						<p>
+							早上起床上班、吃饭、下班、睡觉早上起床上班、吃饭、下班、睡觉
+							早上起床上班、吃饭、下班、睡觉早上起床上班、吃饭、下班、睡觉
+						</p>
+					</div>
+				</li>
+				<li>
+					<h3>今天是星期五<i></i></h3>
+					<div class="content">
+						<p>
+							早上起床上班、吃饭、下班、睡觉早上起床上班、吃饭、下班、睡觉
+							早上起床上班、吃饭、下班、睡觉早上起床上班、吃饭、下班、睡觉
+						</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+//			监听h3
+			$(".accordion ul li h3").click(function(){
+				//所有的content合上
+				$(".content").slideUp();
+//				自己兄弟的content显示
+				if ($(this).siblings(".content").is(":visible")) {
+					//如果自己的兄弟可见
+					//自己的内容兄弟合上，变为不可见，去掉cur样式
+					$(this).siblings(".content").stop(true).slideUp();
+					$(this).parent().removeClass("cur");
+				} else{
+					//反之 自己内容兄弟不可见
+					$(".cur").removeClass("cur");
+					$(this).parent().addClass("cur");
+					$(this).siblings(".content").stop(true).slideDown();
+				}
+			})
+		</script>
+	</body>
+</html>

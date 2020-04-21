@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width:300px;
+				height:30px;
+				border-bottom:1px solid #ccc;
+				margin: 30px auto;
+				position: relative;
+			}
+			input{
+				width:270px;
+				height:25px;
+				outline: none;
+				border: none;
+			}
+			.box img{
+				width:30px;
+				height:20px;
+				position: absolute;
+				top:3px;
+				right: 3px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<div id="time">
+			2020-3-5
+		</div>-->
+		<!--<ul>
+			<li>我叫杜芳媛</li>
+			<li>我叫杜芳媛</li>
+			<li>我叫杜芳媛</li>
+			<li>我叫杜芳媛</li>
+		</ul>-->
+	     <div class="box">
+	     	<label>
+	     		<img src="img/1.PNG" id="eye"/>
+	     	</label>
+	     	<input type="password" id="pwd" value="" />
+	     </div>
+		<script type="text/javascript">
+			/*//get 获取     element 元素       by 通过          驼峰命名法
+			//参数id是大小写敏感的字符串
+			var timer = document.getElementById('time');
+			console.log(timer);
+			//返回的是一个元素对象
+			console.log(typeof timer);
+			//console.dir打印我们返回的元素对象，更好的查看里面的属性和方法
+			console.dir(timer);*/
+			
+			
+			//返回的是获取过来元素对象的集合，以伪数组的形式储存的
+			/*var lis = document.getElementsByTagName('li');
+			console.log(lis);
+			//获取第一个li
+			console.log(lis[0]);
+			//一次打印里面的li
+			for(var i=0;i<lis.length;i++){
+				console.log(lis[i]);
+			}*/
+			
+			//伪京东密码框
+			var eye=document.getElementById('eye');
+			var pwd=document.getElementById('pwd');
+			var flag=0;
+			eye.onclick=function(){
+				if(flag==0){
+					pwd.type='text';
+					eye.src='img/2.PNG';
+					flag=1;
+				}else{
+					pwd.type='password';
+					eye.src='img/1.PNG';
+					flag=0;
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				height: 5000px;
+			}
+			div{
+				width: 200px;
+				height: 200px;
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<script type="text/javascript">
+			var oDiv=document.getElementsByTagName("div")[0];
+			oDiv.onmousewheel=function(event){
+				console.log(event);
+				event.preventDefault();
+			}
+			//当右击的时候阻止弹出默认的菜单
+			/*document.oncontextmenu=function(){
+				event.preventDefault();
+			}*/
+		</script>
+	</body>
+</html>

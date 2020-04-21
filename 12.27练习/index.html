@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*地雷游戏
+			var dilei=parseInt(Math.random()*100+1);
+			console.log(dilei);
+			var shangxian=100;
+			var xiaxian=1;
+			while(true){
+				var a=parseInt(prompt("请输入一个数在"+xiaxian+"到"+shangxian+"之间"));
+				if(a>xiaxian&&a<shangxian){
+					if (a>dilei) {
+						shangxian=a;
+					} else if(a<dilei){
+						 xiaxian=a;
+					}
+					else if(a=dilei){
+						alert("恭喜你中大奖了")
+					    break;
+					}
+				}else{
+                        alert("请输入正确的数");
+				}
+				}*/
+				/**/
+//				第一步求它的约数个数
+				function yueshugeshu(a){
+					var count=0;
+					for(var i=1;i<=a;i++){
+						if (a%i==0) {
+							count++;
+						}
+					}
+					return count;
+				}
+//				第二步求它是不是质数
+				function zhishu(b){
+					if(yueshugeshu(b)==2){
+						return true;
+					}else{
+						return false;
+					}
+				}
+//				求2-100的所有质数
+				for(var a=2;a<100;a++){
+					if (zhishu(a)) {
+						console.log(a);
+					} 
+				}
+		</script>
+	</body>
+</html>

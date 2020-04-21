@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				background-color:darkgray;
+			}
+			h1{
+				text-align: center;
+				margin-bottom: 10px;
+				color: palevioletred;
+				
+			}
+			form{
+				width:500px;
+				margin: 30px auto;
+				background-color: navajowhite;
+				/*border: 1px solid red;*/
+			}
+			.text{
+				text-indent:1em;
+				cursor: pointer;
+			}
+			p{
+				margin-top: 10px;
+			}
+			input{
+				border-radius: 5px;
+				outline:none;
+				border:1px solid ghostwhite;
+			}
+			div{
+				width:350px;
+				margin: 10px auto;
+			}
+			#pj{
+				resize:none;
+			}
+			.anniu{
+				width:70px;
+				height:25px;
+				margin:10px 45px;
+				background-color: red;
+				color:white;
+				border: 1px solid red;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<form>
+			<h1>个人简介</h1>
+			<div>
+			<p>
+				<label for="">用户名：</label>
+				<input type="text" name="name" class="text" value="杜芳媛" disabled/>
+			</p>
+			<p>
+				<label for="">密&nbsp;&nbsp;&nbsp;码：</label>
+				<input type="password" name="mima" class="text" value="123" readonly/>
+			</p>
+			<p>
+				<label for="">性&nbsp;&nbsp;&nbsp;别：</label>
+				<input type="radio" name="sex" id="" value="女" checked/>女
+				<input type="radio" name="sex" id="" value="男"/>男
+			</p>
+			<p>
+				<label for="">民&nbsp;&nbsp;&nbsp;族：</label>
+				<select>
+					<option value="">汉族</option>
+					<option value="">回族</option>
+					<option value="">维吾尔族</option>
+					<option value="">藏族</option>
+				</select>
+			</p>
+			<p>
+				<label for=""> 出生日期：</label>
+				<input type="date" name="date" id="" value=""/>
+			</p>
+			<p>
+				<label for="">联系方式：</label>
+				<input type="tel" required/>
+			</p>
+			<p>
+				<label for="">电子邮箱：</label>
+				<input class="" type="email" maxlength="11" placeholder="请输入正确形式"/>
+			</p>
+			<p>
+				<label for="">个人爱好：</label>
+				<input type="checkbox"  id="changge" value="唱歌" checked/><label for="changge">唱歌</label>
+				<input type="checkbox"  id="huahua" value="画画" /><label for="huahua">画画</label>
+				<input type="checkbox"  id="youxi" value="打游戏" /><label for="youxi">打游戏</label>
+				<input type="checkbox"  id="tv" value="看电视" /><label for="tv">看电视</label>
+			</p>
+			<p>
+				<label for="">毕业院校：</label>
+				<select name="" id="">
+					<option value="" checked>陕西职业技术学院</option>
+					<option value="">西安职业技术学院</option>
+					<option value="">陕西交通职业技术学院</option>
+					<option value="">西安海棠学院</option>
+				</select>
+			</p>
+			<p>
+				<label for=""> 专&nbsp;&nbsp;&nbsp;业：</label>
+				<input type="text" name="" id="" value="" required/>
+			</p>
+			<p>
+				<label for="">工作经验：</label>
+				<input type="radio" name="work" id="" value="有" checked/>有
+				<input type="radio" name="work" id="" value="无"/>无
+			</p>
+			<p>
+				<label for="">申请职位：</label>
+				<select name="" id="">
+					<option value="" checked>UI设计师</option>
+					<option value=""> 前端工程师</option>
+					<option value="">后端工程师</option>
+					<option value="">软件开发师</option>
+				</select>
+			</p>
+			<div></div>
+			<p>
+				<p><label for="">自我评价：</label></p>
+				<textarea name="" id="pj" cols="30" rows="5"></textarea>
+			</p>
+			<p>
+				<input type="submit" name="" class="anniu" value="提交" />
+				<input type="reset" name="" class="anniu" value="重置" />
+			</p>
+			</div>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function People(name,age){
+				this.name=name;
+				this.age=age;
+			}
+			People.prototype.sayhello=function(){
+				alert("你好！我是"+this.name+",我今年"+this.age+"岁了");
+			}
+			var xiaoming=new People("小明",18);
+			var xiaomeng=new People("小梦",16);
+			/*xiaoming.sayhello();
+			xiaomeng.sayhello();*/
+			alert(xiaoming.sayhello==xiaomeng.sayhello);//true
+		</script>
+	</body>
+</html>

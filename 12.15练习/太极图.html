@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				background-color: yellow;
+			}
+			.box{
+				width: 400px;
+				height: 400px;
+				border: 1px solid black;
+				margin: 100px auto;
+				border-radius: 50%;
+				position: relative;
+				animation: zhuan 2s infinite linear;
+			}
+			@keyframes zhuan{
+				from{
+					transform: rotate(0deg);
+				}
+				to{
+					transform: rotate(360deg);
+				}
+			}
+			.hei{
+				width: 400px;
+				height: 200px;
+				background-color: black;
+				border-top-left-radius: 200px;
+				border-top-right-radius: 200px;
+			}
+			.bai{
+				width: 400px;
+				height: 200px;
+				background-color: white;
+				border-bottom-left-radius: 200px;
+				border-bottom-right-radius: 200px;
+			}
+			.xhei{
+				width: 200px;
+				height: 200px;
+				background-color: black;
+				border-radius: 50%;
+				position: absolute;
+				right: 0;
+				top: 100px;
+			}
+			.xxbai{
+				width: 50px;
+				height: 50px;
+				background-color: white;
+				border-radius: 50%;
+				margin: 75px auto;
+			}
+			.xbai{
+				width: 200px;
+				height: 200px;
+				background-color: white;
+				border-radius: 50%;
+				position: absolute;
+				top: 100px;
+			}
+			.xxhei{
+				width: 50px;
+				height: 50px;
+				background-color: black;
+				border-radius: 50%;
+				margin: 75px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="hei">
+				<div class="xhei">
+					<div class="xxbai"></div>
+				</div>
+			</div>
+			<div class="bai">
+				<div class="xbai">
+					<div class="xxhei"></div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>哈哈</li>
+			<li>嘻嘻</li>
+			<li>呵呵</li>
+		</ul>
+		<script type="text/javascript">
+			var ul=document.getElementsByTagName("ul")[0];
+			var lis=ul.getElementsByTagName("li");
+			ul.appendChild(lis[1].cloneNode(true));
+		</script>
+	</body>
+</html>

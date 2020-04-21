@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			window.onload=function(){
+				var form=document.getElementById("form");
+				var shoujihaoTxt=document.getElementById("shoujihao");
+				var wechatTxt=document.getElementById("wechat");
+				form.onsubmit=function(){
+					var shoujihao=shoujihaoTxt.value;
+					var wechat=wechatTxt.value;
+					if (!/^1[\d]{10}$/.test(shoujihao)) {
+						alert("请收入正确的手机号");
+						return false;
+					}
+					if (!/^[\d]{5,11}$/.test(wechat)) {
+						alert("请输入正确的微信号");
+						return false;
+					}
+					alert("登录成功");
+					return true;
+				}
+			}
+		</script>
+		<form  id="form" action="1.php">
+			<p>手机号： <input type="text" id="shoujihao" value="" />  </p>
+			<p>微信号： <input type="text" id="wechat" value="" />  </p>
+			<input type="submit" value="提交" id="tj"/>
+		</form>
+	</body>
+</html>

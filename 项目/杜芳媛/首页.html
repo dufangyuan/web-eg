@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon"  href="img/标题图.PNG"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="js/jquery-1.12.3.min.js"></script>
+		<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<title>天天购，天天都想购</title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.nav{
+				margin-left:100px;
+			}
+			.container{
+				position: relative;
+			}
+			.navbar li:nth-child(5){
+				float:right;
+				margin-right:100px;
+			}
+			.navbar li:nth-child(6){
+				float:right;
+			}
+			.logo input{
+				width:350px;
+				height:35px;
+				border-radius: 2px;
+				border:1px solid #ccc;
+				outline: none;
+				float: right;
+				margin-top: 30px;
+			}
+			.logo button{
+				outline: none;
+				float: right;
+				margin-top: 30px;
+			}
+			.carousel{
+				width: 650px;
+				height: 350px;
+				margin:auto;
+				position: relative;
+				overflow: hidden;
+			}
+			.carousel ul{
+				list-style: none;
+			}
+			.carousel ul li{
+				display:none;
+			}
+			.carousel ul li img{
+				width: 650px;
+				height: 350px;
+			}
+			.carousel ul li.current{
+				display:block;
+			}
+			.carousel span{
+				/*width: 50px;
+				height: 50px;*/
+				position: absolute;
+				top: 150px;
+				cursor: pointer;
+			}
+			.glyphicon-chevron-left{
+				left: 10px;
+			}
+			.glyphicon-chevron-right{
+				right:10px;
+			}
+			.circles{
+				position: absolute;
+				bottom: 10px;
+				width: 200px;
+				height: 20px;
+				left: 50%;
+				margin-left: -50px;
+			}
+			.circles ol{
+				list-style: none;
+			}
+			.circles ol li{
+				width: 15px;
+				height: 15px;
+				background-color: #8C8C8C;
+				border-radius: 50%;
+				cursor: pointer;
+				margin-right: 10px;
+				float: left;
+			}
+			.circles ol li.current{
+				background-color: #ccc;
+			}
+			.list{
+				width:240px;
+				height:340px;
+				border: 1px solid #ccc;
+				position: absolute;
+				top:110px;
+				left:20px;
+				/*z-index: 999;*/
+			}
+			.list ul{
+				list-style: none;
+				margin: 8px 30px;
+			}
+			.list ul li{
+				margin-top: 13px;
+			}
+			.list a{
+				/*border: 1px solid red;*/
+				text-decoration: none;
+				color: #000000;
+				font-size: 15px;
+			}
+			.list a:hover{
+				color: red;
+			}
+			.list span{
+				float: right;
+			}
+			.erjilist{
+				width:500px;
+				height:340px;
+				border: 1px solid #ccc;
+				position: absolute;
+				top:-1px;
+				left:238px;
+				z-index: 999;
+				display: none;
+			}
+			.erjilist h4{
+				margin-top: 25px;
+			}
+			.erjilist ul li{
+				width:70px;
+				text-align: center;
+				border-right: 1px solid #ccc;
+				float: left;
+			}
+			.logos{
+				width:245px;
+				height:340px;
+				float: right;
+				position: absolute;
+				top:109px;
+				right:16px;
+				/*border: 1px solid red;*/
+			}
+			.logos img{
+				/*border: 1px solid red;*/
+				display: block;
+				margin: auto;
+			}
+			.clear{
+				clear: both;
+			}
+			.imgs h3{
+				color: red;
+			}
+			.item{
+				/*position: relative;*/
+				width:90%;
+				height:260px;
+				box-shadow: 0 0 5px #ccc;
+				margin: 10px 0;
+				transition: all .4s;
+			}
+			.item img{
+				width:100%;
+				height:220px;
+			}
+			.item img:hover{
+				transform: scale(1.2);
+			}
+			.item span{
+				line-height:20px;
+				display: block;
+				font-size:18px;
+				color: #E5000C;
+				text-align: center;
+				font-weight: bold;
+				padding: 0 15px;
+				font-style: italic;
+			}
+			.item:hover .mask{
+				display: block;
+			}
+			.item:hover span{
+				display: none;
+			}
+			.mask{
+				position: absolute;
+				bottom:10px;
+				text-align: center;
+				left:15px;
+				width:80%;
+				height:50px;
+				background-color:rgba(0,0,0,0.5);
+				display: none;
+				padding-top:8px;
+			}
+			.mask a{
+				font-size: 18px;
+				text-decoration: none;
+				color: white;
+			}
+			.bottom{
+				position: absolute;
+				bottom:-180px;
+				left:30px;
+			}
+		</style>
+	</head>
+	<body>
+			<div class="navbar navbar-default">
+			  <ul class="nav nav-tabs">
+				  <li role="presentation" class="active"><a href="首页.html">首页</a></li>
+				  <li role="presentation"><a href="9.9.html?name=${obj[i].reserve_price" target="_blank">9.9包邮</a></li>
+				  <li role="presentation"><a href="19.9.html" target="_blank">19.9好货</a></li>
+				  <li role="presentation"><a href="今日新品.html" target="_blank">今日新品</a></li>
+				  <li role="presentation"><a href="登录.html">登录</a></li>
+				  <li role="presentation"><a href="注册.html">注册</a></li>
+			  </ul>
+		</div>
+		<div class="container">
+		     <div class="logo">
+		     	<img src="../img/logo.jpg"/>
+		     	<input type="text" name="" id="" value="" placeholder="请输入搜索内容"/>
+		     	<button type="button" class="btn btn-danger">搜索</button>
+		     </div>
+		     <div class="list" id="list">
+		     	<ul>
+		     		<li>
+		     			<a href="#">女装&ensp;/&ensp;<a>
+		     		    <a href="#">男装<a>
+		     		    <span class="glyphicon glyphicon-menu-right"></span>
+		     		    <div class="erjilist" id="erjilist">
+		     		    	<ul>
+		     		    		<h4>女装</h4>
+		     		    		<li><a href="javascript:;">裙子</a></li>
+		     		    		<li><a href="javascript:;">婚纱</a></li>
+		     		    		<li><a href="javascript:;">敬酒服</a></li>
+		     		    		<li><a href="javascript:;">针织上衣</a></li>
+		     		    		<li><a href="javascript:;">衬衫外套</a></li>
+		     		    		<li><a href="javascript:;">套装</a></li>
+		     		    		<li><a href="javascript:;">针织短袖</a></li>
+		     		    		<li><a href="javascript:;">白衬衫</a></li>
+		     		    		<li><a href="javascript:;">运动裤</a></li>
+		     		    		<li><a href="javascript:;">阔腿裤</a></li>
+		     		    		<li><a href="javascript:;">安全裤</a></li>
+		     		    		<li><a href="javascript:;">短裤</a></li>
+		     		    		<li><a href="javascript:;">西装裤</a></li>
+		     		    		<li><a href="javascript:;">直筒裤</a></li>
+		     		    		<li><a href="javascript:;">内衣</a></li>
+		     		    		<li><a href="javascript:;">没被文胸</a></li>
+		     		    		<li><a href="javascript:;">纯棉内裤</a></li>
+		     		    		<li><a href="javascript:;">袜子</a></li>
+		     		    	</ul>
+		     		    	<div class="clear"></div>
+		     		    	<ul>
+		     		    		<h4>男装</h4>
+		     		    		<li><a href="javascript:;">裙子</a></li>
+		     		    		<li><a href="javascript:;">婚纱</a></li>
+		     		    		<li><a href="javascript:;">敬酒服</a></li>
+		     		    		<li><a href="javascript:;">针织上衣</a></li>
+		     		    		<li><a href="javascript:;">衬衫外套</a></li>
+		     		    		<li><a href="javascript:;">套装</a></li>
+		     		    		<li><a href="javascript:;">运动裤</a></li>
+		     		    		<li><a href="javascript:;">阔腿裤</a></li>
+		     		    		<li><a href="javascript:;">安全裤</a></li>
+		     		    		<li><a href="javascript:;">小白鞋</a></li>
+		     		    		<li><a href="javascript:;">高跟鞋</a></li>
+		     		    		<li><a href="javascript:;">运动鞋</a></li>
+		     		    		<li><a href="javascript:;">凉鞋</a></li>
+		     		    		<li><a href="javascript:;">平底鞋</a></li>
+		     		    		<li><a href="javascript:;">内衣</a></li>
+		     		    		<li><a href="javascript:;">没被文胸</a></li>
+		     		    		<li><a href="javascript:;">纯棉内裤</a></li>
+		     		    		<li><a href="javascript:;">袜子</a></li>
+		     		    	</ul>
+		     		    </div>
+		     		</li>
+		     		<li>
+		     			<a href="#">鞋靴&ensp;/&ensp;</a>
+		     			<a href="#">箱包 </a>
+		     			<span class="glyphicon glyphicon-menu-right"></span>
+		     			<div class="erjilist" id="erjilist">
+		     		    	<ul>
+		     		    		<h4>鞋靴</h4>
+		     		    		<li><a href="javascript:;">运动鞋</a></li>
+		     		    		<li><a href="javascript:;">平底鞋</a></li>
+		     		    		<li><a href="javascript:;">高跟鞋</a></li>
+		     		    		<li><a href="javascript:;">豆豆鞋</a></li>
+		     		    		<li><a href="javascript:;">内增高鞋</a></li>
+		     		    		<li><a href="javascript:;">凉鞋</a></li>
+		     		    		<li><a href="javascript:;">板鞋</a></li>
+		     		    		<li><a href="javascript:;">休闲鞋</a></li>
+		     		    		<li><a href="javascript:;">情侣鞋</a></li>
+		     		    		<li><a href="javascript:;">婚鞋</a></li>
+		     		    		<li><a href="javascript:;">高筒靴</a></li>
+		     		    		<li><a href="javascript:;">雪地棉</a></li>
+		     		    		<li><a href="javascript:;">长靴</a></li>
+		     		    		<li><a href="javascript:;">短靴</a></li>
+		     		    		<li><a href="javascript:;">军用靴</a></li>
+		     		    		<li><a href="javascript:;">马丁靴</a></li>
+		     		    		<li><a href="javascript:;">机车靴</a></li>
+		     		    		<li><a href="javascript:;">雨靴</a></li>
+		     		    	</ul>
+		     		    	<div class="clear"></div>
+		     		    	<ul>
+		     		    		<h4>箱包</h4>
+		     		    		<li><a href="javascript:;">斜挎包</a></li>
+		     		    		<li><a href="javascript:;">双肩包</a></li>
+		     		    		<li><a href="javascript:;">小方包</a></li>
+		     		    		<li><a href="javascript:;">旅行箱</a></li>
+		     		    		<li><a href="javascript:;">钱包</a></li>
+		     		    		<li><a href="javascript:;">链条包</a></li>
+		     		    		<li><a href="javascript:;">单肩包</a></li>
+		     		    		<li><a href="javascript:;">帆布包</a></li>
+		     		    		<li><a href="javascript:;">手提包</a></li>
+		     		    		<li><a href="javascript:;">手拿包</a></li>
+		     		    		<li><a href="javascript:;">真皮包</a></li>
+		     		    		<li><a href="javascript:;">水桶包</a></li>
+		     		    		<li><a href="javascript:;">卡包</a></li>
+		     		    		<li><a href="javascript:;">旅行袋</a></li>
+		     		    	</ul>
+		     		    </div>
+		     		</li>
+		     		<li>
+		     			<a href="#">童装玩具&ensp;/&ensp;</a>
+		     			<a href="#">孕产</a>
+		     			<span class="glyphicon glyphicon-menu-right"></span>
+		     			<div class="erjilist" id="erjilist">
+		     		    	<ul>
+		     		    		<h4>童装玩具</h4>
+		     		    		<li><a href="javascript:;">儿童童装</a></li>
+		     		    		<li><a href="javascript:;">儿童裙子</a></li>
+		     		    		<li><a href="javascript:;">儿童外套</a></li>
+		     		    		<li><a href="javascript:;">儿童裤子</a></li>
+		     		    		<li><a href="javascript:;">儿童T恤</a></li>
+		     		    		<li><a href="javascript:;">儿童袜子</a></li>
+		     		    		<li><a href="javascript:;">儿童衬衫</a></li>
+		     		    		<li><a href="javascript:;">儿童内衣</a></li>
+		     		    		<li><a href="javascript:;">儿童泳衣</a></li>
+		     		    		<li><a href="javascript:;">益智玩具</a></li>
+		     		    		<li><a href="javascript:;">儿童电车</a></li>
+		     		    		<li><a href="javascript:;">学步鞋</a></li>
+		     		    		<li><a href="javascript:;">拼装积木</a></li>
+		     		    		<li><a href="javascript:;">过家家</a></li>
+		     		    		<li><a href="javascript:;">洋娃娃</a></li>
+		     		    		<li><a href="javascript:;">毛绒抱枕</a></li>
+		     		    		<li><a href="javascript:;">玩具枪</a></li>
+		     		    		<li><a href="javascript:;">户外玩具</a></li>
+		     		    	</ul>
+		     		    	<div class="clear"></div>
+		     		    	<ul>
+		     		    		<h4>孕产</h4>
+		     		    		<li><a href="javascript:;">孕妇装</a></li>
+		     		    		<li><a href="javascript:;">纸尿裤</a></li>
+		     		    		<li><a href="javascript:;">奶瓶</a></li>
+		     		    		<li><a href="javascript:;">洗澡用品</a></li>
+		     		    		<li><a href="javascript:;">婴儿湿巾</a></li>
+		     		    		<li><a href="javascript:;">隔尿垫</a></li>
+		     		    		<li><a href="javascript:;">宝宝个护</a></li>
+		     		    		<li><a href="javascript:;">驱蚊用品</a></li>
+		     		    		<li><a href="javascript:;">口水巾</a></li>
+		     		    		<li><a href="javascript:;">婴儿床</a></li>
+		     		    		<li><a href="javascript:;">妈咪包</a></li>
+		     		    		<li><a href="javascript:;">吸奶器</a></li>
+		     		    		<li><a href="javascript:;">产妇养液</a></li>
+		     		    		<li><a href="javascript:;">月嫂</a></li>
+		     		    	</ul>
+		     		    </div>
+		     		</li>
+		     		<li>
+		     			<a href="#">家电&ensp;/&ensp;</a>
+		     			<a href="#">数码</a>
+		     			<span class="glyphicon glyphicon-menu-right"></span>
+		     			<div class="erjilist" id="erjilist">
+		     		    	<ul>
+		     		    		<h4>家电</h4>
+		     		    		<li><a href="javascript:;">电视机</a></li>
+		     		    		<li><a href="javascript:;">厨房电器</a></li>
+		     		    		<li><a href="javascript:;">冰箱</a></li>
+		     		    		<li><a href="javascript:;">洗衣机</a></li>
+		     		    		<li><a href="javascript:;">烤箱</a></li>
+		     		    		<li><a href="javascript:;">电饭煲</a></li>
+		     		    		<li><a href="javascript:;">理发器</a></li>
+		     		    		<li><a href="javascript:;">电火锅</a></li>
+		     		    		<li><a href="javascript:;">空调</a></li>
+		     		    		<li><a href="javascript:;">电热水壶</a></li>
+		     		    		<li><a href="javascript:;">榨汁机</a></li>
+		     		    		<li><a href="javascript:;">电压力锅</a></li>
+		     		    		<li><a href="javascript:;">净水器</a></li>
+		     		    		<li><a href="javascript:;">面包机</a></li>
+		     		    		<li><a href="javascript:;">咖啡机</a></li>
+		     		    		<li><a href="javascript:;">体重器</a></li>
+		     		    		<li><a href="javascript:;">油烟机</a></li>
+		     		    		<li><a href="javascript:;">消毒柜</a></li>
+		     		    	</ul>
+		     		    	<div class="clear"></div>
+		     		    	<ul>
+		     		    		<h4>数码</h4>
+		     		    		<li><a href="javascript:;">笔记本</a></li>
+		     		    		<li><a href="javascript:;">平板电脑</a></li>
+		     		    		<li><a href="javascript:;">无屏投影</a></li>
+		     		    		<li><a href="javascript:;">无人机</a></li>
+		     		    		<li><a href="javascript:;">家庭影院</a></li>
+		     		    		<li><a href="javascript:;">游戏机</a></li>
+		     		    		<li><a href="javascript:;">数码相机</a></li>
+		     		    		<li><a href="javascript:;">显示器</a></li>
+		     		    		<li><a href="javascript:;">键盘鼠标</a></li>
+		     		    		<li><a href="javascript:;">U盘</a></li>
+		     		    		<li><a href="javascript:;">硬盘</a></li>
+		     		    		<li><a href="javascript:;">支架</a></li>
+		     		    		<li><a href="javascript:;">耳机</a></li>
+		     		    		<li><a href="javascript:;">随身听</a></li>
+		     		    	</ul>
+		     		    </div>
+		     		</li>
+		     		<li>
+		     			<a href="#">美妆&ensp;/&ensp;</a>
+		     			<a href="#">洗护</a>
+		     			<span class="glyphicon glyphicon-menu-right"></span>
+		     			<div class="erjilist" id="erjilist">
+		     		    	<ul>
+		     		    		<h4>美妆</h4>
+		     		    		<li><a href="javascript:;">口红</a></li>
+		     		    		<li><a href="javascript:;">唇膏</a></li>
+		     		    		<li><a href="javascript:;">护肤套装</a></li>
+		     		    		<li><a href="javascript:;">电动牙刷</a></li>
+		     		    		<li><a href="javascript:;">面膜</a></li>
+		     		    		<li><a href="javascript:;">粉底</a></li>
+		     		    		<li><a href="javascript:;">洁面</a></li>
+		     		    		<li><a href="javascript:;">香水</a></li>
+		     		    		<li><a href="javascript:;">美甲</a></li>
+		     		    		<li><a href="javascript:;">化妆工具</a></li>
+		     		    		<li><a href="javascript:;">眼影眼线</a></li>
+		     		    		<li><a href="javascript:;">彩妆套装</a></li>
+		     		    		<li><a href="javascript:;">隔离</a></li>
+		     		    		<li><a href="javascript:;">修容</a></li>
+		     		    		<li><a href="javascript:;">眉笔</a></li>
+		     		    		<li><a href="javascript:;">睫毛膏</a></li>
+		     		    		<li><a href="javascript:;">防晒</a></li>
+		     		    		<li><a href="javascript:;">眼霜</a></li>
+		     		    	</ul>
+		     		    	<div class="clear"></div>
+		     		    	<ul>
+		     		    		<h4>洗护</h4>
+		     		    		<li><a href="javascript:;">洗脸扑</a></li>
+		     		    		<li><a href="javascript:;">洗发</a></li>
+		     		    		<li><a href="javascript:;">沐浴露</a></li>
+		     		    		<li><a href="javascript:;">纸巾</a></li>
+		     		    		<li><a href="javascript:;">卫生巾</a></li>
+		     		    		<li><a href="javascript:;">口腔清洁</a></li>
+		     		    		<li><a href="javascript:;">香皂</a></li>
+		     		    		<li><a href="javascript:;">洗手液</a></li>
+		     		    		<li><a href="javascript:;">浴刷</a></li>
+		     		    		<li><a href="javascript:;">浴帽</a></li>
+		     		    		<li><a href="javascript:;">清洁工具</a></li>
+		     		    		<li><a href="javascript:;">洗衣护理</a></li>
+		     		    		<li><a href="javascript:;">拖把扫把</a></li>
+		     		    		<li><a href="javascript:;">家政服务</a></li>
+		     		    	</ul>
+		     		    </div>
+		     		</li>
+		     		<li>
+		     			<a href="#">生鲜&ensp;/&ensp;</a>
+		     			<a href="#">百货</a>
+		     			<span class="glyphicon glyphicon-menu-right"></span>
+		     			<div class="erjilist" id="erjilist">
+		     		    	<ul>
+		     		    		<h4>生鲜</h4>
+		     		    		<li><a href="javascript:;">苹果</a></li>
+		     		    		<li><a href="javascript:;">榴莲</a></li>
+		     		    		<li><a href="javascript:;">菠萝蜜</a></li>
+		     		    		<li><a href="javascript:;">凤梨</a></li>
+		     		    		<li><a href="javascript:;">山竹</a></li>
+		     		    		<li><a href="javascript:;">弥胡桃</a></li>
+		     		    		<li><a href="javascript:;">哈密瓜</a></li>
+		     		    		<li><a href="javascript:;">柚子</a></li>
+		     		    		<li><a href="javascript:;">百香果</a></li>
+		     		    		<li><a href="javascript:;">梨</a></li>
+		     		    		<li><a href="javascript:;">石榴</a></li>
+		     		    		<li><a href="javascript:;">柠檬</a></li>
+		     		    		<li><a href="javascript:;">车厘子</a></li>
+		     		    		<li><a href="javascript:;">草莓</a></li>
+		     		    		<li><a href="javascript:;">蔬菜</a></li>
+		     		    		<li><a href="javascript:;">肉类</a></li>
+		     		    		<li><a href="javascript:;">海鲜</a></li>
+		     		    		<li><a href="javascript:;">禽蛋</a></li>
+		     		    	</ul>
+		     		    	<div class="clear"></div>
+		     		    	<ul>
+		     		    		<h4>百货</h4>
+		     		    		<li><a href="javascript:;">保险器皿</a></li>
+		     		    		<li><a href="javascript:;">碗筷餐具</a></li>
+		     		    		<li><a href="javascript:;">锅具汤煲</a></li>
+		     		    		<li><a href="javascript:;">烹饪厨具</a></li>
+		     		    		<li><a href="javascript:;">餐桌布艺</a></li>
+		     		    		<li><a href="javascript:;">床品套件</a></li>
+		     		    		<li><a href="javascript:;">墙面装饰</a></li>
+		     		    		<li><a href="javascript:;">创意用品</a></li>
+		     		    		<li><a href="javascript:;">婚庆用品</a></li>
+		     		    	</ul>
+		     		    </div>
+		     		</li>
+		     		<li>
+		     			<a href="#">运动&ensp;/&ensp;</a>
+		     			<a href="#">户外</a>
+		     			<span class="glyphicon glyphicon-menu-right"></span>
+		     			<div class="erjilist" id="erjilist">
+		     		    	<ul>
+		     		    		<h4>运动</h4>
+		     		    		<li><a href="javascript:;">休闲鞋</a></li>
+		     		    		<li><a href="javascript:;">跑步鞋</a></li>
+		     		    		<li><a href="javascript:;">篮球鞋</a></li>
+		     		    		<li><a href="javascript:;">运动夹克</a></li>
+		     		    		<li><a href="javascript:;">泳衣</a></li>
+		     		    		<li><a href="javascript:;">羽毛球拍</a></li>
+		     		    		<li><a href="javascript:;">运动帽</a></li>
+		     		    		<li><a href="javascript:;">运动卫衣</a></li>
+		     		    		<li><a href="javascript:;">运动文胸</a></li>
+		     		    		<li><a href="javascript:;">运动手表</a></li>
+		     		    		<li><a href="javascript:;">运动袜</a></li>
+		     		    		<li><a href="javascript:;">运动短裤</a></li>
+		     		    		<li><a href="javascript:;">运动长裤</a></li>
+		     		    		<li><a href="javascript:;">运动T恤</a></li>
+		     		    		<li><a href="javascript:;">健身服装</a></li>
+		     		    		<li><a href="javascript:;">凉拖</a></li>
+		     		    		<li><a href="javascript:;">运动棉服</a></li>
+		     		    	</ul>
+		     		    	<div class="clear"></div>
+		     		    	<ul>
+		     		    		<h4>户外</h4>
+		     		    		<li><a href="javascript:;">自行车</a></li>
+		     		    		<li><a href="javascript:;">传统台钓</a></li>
+		     		    		<li><a href="javascript:;">平衡车</a></li>
+		     		    		<li><a href="javascript:;">烧烤野餐</a></li>
+		     		    		<li><a href="javascript:;">望远镜</a></li>
+		     		    		<li><a href="javascript:;">滑板车</a></li>
+		     		    		<li><a href="javascript:;">户外露营</a></li>
+		     		    		<li><a href="javascript:;">户外装备</a></li>
+		     		    		<li><a href="javascript:;">户外照明</a></li>
+		     		    		<li><a href="javascript:;">防护救生</a></li>
+		     		    		<li><a href="javascript:;">户外饮水</a></li>
+		     		    		<li><a href="javascript:;">旅行用品</a></li>
+		     		    		<li><a href="javascript:;">户外箱包</a></li>
+		     		    		<li><a href="javascript:;">滑雪装备</a></li>
+		     		    	</ul>
+		     		    </div>
+		     		</li>
+		     		<li>
+		     			<a href="#">家具&ensp;/&ensp;</a>
+		     			<a href="#">家饰</a>
+		     			<span class="glyphicon glyphicon-menu-right"></span>
+		     			<div class="erjilist" id="erjilist">
+		     		    	<ul>
+		     		    		<h4>家具</h4>
+		     		    		<li><a href="javascript:;">架类</a></li>
+		     		    		<li><a href="javascript:;">布艺沙发</a></li>
+		     		    		<li><a href="javascript:;">木床</a></li>
+		     		    		<li><a href="javascript:;">餐桌</a></li>
+		     		    		<li><a href="javascript:;">电脑书桌</a></li>
+		     		    		<li><a href="javascript:;">墙纸</a></li>
+		     		    		<li><a href="javascript:;">梳妆台</a></li>
+		     		    		<li><a href="javascript:;">定制衣柜</a></li>
+		     		    		<li><a href="javascript:;">茶几</a></li>
+		     		    		<li><a href="javascript:;">实木沙发</a></li>
+		     		    		<li><a href="javascript:;">户外沙发</a></li>
+		     		    		<li><a href="javascript:;">午休床</a></li>
+		     		    		<li><a href="javascript:;">床垫</a></li>
+		     		    		<li><a href="javascript:;">电脑椅</a></li>
+		     		    		<li><a href="javascript:;">皮艺沙发</a></li>
+		     		    		<li><a href="javascript:;">皮床</a></li>
+		     		    	</ul>
+		     		    	<div class="clear"></div>
+		     		    	<ul>
+		     		    		<h4>家饰</h4>
+		     		    		<li><a href="javascript:;">台灯</a></li>
+		     		    		<li><a href="javascript:;">电灯</a></li>
+		     		    		<li><a href="javascript:;">吸顶灯</a></li>
+		     		    		<li><a href="javascript:;">开关插座</a></li>
+		     		    		<li><a href="javascript:;">庭院灯</a></li>
+		     		    		<li><a href="javascript:;">筒灯</a></li>
+		     		    		<li><a href="javascript:;">浴霸</a></li>
+		     		    		<li><a href="javascript:;">瓷砖</a></li>
+		     		    		<li><a href="javascript:;">地板</a></li>
+		     		    		<li><a href="javascript:;">墙纸</a></li>
+		     		    		<li><a href="javascript:;">隔音隔热</a></li>
+		     		    		<li><a href="javascript:;">美缝</a></li>
+		     		    		<li><a href="javascript:;">防水材料</a></li>
+		     		    		<li><a href="javascript:;">整装设计</a></li>
+		     		    	</ul>
+		     		    </div>
+		     		</li>
+		     		<li>
+		     		    <a href="#">汽车&ensp;/&ensp;</a>
+		     		    <a href="#">进口</a>
+		     		    <span class="glyphicon glyphicon-menu-right"></span>
+		     		    <div class="erjilist" id="erjilist">
+		     		    	<ul>
+		     		    		<h4>汽车</h4>
+		     		    		<li><a href="javascript:;">二手车</a></li>
+		     		    		<li><a href="javascript:;">汽车装饰</a></li>
+		     		    		<li><a href="javascript:;">车内用品</a></li>
+		     		    		<li><a href="javascript:;">汽车工具</a></li>
+		     		    		<li><a href="javascript:;">脚垫</a></li>
+		     		    		<li><a href="javascript:;">手机架</a></li>
+		     		    		<li><a href="javascript:;">车用电器</a></li>
+		     		    		<li><a href="javascript:;">记录仪</a></li>
+		     		    		<li><a href="javascript:;">车零配件</a></li>
+		     		    		<li><a href="javascript:;">汽车坐垫</a></li>
+		     		    		<li><a href="javascript:;">汽车香氛</a></li>
+		     		    		<li><a href="javascript:;">车内置物</a></li>
+		     		    		<li><a href="javascript:;">方向盘套</a></li>
+		     		    		<li><a href="javascript:;">头枕腰靠</a></li>
+		     		    		<li><a href="javascript:;">车蜡车模</a></li>
+		     		    		<li><a href="javascript:;">汽车车衣</a></li>
+		     		    		<li><a href="javascript:;">汽车轮胎</a></li>
+		     		    		<li><a href="javascript:;">补胎工具</a></li>
+		     		    	</ul>
+		     		    	<div class="clear"></div>
+		     		    	<ul>
+		     		    		<h4>进口</h4>
+		     		    		<li><a href="javascript:;">限量潮鞋</a></li>
+		     		    		<li><a href="javascript:;">大牌女包</a></li>
+		     		    		<li><a href="javascript:;">项链</a></li>
+		     		    		<li><a href="javascript:;">瑞士腕表</a></li>
+		     		    		<li><a href="javascript:;">欧美腕表</a></li>
+		     		    		<li><a href="javascript:;">香水</a></li>
+		     		    		<li><a href="javascript:;">面膜</a></li>
+		     		    		<li><a href="javascript:;">网红零食</a></li>
+		     		    		<li><a href="javascript:;">名庄酒</a></li>
+		     		    		<li><a href="javascript:;">成人奶粉</a></li>
+		     		    		<li><a href="javascript:;">胶原蛋白</a></li>
+		     		    		<li><a href="javascript:;">维生素</a></li>
+		     		    		<li><a href="javascript:;">鱼油</a></li>
+		     		    		<li><a href="javascript:;">葡萄糖</a></li>
+		     		    	</ul>
+		     		    </div>
+		     		</li>
+		     	</ul>
+		     </div>
+		     <div class="carousel">
+			 <div id="imagesList" class="imagesList">
+				<!--<ul>
+					<li class="current">
+						<a href=""><img src="img/01.jpg"/></a>
+					</li>
+					<li>
+						<a href=""><img src="img/cat.jpg"/></a>
+					</li>
+					<li>
+						<a href=""><img src="img/02.jpg"/></a>
+					</li>
+					<li>
+						<a href=""><img src="img/03.jpg"/></a>
+					</li>
+					<li>
+						<a href=""><img src="img/05.jpg"/></a>
+					</li>
+				</ul>-->
+			</div>
+			<div class="btns">
+				<span class="glyphicon glyphicon-chevron-left" id="carousel_leftBtn"></span>
+				<span class="glyphicon glyphicon-chevron-right" id="carousel_rightBtn"></span>
+			</div>
+			<div id="circles" class="circles">
+				<ol>
+					<li class="current"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+			</div>
+		</div>
+		<div class="logos">
+				<img src="img/淘宝.png"/>
+				<img src="img/VIP.png"/>
+				<img src="img/天猫.png"/>
+				<img src="img/京东.png"/>
+			</div>
+		<div class="imgs">
+			<h3>猜你喜欢</h3>
+			<div class="row">
+			   <!--<div class="col-md-3">
+			    	<div class="item">
+			    		<img src="bootstrap/img/c1.jpg"/>
+			    		<span>jiage</span>
+			    		<div class="mask">
+			    			<h2>title</h2>
+			    		</div>
+			    	</div>
+			    </div>-->
+		</div>
+		</div>
+		<div class="bottom">
+			<img src="img/底部.png"/>
+		</div>
+		</div>
+		<script type="text/javascript">
+			/*var lis=document.getElementById("list");
+			var erji=document.getElementById("erjilist");
+			
+				lis.onmouseover=function(){
+				erji.style.display="block";
+			}
+				erji.onmouseout=function(){
+				this.style.display="none";
+			}*/
+			var index;
+			$("#list li").mouseenter(function(){
+				$(this).children("#erjilist").show()
+			})
+			$("#erjilist").mouseleave(function(){
+				$(this).stop(true).hide()
+				
+			})	
+		</script>
+		<script type="text/javascript">
+			$.ajax({
+				type:"get",
+				url:"http://127.0.0.1/w/website/bannerList",
+				async:true,
+				success:function(response){
+					var obj=response.data;
+					console.log(obj);
+					for(var i=0;i<obj.length;i++){
+						$(".imagesList").append(
+							`<ul>
+						     	<li>
+						     	<a href="">
+						     	<img src="${obj[i].img}"/>
+						     	</a>
+						     	</li>
+		     	            </ul>`
+						)
+					}
+				}
+			});
+			var carousel_leftBtn=document.getElementById("carousel_leftBtn");
+			var carousel_rightBtn=document.getElementById("carousel_rightBtn");
+			var circlesLis=document.getElementById("circles").getElementsByTagName("li");
+			var imagesList=document.getElementById("imagesList").getElementsByTagName("li");
+			//信号量 0 1 2 3 4
+			var img_idx=0;
+			//右按钮监听
+			carousel_rightBtn.onclick=function(){
+				img_idx++;
+				if (img_idx>4) {
+					img_idx=0;
+				}
+				changePic();
+			}
+			//左按钮监听
+			carousel_leftBtn.onclick=function(){
+				img_idx--;
+				if (img_idx<0) {
+					img_idx=4;
+				}
+				changePic();
+			}
+			//小圆点监听，要批量添加
+			for(var i=0;i<circlesLis.length;i++){
+				(function(m){
+					circlesLis[m].onmouseover=function(){
+						img_idx=m;
+						changePic();
+					}
+				})(i)
+				
+			}
+			//业务函数 根据当前信号量的值，来切换图片
+			function changePic(){
+				//去掉所有图片li的current类名
+				for (var i=0;i<imagesList.length;i++) {
+					imagesList[i].className="";
+				}
+				//把当前信号量的图片li加上current类名
+				imagesList[img_idx].className="current";
+				//去掉所有小圆点li的current类名
+				for(var i=0;i<circlesLis.length;i++){
+					circlesLis[i].className="";
+				}
+				//把当前信号量的小圆点li加上current类名
+				circlesLis[img_idx].className="current";
+			}
+		</script>
+		<script type="text/javascript">
+			$.ajax({
+				type:"get",
+				url:"http://127.0.0.1/w/website/findGoodsTypeList",
+				async:true,
+				success:function(response){
+					var obj=response.data;
+					console.log(obj);
+					var str="";
+					for (var i=0;i<obj.length;i++) {
+						var imgchange=obj[i].icon.replace(obj[i].icon.substr(0,5),"http:");
+						$(".container").append(
+							    `<div class="col-md-3">
+							    	<div class="item">
+							    		<img src="${imgchange}"/>
+							    		<span>编号:${obj[i].cateID}</span>
+							    		<div class="mask">
+							    			<a href="分类.html?name=${obj[i].name}" target="_blank">${obj[i].name}</a>
+							    		</div>
+							    	</div>
+							    </div>`
+						)
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

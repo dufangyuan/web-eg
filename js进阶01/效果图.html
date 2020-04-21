@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.info{
+				position: fixed;
+				bottom: -370px;
+				right: -190px;
+				width: 228px;
+				height: 375px;
+				background: url(img/bg.png) no-repeat;
+				padding-top: 35px;
+			}
+			.btn{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 40px;
+				height: 40px;
+				background: url(img/pic1.png);
+				text-indent: -999em;
+				overflow: hidden;
+			}
+			.btn.off{
+				background: url(img/pic2.png);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="info">
+			<a href="#" class="btn">点击展开/收起</a>
+			<div class="bd">
+				我是内容
+			</div>
+		</div>
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var state=0;//0收缩  1展开
+			$(".info .btn").click(function(){
+				if ($(".info").is(":animated")) return;
+				if (state==0) {
+					$(".info").animate({"right":0},600);
+					$(".info").animate({"bottom":0},600);
+					$(this).addClass("off");
+					state=1;
+				}else if(state==1){
+					$(".info").animate({"right":-190},600);
+					$(".info").animate({"bottom":-370},600);
+					$(this).removeClass("off");
+					state=0;
+				}
+			})
+		</script>
+	</body>
+</html>

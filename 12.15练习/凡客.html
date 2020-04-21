@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.all{
+				width:1250px;
+				height:46px;
+/*				border:1px solid red;*/
+				margin: 20px auto;
+			}
+			.tu{
+				width:185px;
+				height:46px;
+				/*border: 1px solid red;*/
+				float: left;
+				cursor:pointer;
+			}
+			ul{
+				width:1200px;
+				height:46px;
+				/*border: 1px solid navy;*/
+			}
+			ul li{
+				width:99px;
+				height:32px;
+				/*border: 1px solid red;*/
+				float: left;
+				list-style: none;
+				text-align: center;
+                line-height: 32px;
+				margin-top:7px;
+			}
+			ul li:nth-child(2){
+				height:20px;
+				border-left:1px solid #727171;
+				border-right:1px solid #727171;
+			}
+			ul li:nth-child(4){
+				height:20px;
+				border-left:1px solid #727171;
+				border-right:1px solid #727171;
+			}
+			ul li:nth-child(6){
+				height:20px;
+				border-left:1px solid #727171;
+				border-right:1px solid #727171;
+			}
+			ul li:nth-child(8){
+				height:20px;
+				border-left:1px solid #727171;
+				border-right:1px solid #727171;
+			}
+			ul li:nth-child(10){
+				height:20px;
+				border-left:1px solid #727171;
+				border-right:1px solid #727171;
+			}
+			ul li a{
+				display: block;
+				height: 32px;
+				text-decoration: none;
+				color: #727171;
+			}
+			ul li a:hover{
+				color: #B81C22;
+			}
+			.twolist{
+				width: 99px;
+				overflow: hidden;
+				background-color: white;
+				color: #727171;
+				border: 1px solid #ddd;
+				display: none;}
+				/*animation: ee 5s;
+			}
+			@keyframes ee{
+				from{
+					transition-duration:5s;
+				}
+				to{
+					transition-duration:5s;
+				}
+			}*/
+			.twolist p{
+				cursor:pointer;
+				line-height: 35px;
+			}
+			.twolist p:hover{
+				color: #B81C22;
+			}
+			ul li:hover .twolist{
+				display: block;
+			}
+			.li{
+				border:none;
+				border-top:5px solid #B81C22;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="all">
+			<p class="tu">
+				<img src="img/logo18546.png"/>
+			</p>
+			<ul>
+				<li>
+					<a href="#">首页</a>
+				</li>
+				<li>
+					<a href="#">新品</a>
+					<div class="twolist">
+						<p class="li"></p>
+					</div>
+				</li>
+				<li>
+					<a href="#">衬衫</a>
+					<div class="twolist">
+						<p class="li"></p>
+						<p>免烫</p>
+						<p>易打理</p>
+						<p>休闲</p>
+						<p>高支</p>
+						<p>法兰绒</p>
+						<p>灯芯绒</p>
+						<p>牛津纺</p>
+						<p>牛仔</p>
+						<p>麻棉</p>
+						<p>水洗棉</p>
+						<p>泡泡纱</p>
+						<p>商务衬衫</p>
+						<p>复古衬衫</p>
+					</div>
+				</li>
+				<li>
+					<a href="#">卫衣</a>
+					<div class="twolist">
+						<p class="li"></p>
+						<p>熊本熊</p>
+						<p>创可贴</p>
+						<p>开衫</p>
+						<p>连帽</p>
+						<p>圆领</p>
+						<p>水柔棉</p>
+						<p>T恤</p>
+					</div>
+				</li>
+				<li>
+					<a href="#">女装</a>
+					<div class="twolist">
+						<p class="li"></p>
+						<p>大衣</p>
+						<p>针织衫</p>
+						<p>鞋品</p>
+						<p>袜品</p>
+						<p>家具配饰</p>
+					</div>
+				</li>
+				<li>
+					<a href="#">羽绒服</a>
+					<div class="twolist">
+						<p class="li"></p>
+						<p>羽绒服</p>
+						<p>大衣</p>
+						<p>夹克</p>
+						<p>西服</p>
+						<p>C9设计款</p>
+						<p>nautilus</p>
+					</div>
+				</li>
+				<li>
+					<a href="#">针织衫</a>
+					<div class="twolist">
+						<p class="li"></p>
+						<p>棉线衫</p>
+						<p>羊毛衫</p>
+						<p>空调衫</p>
+					</div>
+				</li>
+				<li>
+					<a href="#">裤装</a>
+					<div class="twolist">
+						<p class="li"></p>
+						<p>针织裤</p>
+						<p>休闲裤</p>
+						<p>牛仔裤</p>
+						<p>工装裤</p>
+					</div>
+				</li>
+				<li>
+					<a href="#">鞋</a>
+					<div class="twolist">
+						<p class="li"></p>
+						<p>复古跑鞋</p>
+						<p>帆布鞋</p>
+						<p>休闲鞋</p>
+						<p>运动鞋</p>
+						<p>皮鞋</p>
+						<p>凉鞋</p>
+					</div>
+				</li>
+				<li>
+					<a href="#">家具配饰</a>
+					<div class="twolist">
+						<p class="li"></p>
+						<p>内衣袜品</p>
+						<p>家居服</p>
+						<p>家居鞋</p>
+						<p>床品套件</p>
+						<p>被子</p>
+						<p>毯子</p>
+						<p>围巾</p>
+						<p>枕</p>
+						<p>毛巾</p>
+						<p>手机壳</p>
+						<p>皮带</p>
+						<p>箱包</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

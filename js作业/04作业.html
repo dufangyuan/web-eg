@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*1.求1! + 2! + 3! + 4! + …… + 10!的和
+			  叹号表示阶乘，如4! = 1 * 2 * 3 * 4*/
+			 /*function jiecheng(a){
+			 	var s=1;
+			 	for (var i=1;i<=a;i++){
+			 		s*=i;
+			 	}
+			 	return s;
+			 }
+			 var sum=0;
+			 for(var j=1;j<=10;j++){
+			 	sum+=jiecheng(j)
+			 }
+			 console.log(sum);*/
+//			2.求一个三位数，该三位数等与其每位数字的阶乘之和。
+			 /*function jiecheng(a){
+			 	var s=1;
+			 	for(var i=1;i<=a;i++){
+			 		s*=i;
+			 	}
+			 	return s;
+			 }
+			 for(var j=100;j<1000;j++){
+			 	var gewei=parseInt(j%10);
+			 	var shiwei=parseInt(j/10)%10;
+			 	var baiwei=parseInt(j/100);
+			 	if(jiecheng(gewei)+jiecheng(shiwei)+jiecheng(baiwei)==j){
+			 		console.log(j);
+			 	}
+			 }*/
+			/*3.编写一个函数rev用于将一个整数前后倒置。
+			  例如rev(12345)将返回54321，rev(123)将返回321
+			  整数位数不限制，多少位都行。*/
+			 /*function rev(a){
+			  	var b=0;
+			  	while(a){
+			  		b=a%10+b*10;
+			  		a=parseInt(a/10);
+			  	}
+			  	return b;
+			  }
+			 alert(rev(123456));*/
+			 /*4.如果整数A 的全部约数（包括1，不包括A 本身）之和等于B，且整数B 的全部约数
+			  （包括1，不包括B 本身）之和等于A，则称整数A和B是一对亲密数。
+			   求3000 以内的全部亲密数。*/
+			  /*function yueshu(a){
+			  	var count=0;
+			  	for(var i=1;i<a;i++){
+			  		if(a%i==0){
+			  			count+=i;
+			  		}
+			  	}
+			  	return count;
+			  }
+			  for(var j=1;j<=3000;j++){
+			  	var c=yueshu(j);
+			  	if(j==yueshu(c)&&j<c){
+			  		console.log(j+"和"+c+"是亲密数");
+			  	}
+			  }*/
+		</script>
+	</body>
+</html>

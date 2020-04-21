@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/**/progress{
+				background: yellow;
+			}
+			/* 表示总长度背景色 */
+			progress::-webkit-progress-bar{
+				background: yellow;
+			}
+			/* 表示已完成进度背景色 */
+			progress::-webkit-progress-value{
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<!--放置图片和说明文字-->
+		<figure>
+			<img src="img/cat.jpg"/>
+			<figcaption>可爱的猫咪</figcaption>
+		</figure>
+		<!--进度条-->
+		<progress value="60" min="1" max="100">60%</progress>
+		<address>陕西省西安</address>
+		<span>这个周六我们<time>10点</time>在西点科技集合</span>
+		<div>
+			我们一定要<mark>好好学习，天天向上</mark>
+		</div>
+		<ruby>
+			彳<rt>chì</rt>
+			亍<rt>chù</rt>
+		</ruby>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.item{
+				/*width: 280px;*/
+				height: 300px;
+				box-shadow: 0px 0px 5px #000;
+				margin: 5px;
+			}
+			.item img{
+				width: 280px;
+				height: 240px;
+			}
+			h3{
+				/*line-height: 30px;*/
+			}
+			p{
+				line-height: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function(){
+				if (xhr.readyState==4) {
+					console.log(typeof xhr.responseText);
+					var response=JSON.parse(xhr.responseText)
+					var aa=response.result.data;
+					console.log(aa);
+					var str='';
+					for (var i=0;i<aa.length;i++) {
+						str+=`
+							<div class="item">
+								<img src="${aa[i].thumbnail_pic_s}"/>
+								<h3>${aa[i].author_name}</h3>
+								<p>${aa[i].title}</p>
+							</div>`
+					}
+					document.body.innerHTML=str;
+				}
+			}
+			xhr.open("get","json/shishang.json",true);
+			xhr.send(null);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>锅打灰太狼</title>
+    <style>
+        .wrap {
+            width: 320px;
+            height: 480px;
+            background: url("images/game_bg.jpg")0 0 no-repeat;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .scoreDiv {
+            font-size: 30px;
+            position: absolute;
+            top: 2px;
+            left: 60px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .wolves {
+            position: absolute;
+        }
+
+        .wolves>img {
+            position: absolute;
+        }
+
+        #item {
+            height: 16px;
+            position: absolute;
+            top: 66px;
+            left: 63px;
+            z-index: 2;
+            border-radius: 10px;
+        }
+
+        .start {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 99;
+            text-align: center;
+            font-size: 50px;
+            color: orangered;
+            text-shadow: 6px 8px 8px orangered;
+            line-height: 388px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 分数 -->
+        <div class="scoreDiv">0</div>
+        <!-- 狼 -->
+        <div class="wolves"></div>
+        <!-- 进度条 -->
+        <img src="./images/progress.png" id="item">
+        <!-- 开始游戏 -->
+        <div class="start">开始游戏</div>
+        <!-- 
+       游戏结束
+       再来一局
+    -->
+    </div>
+</body>
+<script src="../js的插件/tween.js"></script>
+
+<!-- 
+    tween.js的工作还是需要依赖于定时器setInterval
+
+ 核心：t,b,c,d;
+ t:表示开始步数
+ b:表示开始位置
+ c:表示改变量
+ d:表示总的步数
+
+
+ 1.t和d共同决定了动画总共要分多少步完成，步数越多动画越连贯细致，
+   一般情况下t初始值都是0；
+ 2.b和c相加的结果决定了动画结束时元素所在位置。
+
+ 3.t是不断变换的。
+ -->
+<script>
+    // 1获取元素
+    // 2设置变量
+    // 3创建狼。两种类型的狼
+    // 4通过计时器，让狼0-5；5-0；出现到消失;
+    // 5点击事件，判断狼的种类，大的加分，小的减分。让狼从5-9；消失
+
+
+    // 1.获取元素
+    var scoreDiv = document.querySelector(".scoreDiv");//显示的成绩
+    var wolves = document.querySelector(".wolves");//狼的父级
+    var tiaoImg = document.getElementById("item");//进度条
+    var start = document.querySelector(".start");//开始的按钮
+
+
+    // 2.声明变量
+    // posArr[i][0]=>left;posArr[i][1]=>top
+    // 狼的位置
+    var posArr = [['98px', '115px'], ['17px', '160px'], ['15px', '220px'], ['30px', '293px'], ['122px', '273px'], ['207px', '295px'], ['200px', '211px'], ['187px', '141px'], ['100px', '192px']];
+    //计时器
+    var createWolfTimer;//创建狼的计时器
+    var score = 0;//分数
+    // var imgTimer;
+
+    // 开始按钮
+    start.onclick = function () {
+        // 点击的时候让start的消失
+        this.style.display="none";
+    //   声明插件的所需要的的变量
+        var t = 0;//表示开始步数
+        var b = 180;//开始的位置
+        var c = -180;//改变量（结束的位置-开始的位置）
+        var d = 1200;//表示总的步数
+        // 开启定时器
+     var imgTimer = setInterval(function () {
+        //  让开始的步数++
+            t++;
+            // 让图片的宽度减减显示到上面
+            tiaoImg.style.width = Tween.Linear(t, b, c, d) + 'px';
+            // 如果开始的步数>=总步数
+            if (t >= d) {
+                // 关闭狼的计时器
+                clearInterval(createWolfTimer);
+                // 关闭进度条;
+                clearInterval(imgTimer);
+                // 弹窗显示得分
+                alert("得分" + score + "再来一局");
+                // 再来一局
+                // 显示start
+               start.style.display="block";
+            //    该变成在来一局
+               start.innerHTML="再来一局";
+            //    成绩重置
+               score=0;
+            //    显示在上面；
+               scoreDiv.innerHTML=score;
+            }
+        }, 10)
+        // 开始创建狼
+        gameStart();
+    
+    }
+
+    // 3.封装的随机的函数
+    function rN(min, max) {
+        return Math.round(Math.random() * (max - min) + min);
+    }
+
+    // 创建狼
+    function createWolf() {
+        // 创建图片
+        var wolf = document.createElement("img");
+        // h灰太狼，x小灰灰 通过随机数来控制狼的种类
+        wolf.type = rN(1, 100) >= 90 ? "x" : "h";//自定义属性  type的属性；
+        //声明一个初始的图片
+        wolf.index = 0;
+        //    给狼绑定图片的路径
+        wolf.src = "images/" + wolf.type + wolf.index + ".png";
+
+        //   声明一个旗帜
+        var flag = true;
+        while (flag) {
+            //随机取下标
+            var index = rN(0, posArr.length - 1);
+            // 判断是否已经生成狼
+            // 获取页面上已经生成的狼
+            var wolfArr = wolves.children;
+            // 循环对比位置以及下标
+            for (var i = 0; i < wolfArr.length; i++) {
+                //  判断页面狼的left值是否存在数组中
+                if (wolfArr[i].style.left == posArr[index][0]) {
+                    break;
+                }
+            }
+            // 当循环完成的时候，获取新的index，结束获取下标的过程；
+            if (i == wolfArr.length) {
+                flag = false;
+            }
+        }
+        // 给狼设置出现的位置
+        wolf.style.left = posArr[index][0];
+        wolf.style.top = posArr[index][1];
+        // 把狼放入页面中
+        wolves.appendChild(wolf);
+        //    返回狼
+        return wolf;
+    }
+    // createWolf();
+
+    // 让狼动起来的函数
+    function moveWolf() {
+        //  创建一个狼
+        var lang = createWolf();
+        // 给狼帮定点击事件
+        hitWolf(lang)
+        // 给每一狼创建计时器
+        // 狼出现的计时器
+        lang.appearTimer = setInterval(function () {
+            // 改变狼的index值
+            lang.index++;
+            // 给图片重新赋值
+            lang.src = "images/" + lang.type + lang.index + ".png";
+            // 控制狼的出现的图片
+            if (lang.index == 5) {
+                // 清空一下增加的计时器
+                clearInterval(lang.appearTimer);
+                lang.disappearTimer = setInterval(function () {
+                   // 图片进行累减
+                    //    index减少
+                    lang.index--;
+                    console.log(lang.index)
+                    // 给图片赋值
+                    lang.src = "images/" + lang.type + lang.index + ".png";
+                    // 当图片到达0时，清除计时器
+                    if (lang.index == 0) {
+                        clearInterval(lang.disappearTimer);
+                        // 让这个狼消失
+                        lang.remove();
+                    }
+                }, 200)
+            }
+        }, 500)
+    }
+
+
+    // 创建狼的函数
+    function gameStart() {
+        // 计时器创建
+        createWolfTimer = setInterval(function () {
+            moveWolf();
+        }, 2000)
+    }
+   
+
+    // 给狼绑定点击事件的函数
+    function hitWolf(w) {
+        // 给狼加标志旗帜
+        w.flag = true;
+        // 给狼绑定点击事件
+        w.onclick = function () {
+            //  给狼加点击旗帜防止多次点击
+            if (!w.flag) {
+                return
+            }
+            // 根据狼的种类是否加分
+            if (w.type == "h") {
+                score += 10;
+            } else {
+                score -= 10;
+                if (score < 0) {
+                    score = 0;
+                    scoreDiv.innerHTML = score;
+                }
+            }
+            // 将分数放入页面中
+            scoreDiv.innerHTML = score;
+            // 清空计时器
+            clearInterval(w.appearTimer);//出现
+            clearInterval(w.disappearTimer);//消失
+            // 改变狼的图片
+            w.index = 5;
+            // 给狼绑定一个计时器
+            w.hitWolf = setInterval(function () {
+                w.index++;
+                //    给图片赋值
+                w.src = "images/" + w.type + w.index + ".png";
+                // 当图片到9消失
+                if (w.index == 9) {
+                    // 清除计时器
+                    clearInterval(w.hitWolf);
+                    // 删除狼
+                    w.remove();
+                }
+            }, 150)
+            w.flag = false;
+        }
+    }
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 300px;
+				height: 300px;
+				border: 1px solid #000;
+				position: relative;
+			}
+			p{
+				position: absolute;
+				width: 300px;
+				height: 100px;
+				background-color: black;
+				opacity: 0.6;
+				bottom: 0;
+				left: 0;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p></p>
+		</div>
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/**/$("div").mouseenter((function(event){
+				console.log(event);
+				$(this).children("p").slideDown()
+			}))
+			$("div").mouseleave((function(){
+				$(this).children("p").slideUp();
+			}))
+			/*$("div").mouseover((function(event){
+				console.log(event);
+				$(this).children("p").slideDown()
+			}))
+			$("div").mouseout((function(){
+				$(this).children("p").slideUp();
+			}))*/
+		</script>
+	</body>
+</html>

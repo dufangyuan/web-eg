@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.box{
+				width: 800px;
+				height: 300px;
+				border:1px solid #000;
+				margin: 100px auto;
+				position: relative;
+				overflow: hidden;
+			}
+			.box ul{
+				list-style: none;
+			}
+			.box ul li{
+				position: absolute;
+				top: 0;
+			}
+			.box ul li.no0{left: 0;}
+			.box ul li.no1{left: 160px;}
+			.box ul li.no2{left: 320px;}
+			.box ul li.no3{left: 480px;}
+			.box ul li.no4{left: 640px;}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul>
+				<li class="no0">
+					<a href="#">
+						<img src="img/0.jpg"/>
+					</a>
+				</li>
+				<li class="no1">
+					<a href="#">
+						<img src="img/1.jpg"/>
+					</a>
+				</li>
+				<li class="no2">
+					<a href="#">
+						<img src="img/2.jpg"/>
+					</a>
+				</li>
+				<li class="no3">
+					<a href="#">
+						<img src="img/3.jpg"/>
+					</a>
+				</li>
+				<li class="no4">
+					<a href="#">
+						<img src="img/4.jpg"/>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//0 160 320 480 640
+			/*左边:60 120 180 240
+			右边: 560 620 680 740*/
+			$(".no0").mouseenter(function(){
+				$("li").stop(true);
+				$(".no1").animate({"left":560},1000)
+				$(".no2").animate({"left":620},1000)
+				$(".no3").animate({"left":680},1000)
+				$(".no4").animate({"left":740},1000)
+			})
+			$(".no1").mouseenter(function(){
+				$("li").stop(true);
+				$(".no1").animate({"left":60},1000)
+				$(".no2").animate({"left":620},1000)
+				$(".no3").animate({"left":680},1000)
+				$(".no4").animate({"left":740},1000)
+			})
+			$(".no2").mouseenter(function(){
+				$("li").stop(true);
+				$(".no1").animate({"left":60},1000)
+				$(".no2").animate({"left":120},1000)
+				$(".no3").animate({"left":680},1000)
+				$(".no4").animate({"left":740},1000)
+			})
+			$(".no3").mouseenter(function(){
+				$("li").stop(true);
+				$(".no1").animate({"left":60},1000)
+				$(".no2").animate({"left":120},1000)
+				$(".no3").animate({"left":180},1000)
+				$(".no4").animate({"left":740},1000)
+			})
+			$(".no4").mouseenter(function(){
+				$("li").stop(true);
+				$(".no1").animate({"left":60},1000)
+				$(".no2").animate({"left":120},1000)
+				$(".no3").animate({"left":180},1000)
+				$(".no4").animate({"left":240},1000)
+			})
+			$(".box").mouseleave(function(){
+				$("li").stop(true);
+				$(".no1").animate({"left":160},1000)
+				$(".no2").animate({"left":320},1000)
+				$(".no3").animate({"left":480},1000)
+				$(".no4").animate({"left":640},1000)
+			})
+		</script>
+	</body>
+</html>

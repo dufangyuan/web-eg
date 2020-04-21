@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="img/2.PNG"/>
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin:0;
+			}
+			#tu{
+				margin-left: 100px;
+				margin-top:20px;
+			}
+			#content{
+				width:100%;
+				height:100%;
+				position:absolute;
+				top:0px;
+				left:0px;
+				background-color: rgba(255,126,118,0.3);
+				/*opacity: 0.7;
+				background-color: deeppink;*/
+			}
+			#bottom{
+				width:400px;
+				height:400px;
+				position:absolute;
+				top:50%;
+				left:50%;
+				margin-top:-200px;
+				margin-left: -200px;
+				/*margin: 100px 700px;*/
+				background-color: peachpuff;
+			}
+			h2{
+				text-align: center;
+				padding-top:20px;
+				color:brown;
+			}
+			p{
+				text-align: center;
+				margin-top: 30px;
+			}
+			.input{
+				width:200px;
+				height:30px;
+				border-radius: 10px;
+				border:2px solid gainsboro;
+				outline: none;
+				text-indent: 1.2em;
+			}
+			.button{
+				width:100px;
+				height:30px;
+				border-radius: 15px;
+				border:2px solid gainsboro;
+				outline: none;
+				background-color:palevioletred;
+				color:white;
+				cursor: pointer;
+			}
+			a{
+				position: relative;
+				top:60px;
+				left:70px;
+				margin-right:20px;
+				text-decoration: none;
+				color:black;
+			}
+			#zhuce{
+				color:red;
+				position:relative;
+				top:60px;
+				left:90px;
+				font-weight:bold;
+			}
+			.input::-webkit-input-placeholder
+			{
+				color:red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="tu">
+			<img src="img/2.PNG"/>
+		</div>
+		<div id="content">
+			  <form id="bottom">
+			  	<h2>账户登录</h2>
+			  	<p>
+			  		<input type="text" placeholder="请输入用户名" class="input"/>
+			  	</p>
+			  	<p>
+			  		<input type="password" placeholder="请输入密码" class="input"/>
+			  	</p>
+			  	<p>
+			  		<input type="button" value="登录" class="button"/>
+			  	</p>
+			  	<a href="#">QQ登录</a>
+			  	<a href="#">微信登录</a>
+			  	<a href="#" id="zhuce">立即注册</a>
+			  </form>
+		</div>
+	</body>
+</html>

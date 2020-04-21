@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				width:100px;
+				height:100px;
+				background-color: yellowgreen;
+			}
+		</style>
+	</head>
+	<body>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<script src="js/jquery1.12.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$("p:first").css("background-color","red");
+			$("p:last").css("background-color","orange");
+			$("p:eq(1)").css("background-color","blue");
+			$("p:lt(4)").css("background-color","blanchedalmond");
+			$("p:gt(4)").css("background-color","palegoldenrod");
+			$("p:odd").css("background-color","gold");
+			$("p:even").css("background-color","firebrick");
+		</script>
+	</body>
+</html>

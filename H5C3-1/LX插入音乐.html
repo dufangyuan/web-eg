@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<audio controls class="audioPlay">
+			<source src="img/Camila Cabello _ Young Thug - Havana.mp3"/>
+		</audio>
+		<input type="button" id="play" value="播放" />
+		<input type="button" id="muted" value="静音" />
+		<script type="text/javascript">
+			var audioPlay=document.querySelector(".audioPlay");
+			var play=document.querySelector("#play");
+			var muted=document.querySelector("#muted");
+			play.onclick=function(){
+				if(play.value=="播放"){
+					this.value="暂停";
+					audioPlay.play();
+				}
+				else{
+					this.value="播放";
+					audioPlay.pause();
+				}
+			}
+		</script>
+	</body>
+</html>

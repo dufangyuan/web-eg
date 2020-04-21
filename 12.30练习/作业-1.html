@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*编写函数repeat(char,n) 实现重复char字符串n次
+			比如repeat("★",6) 返回"★★★★★★"*/
+			/*function repeat(char,n){
+				var str='';
+				for (var i=1;i<=n;i++) {
+					str+=char;
+				}
+				return str;
+			}
+			console.log(repeat("★",8));*/
+			/*function star(n){
+				for (var i=1;i<=n;i++) {
+					var str='';
+					for (var j=1;j<=n-i;j++) {
+						str+=' ';
+					}
+					for (var k=1;k<=2*i-1;k++) {
+						str+="*";
+					}
+					console.log(str);
+				}
+			}
+			star(5);*/
+			/*编写函数rev(char) 实现将字符串char倒置
+			比如rev("spring") 返回"gnirps"*/
+			/*function rev(char){
+				var sum='';
+				for (var i=0;i<char.length;i++) {
+					sum=char.charAt(i)+sum;//irps
+				}
+				return sum;
+			}
+			console.log(rev('spring'));*/
+			/*将字符串"i come from beijing"倒置，即控制台输出"beijing from come i"
+			语句直接写在程序中，不需要用户输入*/
+			/*var str="i come from beijing"
+			var a=str.split(' ');
+			a.reverse();
+			a.toString();
+			console.log(a.join(' '));*/
+			/*编写函数rightchange(char,n) 实现字符串char循环右移n位。
+			比如rightchange("abcdefg",2) 返回"fgabcde"*/
+			/*function rightchange(char,n){
+				n=n%char.length;
+				if(n==0){
+					return char;
+				}else{
+					return char.substr(-n)+char.substring(0,char.length-n);
+				}
+			}
+			console.log(rightchange('abcdefg',2));*/
+			/*编写函数maxr(char) 返回字符串char中最长的连续重复字母
+			比如maxr("mmmiijjjjkkkkkkssptr") 返回"kkkkkk"*/
+			/*function maxr(char){
+				var a=0;
+				var b=1;
+				var maxlength=0;
+				var maxletter='';
+				while(a != char.length - 1){
+					if(char.charAt(b)==char.charAt(a)){
+					    maxletter+=char.charAt(a);
+						b++;
+					}else{
+						if((b-a)>=maxlength){
+							maxlength=b-a;
+							maxletter=char.charAt(a);
+						}
+						a++;
+						b=a+1;
+					}
+				}
+				return maxletter;
+			}
+			console.log(maxr("mmmiijjjjkkkkkkssptr"));*/
+			/*有10个学生的成绩存在数组中，请统计大于等于平均成绩的人数。
+			成绩直接以数组形式写在程序中，不需要用户输入。*/
+			/*var score=[88,87,90,45,67,78,55,60,95,100];
+			var pjf=0;
+			var sum=0;
+			for (var i=0;i<score.length;i++) {
+				sum+=score[i];
+			}
+			pjf=sum/score.length;
+			console.log(pjf);
+			var count=0;
+			for (var j=0;j<score.length;j++) {
+				if(score[j]>pjf){
+					count++;
+				}
+			}
+			console.log(count);*/
+			//	有10个学生的成绩存在数组中，请统计最高分，最低分，并将最高分和最低分学生的下标输出到控制台
+			/*var score=[88,87,90,45,67,78,55,60,95,100];
+			var max=0;
+			var min=100;
+			var maxIndex=0;
+			var minIndex=0;
+			for(var i=0;i<score.length;i++){
+				if(score[i]<=min){
+					min=score[i];
+					minIndex=i;
+				}
+				if(score[i]>=max){
+					max=score[i];
+					maxIndex=i;
+				}
+			}
+			console.log(max);
+			console.log(maxIndex);
+			console.log(min);
+			console.log(minIndex);*/
+			/*勾股定理：直角三角形中，两个直角边的平方和，等于斜边平方和。
+			寻找三边的长度都不大于100，并且三边边长都是整数的可能，在控制台输出。*/
+			/*var a=0,b=0;
+			for (var a=1;a<=100;a++) {
+				for (var b=1;b<=100;b++) {
+				   var c1=a*a+b*b;
+				   var c=Math.sqrt(c1);
+				   if (c==parseInt(Math.sqrt(c1))&&c<=100) {
+				   	console.log(a,b,c);
+				   }
+				}
+			}*/
+			/*编写函数maxsame(char1,char2) 返回字符串char1和char2的最大相同子串
+			比如maxsame("abcdefghijklmn","mndefghlm") 返回"defgh"*/
+			/*function maxsame(char1,char2){
+				var s;
+				var maxlenth=0;
+				var maxchar='';
+				for (var start=0;start<=char2.length;start++) {
+					for (var end=start+1;end<=char2.length;end++) {
+						s=char2.substring(start,end);
+						if(char1.indexOf(s)!=-1&&s.length>maxlenth){
+							maxlenth=s.length;
+							maxchar=s;
+						}
+					}
+				}
+				return maxchar;
+			}
+			console.log(maxsame("abcdefghijklmn","mndefghlm")); */
+			//将"i love javascript cai guai"的每个单词的第一个字母，变为大写。
+			/*var arr="i love javascript cai guai".split(' ');
+			console.log(arr);
+			for (var i=0;i<arr.length;i++) {
+				arr[i]=arr[i].charAt(0).toUpperCase()+arr[i].substr(1);
+			}
+			arr.join('');
+			console.log(arr);*/
+		</script>
+	</body>
+</html>

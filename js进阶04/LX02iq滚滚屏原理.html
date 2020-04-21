@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin:0;
+			}
+			body,html{
+				height: 100%;
+				width: 100%;
+				overflow: hidden;
+			}
+			.contanier{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.page{
+				width: 100%;
+				height: 100%;
+				position: relative;
+			}
+			.shishi{
+				position: absolute;
+				left: -600px;
+			}
+			.longlong{
+				position: absolute;
+				left: -600px;
+			}
+			.page0{background-color: yellowgreen;}
+			.page1{background-color: orange;}
+			.page2{background-color: red;}
+			.page3{background-color: aqua;}
+			.page4{background-color: darkblue;}
+		</style>
+	</head>
+	<body>
+		<div class="contanier" id="contanier">
+			<div class="page page0"><h1>0</h1></div>
+			<div class="page page1">
+				<h1>1</h1>
+				<img src="img/shishi.jpg" class="shishi"/>
+				<img src="img/longlong.jpg" class="longlong"/>
+			</div>
+			<div class="page page2"><h1>2</h1></div>
+			<div class="page page3"><h1>3</h1></div>
+			<div class="page page4"><h1>4</h1></div>
+		</div>
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mousewheel.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.easie.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var $contanier=$("#contanier");
+			var idx=0;
+			var INARRAY=[];//所有进场动画INARRAY[1]
+			var OUTARRAY=[];//出厂动画
+			$(document).mousewheel(function(event){
+				if($contanier.is(":animated")) return;
+				/*鼠标向上   deltaY +1  信号量-1
+				鼠标向下   deltaY -1  信号量+1*/
+				var oldidx=idx;
+				idx-=event.deltaY;
+				if (idx<0) {
+					idx=0;
+				}else if(idx>4){
+					idx=4;
+				}
+				if (oldidx!=idx) {
+					if (typeof OUTARRAY[oldidx]=="function") {
+						OUTARRAY[oldidx]();
+					}
+					//新的不等于旧的
+					$contanier.animate({"top":-100*idx+"%"},600,function(){
+						if (typeof INARRAY[idx]=="function") {
+							INARRAY[idx]();
+						}
+					})
+				}
+			})
+			//1号页面的进场动画
+			INARRAY[1]=function(){
+				$(".shishi").show().animate({"left":400},500);
+				$(".longlong").show().delay(600).animate({"left":600,"top":300},500);
+			}
+			//1号页面的出场动画
+			OUTARRAY[1]=function(){
+				$(".shishi").fadeOut(300,function(){
+					$(".shishi").css("left",-600);
+				});
+				$(".longlong").fadeOut(300,function(){
+					$(".longlong").css("left",-600);
+				});
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				padding:10px;
+				border: 20px solid red;
+				margin:30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//alert($("div").width());//200px
+			//alert($("div").innerWidth());//220 width+padding
+			//alert($("div").outerWidth());//260 width+padding+border
+			alert($("div").outerHeight(true));
+		</script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+				this.name="小明";
+		}
+			People.prototype={
+				name:"小梦",
+				sex:"女",
+				age:18
+			}
+			var xiaoming=new People();
+			console.log(xiaoming);
+			console.log(xiaoming.__proto__);
+			console.log(xiaoming.__proto__===People.prototype);//true
+			console.log(xiaoming.name);
+			console.log(xiaoming.sex);
+			console.log(xiaoming.age);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			ul{
+				width:800px;
+				height:80px;
+				border:2px solid red;
+				margin: 20px auto;
+			}
+			ul li{
+				width:100px;
+				height:80px;
+				background-color: red;
+				float:left;
+				margin-right:15px;
+				list-style: none;
+				text-align: center;
+				line-height: 80px;
+			}
+			ul li a{
+				text-decoration: none;
+				color: white;
+				display: block;
+				height:80px;
+			}
+			ul li:hover{
+				background-color: yellow;
+				color:cornflowerblue;
+			}
+			.twolist{
+				width:100px;
+				background-color: chartreuse;
+				line-height: 40px;
+				overflow: hidden;
+				display: none;
+			}
+			.twolist p{
+				cursor:pointer;
+			}
+			.twolist p:hover{
+				background-color: red;
+				color: darkgoldenrod;
+			}
+			ul li:hover .twolist{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<a href="#">一级菜单</a>
+				<div class="twolist">
+					<p>二级菜单</p>
+					<p>二级菜单</p>
+					<p>二级菜单</p>
+					<p>二级菜单</p>
+					<p>二级菜单</p>
+					<p>二级菜单</p>
+				</div>
+			</li>
+			<li>
+				<a href="#">一级菜单</a>
+				<div class="twolist">
+					<p>二级菜单</p>
+					<p>二级菜单</p>
+					<p>二级菜单</p>
+					<p>二级菜单</p>
+				</div>
+			</li>
+			<li>
+				<a href="#">一级菜单</a>
+				<div class="twolist">
+					<p>二级菜单</p>
+					<p>二级菜单</p>
+					<p>二级菜单</p>
+					<p>二级菜单</p>
+					<p>二级菜单</p>
+					<p>二级菜单</p>
+				</div>
+			</li>
+			<li>
+				<a href="#">一级菜单</a>
+				<div class="twolist"> 
+					<p>二级菜单</p>
+					<p>二级菜单</p>
+					<p>二级菜单</p>
+				</div>
+			</li>
+			<li>
+				<a href="#">一级菜单</a>
+			</li>
+			<li>
+				<a href="#">一级菜单</a>
+			</li>
+		</ul>
+	</body>
+</html>

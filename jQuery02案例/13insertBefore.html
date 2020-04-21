@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="text" value="" />
+		<input type="button" id="btn" value="点击" />
+		<ul></ul>
+		
+		<script type="text/javascript">
+			var txt=document.getElementById("text");
+			var btn=document.getElementById("btn");
+			var ul=document.getElementsByTagName("ul")[0];
+			var lis=ul.getElementsByTagName("li");
+			btn.onclick=function(){
+				//创建一个新的li
+				var oLi=document.createElement("li");
+				oLi.innerHTML=txt.value;
+				ul.insertBefore(oLi,lis[0]);//标杆儿子
+			}
+		</script>
+	</body>
+</html>

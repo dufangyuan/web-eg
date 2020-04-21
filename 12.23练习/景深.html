@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.box{
+				width:300px;
+				height:300px;
+				border: 2px solid red;
+				margin: 50px auto;
+				perspective: 500px;
+				position:relative;
+			}
+			.box img{
+				width:300px;
+				height:300px;
+				backface-visibility: hidden;
+				transition: all 5s;
+				position:absolute;
+				top:0px;
+				left:0px;
+			}
+			.box img.one{
+				transform: rotateY(0deg);
+			}
+			.box:hover .one{
+				transform: rotateY(180deg);
+			}
+			.box img.two{
+				transform: rotateY(-180deg);
+			}
+			.box:hover .two{
+				transform: rotateY(0deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="img/1.PNG" width="300" height="300" class="one"/>
+			<img src="img/2.PNG" width="300" height="300" class="two"/>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$.ajax({
+				type:"post",
+				url:"http://w.eydata.net/e3f304dcf0988873",
+				async:true,
+				dataType:"jsonp",
+				success:function(res){
+					console.log(res);
+				}
+			});
+		</script>
+	</body>
+</html>

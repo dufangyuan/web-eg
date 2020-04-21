@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				width: 60px;
+				height: 60px;
+				background-color: #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<p class="t"></p>
+		<p class="t"></p>
+		<p></p>
+		<p></p>
+		<p id="m" ></p>
+		<p class="t"></p>
+		<p></p>
+		<p class="t"></p>
+		<!--<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+			$("p:first").animate({"width":600},1000);
+			
+			$("p").click(function(){
+				//alert($(this).is(".t"));
+				//alert($(this).is("#m"));
+				//alert($(this).is("p:first"));//true
+				//alert($(this).is(":odd"));
+				alert($(this).is("p:last"));//true
+				//alert($(this).eq(0).is(":animated"));//false
+			})
+		</script>
+	</body>
+</html>

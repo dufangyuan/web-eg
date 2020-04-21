@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin:0;
+			}
+			.box{
+				width:380px;
+				height:280px;
+				border:1px solid black;
+				margin:100px auto;
+			}
+			.imgs{
+				height:230px;
+				overflow: hidden;
+				position: relative;
+			}
+			.imgs ul{
+				list-style: none;
+				position: absolute;
+				top:0;
+				left:0;
+			}
+			.imgs ul li{
+				width:100%;
+				height:100%;
+			}
+			.smallImgs ul{
+				list-style: none;
+			}
+			.smallImgs ul li{
+				float: left;
+				width:70px;
+				height:40px;
+				border:3px solid gainsboro;
+			}
+			.smallImgs ul li:hover{
+				border-color:red;
+			}
+			.smallImgs ul li.cur{
+				border-color:yellow;
+			}
+			.smallImgs ul li img{
+				width:100%;
+				height:100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="imgs">
+				<ul>
+					<li><a href="javascript:;"><img src="img/homework2/0.jpg"/></a></li>
+					<li><a href="javascript:;"><img src="img/homework2/1.jpg"/></a></li>
+					<li><a href="javascript:;"><img src="img/homework2/2.jpg"/></a></li>
+					<li><a href="javascript:;"><img src="img/homework2/3.jpg"/></a></li>
+					<li><a href="javascript:;"><img src="img/homework2/4.jpg"/></a></li>
+				</ul>
+			</div>
+			<div class="smallImgs">
+				<ul>
+					<li class="cur"><a href="javascript:;"><img src="img/homework2/0.jpg"/></a></li>
+					<li><a href="javascript:;"><img src="img/homework2/1.jpg"/></a></li>
+					<li><a href="javascript:;"><img src="img/homework2/2.jpg"/></a></li>
+					<li><a href="javascript:;"><img src="img/homework2/3.jpg"/></a></li>
+					<li><a href="javascript:;"><img src="img/homework2/4.jpg"/></a></li>
+				</ul>
+			</div>
+		</div>
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/*$(".imgs ul li:first").clone().appendTo($(".imgs ul"));
+			var unit=$(".imgs ul");
+			var idx=0;
+			var timer=setInterval(move,1000);
+			$(".box").mouseenter(function(){
+				clearInterval(timer);
+			})
+			$(".box").mouseleave(function(){
+				timer=setInterval(move,1000);
+			})
+			function move(){
+				idx++;
+				unit.animate({"top":-230*idx},1000,function(){
+					if(idx>4){
+						idx=0;
+						unit.css("top",0);
+					}
+				});
+			}
+			$(".smallImgs ul li").click(function(){
+				idx=$(this).index();
+				unit.stop(true).animate({"top":-230*idx},600);
+				changeCur();
+			})
+			function changeCur(){
+				var n=idx > 4 ? 0 : idx;
+				$(".smallImgs ul li").eq(n).appClass("cur").siblings().removeClass("cur");
+			}*/
+			$(".imgs ul li:first").clone().appendTo($(".imgs ul"));
+			var unit=$(".imgs ul");
+			var idx=0;
+			var timer=setInterval(move,1000);
+			$(".box").mouseenter(function(){
+				clearInterval(timer);
+			})
+			$(".box").mouseleave(function(){
+				timer=setInterval(move,1000);
+			})
+			function move(){
+				idx++;
+				unit.animate({"top":-230*idx},1000,function(){
+					if(idx>4){
+						idx=0;
+						unit.css("top",0);
+					}
+				});
+			}
+			$(".smallImgs ul li").click(function(){
+				idx=$(this).index();
+				unit.stop(true).animate({"top":-230*idx},600);
+				changeCur();
+			})
+			function changeCur(){
+				var n=idx > 4 ? 0 : idx;
+				$(".smallImgs ul li").eq(n).appClass("cur").siblings().removeClass("cur");
+			}
+		</script>
+	</body>
+</html>

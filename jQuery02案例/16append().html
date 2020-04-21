@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<p>hello你好</p>
+			<p>world世界</p>
+		</div>
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/*var obj=$("<p>哈哈</p>");
+			obj.css("background-color","red");
+			$("#box").append(obj)*/
+			$("#box").append("<p>哈哈哈</p>");
+			//父亲.append(儿子)
+			//儿子.appendTo(父亲)
+			//$("<h3>今天是星期三</h3>").appendTo($("#box"));
+			//prepend在第一个儿子添加
+			//$("#box").prepend("<h2>我是prepend</h2>")
+			$("<font color='red'>我是prepend</font>").prependTo($("#box"))
+			$("p").after("<h3>我是h3</h3>");
+			$("p").before("<h3>p标签之前</h3>");
+		</script>
+	</body>
+</html>

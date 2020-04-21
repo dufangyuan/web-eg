@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1 id="oh">=====</h1>
+		<input type="button" id="btn" value="点我" />
+		<script type="text/javascript">
+			var Oh=document.getElementById("oh");
+			var btn=document.getElementById("btn");
+			btn.onclick=function(){
+				var xhr=new XMLHttpRequest();
+				xhr.onreadystatechange=function(){
+					if (xhr.readyState==4) {
+						if(xhr.status>=200&&xhr.status<300||xhr.status==304){
+							console.log(JSON.parse(xhr.responseText));
+						}else{
+							console.log("服务器错误，请稍后重试~")
+						}
+					}
+				}
+				xhr.open("get","json/caijing.json",true)
+				xhr.send(null);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background-color: yellowgreen;
+			}
+			p{
+				width: 100px;
+				height: 100px;
+				background-color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li>
+					<ul>
+						<li>
+							<p></p>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			document.body.onclick=function(){
+				alert("我是页面，点我干甚~");
+			}
+			document.getElementById("box").onclick=function(){
+				alert("我是box,点我干啥~")
+			}
+		</script>
+	</body>
+</html>

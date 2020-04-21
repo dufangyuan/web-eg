@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			jsonp("json.txt","fun",function(data){
+				console.log(data);
+			})
+			
+			//json方法
+			function jsonp(URL,callbackname,callback){
+				window[callbackname]=callback;
+				var scriptObj=document.createElement("script");
+				document.body.appendChild(scriptObj);
+				scriptObj.src=URL;
+				document.body.removeChild(scriptObj);
+			}
+		</script>
+	</body>
+</html>

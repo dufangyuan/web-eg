@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			1
+//			var a=123+45*78;
+//			var b=34+543;
+//			var c=9*(324-34);
+//			console.log(a/b-c);
+			console.log((123+45*78)/(34+543)-9*(324-34));
+//			2
+            var ssd=(prompt("请输入摄氏温度"));
+            var hsd=9 / 5 * ssd + 32;
+            console.log(hsd);
+//          3
+            console.log(Math.pow((23+Math.pow(5,7))/45,2));
+//          4
+            var a=(prompt("输入一个数"));
+            var s=3 * Math.sqrt(3) / 2 * Math.pow(a,2);
+            console.log(s);
+//          5
+            var days=prompt("今天星期二,请输入几天后");
+            var weed=(2+days%7)%7;
+            alert(weed);
+//          6
+            var shu=parseInt(prompt("请输入一个三位数"));
+            var a=parseInt(shu%10);
+            var b=parseInt(shu/10%10);
+            var c=parseInt(shu/100);
+            var sum=parseInt(a+b+c);
+            alert(sum);
+		</script>
+	</body>
+</html>

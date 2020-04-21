@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function Dog(){}
+			var xiaobai=new Dog();
+			//console.log(xiaobai.__proto__.__proto__);
+			//console.log(xiaobai.__proto__.__proto__.constructor);//Object()
+			//Object.prototype是所有对象的原型链的终点。所有我们直接给Object.prototype增加一个方法，
+			//世界上所有的对象都可以调用这个方法
+			Object.prototype.haha=function(){
+				alert("哈哈");
+			}
+			//xiaobai.haha();
+			var arr=[1,2,3];
+			arr.haha();
+		</script>
+	</body>
+</html>

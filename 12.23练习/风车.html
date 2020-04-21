@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.box{
+				width:400px;
+				height:400px;
+				margin: 20px auto;
+				/*display:flex;
+				flex-direction:row;
+				flex-wrap: wrap;*/
+				position: relative;
+				z-index: 1;
+				/*border: 1px solid red;*/
+				animation: zhuan 1.5s infinite linear;
+				
+			}
+			@keyframes zhuan{
+				from{
+					transform: rotate(0deg);
+				}
+				to{
+					transform: rotate(360deg);
+				}
+			}
+			.one{
+				width:200px;
+				height:100px;
+				margin-top: 100px;
+				float: left;
+				border-top-left-radius:100px;
+				border-top-right-radius:100px;
+				background-color: red;
+			}
+			.two{
+				width:100px;
+				height:200px;
+				float: left;
+				/*margin-right: 100px;*/
+				border-bottom-right-radius:100px;
+				border-top-right-radius:100px;
+				background-color: aqua;
+			}
+			.three{
+				width:100px;
+				height:200px;
+				float: left;
+				margin-left: 100px;
+				border-top-left-radius:100px;
+				border-bottom-left-radius:100px;
+				background-color:greenyellow;
+			}
+			.four{
+				width:200px;
+				height:100px;
+				float: left;
+				border-bottom-left-radius:100px;
+				border-bottom-right-radius:100px;
+				background-color:hotpink;
+			}
+			.gan{
+				width:5px;
+				height:300px;
+				position: absolute;
+				top:220px;
+				left:675px;
+				background-color: darkgoldenrod;
+				/*border: 1px solid red;*/
+			}
+			.fengche{
+				width:200px;
+				height:200px;
+				/*border:1px solid red;*/
+				margin-left:80px ;
+				animation: fengche 1.5s linear infinite reverse;
+			}
+			@keyframes fengche{
+				from{
+					transform: rotate(0deg);
+				}
+				to{
+					transform: rotate(360deg);
+				}
+			}
+			.fc1{
+				width:100px;
+				height:50px;
+				float: left;
+				margin-top: 50px;
+				border-top-left-radius:100px;
+				border-top-right-radius:100px;
+				background-color: yellow;
+			}
+			.fc2{
+				width:50px;
+				height:100px;
+				float: left;
+				border-bottom-right-radius:100px;
+				border-top-right-radius:100px;
+				background-color: blueviolet;
+			}
+			.fc3{
+				width:50px;
+				height:100px;
+				float: left;
+				margin-left: 50px;
+				border-top-left-radius:100px;
+				border-bottom-left-radius:100px;
+				background-color: deeppink;
+			}
+			.fc4{
+				width:100px;
+				height:50px;
+				float: left;
+				border-bottom-left-radius:100px;
+				border-bottom-right-radius:100px;
+				background-color: coral;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="all">
+			<div class="box">
+			<div class="one"></div>
+			<div class="two"></div>
+			<div class="three"></div>
+			<div class="four"></div>
+		</div>
+		<div class="gan"></div>
+		</div>
+		<div class="fengche">
+			<div class="fc1"></div>
+			<div class="fc2"></div>
+			<div class="fc3"></div>
+			<div class="fc4"></div>
+		</div>
+	</body>
+</html>

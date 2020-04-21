@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<script type="text/javascript">
+			var oDiv=document.getElementsByTagName("div")[0];
+			oDiv.onclick=function(event){
+				console.log(event);
+				console.log(event.type);
+				console.log(event.target);
+			}
+		</script>
+	</body>
+</html>

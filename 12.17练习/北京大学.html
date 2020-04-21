@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.all{
+				width:1000px;
+				overflow:hidden;
+				border: 1px solid gainsboro;
+				margin: 30px auto;
+				*zoom:1;
+			}
+			.top{
+				widows: 100%;
+				margin: 10px;
+			}
+			.top_left{
+				width:200px;
+				height:80px;
+				background-color: red;
+				float: left;
+			}
+			.top_right1{
+				width:150px;
+				height:35px;
+				background-color: green;
+				float:right;
+				margin-bottom: 10px;
+			}
+			.top_right2{
+				width:770px;
+				height:35px;
+				background-color: green;
+				float:right;
+			}
+			/*.op{
+				clear: both;
+			}*/
+			.content{
+				margin: 10px;
+			}
+			.content_left{
+				width:230px;
+				height:330px;
+				background-color: gold;
+				float: left;
+				margin-right: 10px;
+			}
+			.content_right{
+				width:230px;
+				height:280px;
+				background-color: purple;
+				margin-left: 10px;
+				float: right;
+			}
+			.content_center1{
+				width:500px;
+				height:130px;
+				background-color: deepskyblue;
+				float: left;
+				margin-bottom: 10px;
+			}
+			.content_center2{
+				width:500px;
+				height:80px;
+				background-color: deepskyblue;
+				margin-bottom: 10px;
+				float: left;
+			}
+			.content_center3{
+				width:500px;
+				height:50px;
+				background-color: deepskyblue;
+				margin-bottom: 10px;
+				float: left;
+			}
+			.content_bottom{
+				width:740px;
+				height:40px;
+				background-color: green;
+				float: left;
+			}
+			.bottom{
+				width:98%;
+				height:40px;
+				margin: 10px;
+				background-color: blue;
+				float: left;
+			}
+			.top::after{
+				content: '';
+				display: block;
+                clear: both;
+			}
+			</style>
+	</head>
+	<body>
+		<div class="all">
+			<div class="top">
+				<div class="top_left">我是logo</div>
+				<div class="top_right1">english</div>
+				<div class="top_right2">nav就是导航条，叫做navigater</div>
+			</div>
+			<!--<p class="op"></p>-->
+			<div class="content">
+				<div class="content_left"></div>
+				<div class="content_right"></div>
+				<div class="content_center1"></div>
+				<div class="content_center2"></div>
+				<div class="content_center3"></div>
+				<div class="content_bottom">我是超级链接</div>
+			</div>
+			<p class="op"></p>
+			<div class="bottom">
+				
+			</div>
+		</div>
+	</body>
+</html>

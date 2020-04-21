@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1 id="oh">=====</h1>
+		<input type="button" id="btn" value="点我" />
+		<script type="text/javascript">
+			var Oh=document.getElementById("oh");
+			var btn=document.getElementById("btn");
+			btn.onclick=function(){
+				var xhr=new XMLHttpRequest();
+				xhr.onreadystatechange=function(){
+					if(xhr.readyState==4){
+						console.log(xhr.responseText)
+					}
+				}
+				xhr.open("post","json/caijing.json",true);
+				//name="张三" age=18
+				xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+				xhr.send("name="+encodeURIComponent("张三")+"$age=18");
+			}
+		</script>
+	</body>
+</html>

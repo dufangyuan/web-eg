@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* */
+//			求1! + 2! + 3! + 4! + …… + 10!的和
+//          叹号表示阶乘，如4! = 1 * 2 * s3 * 4
+            function a(b){
+            	var cheng=1;
+            	for (var i=1;i<=b;i++) {
+            		cheng*=i;
+            	}
+            		return cheng;
+            }
+            	var sum=0;
+            	for (var i=1;i<=10;i++) {
+            		sum+=a(i);
+            	}
+            console.log(sum);
+          /**/
+//        求一个三位数，该三位数等与其每位数字的阶乘之和。
+            function a(b){
+            	var cheng=1;
+            	for (var i=1;i<=b;i++) {
+            		cheng*=i;
+            	}
+            	return cheng;
+            }
+//              var shu=parseInt(prompt("请输入一个三位数"))
+                for (var cc=100;cc<1000;cc++) {
+                	var ge=parseInt(cc%10);
+            	var shi=parseInt(cc/10%10);
+            	var bai=parseInt(cc/100);
+            	if(a(ge)+a(shi)+a(bai)==cc){
+            		console.log(cc);
+               }
+            	}
+//               编写一个函数rev用于将一个整数前后倒置。
+//               例如rev(12345)将返回54321，rev(123)将返回321
+//                整数位数不限制，多少位都行。
+                /**/
+               function rev(a){
+               	var b=0;
+				while(a){
+					b=b*10+a%10;//5 50+3=53  534
+					a=parseInt(a/10);//4 0
+				}
+				return b;
+			}
+             alert(rev(123))
+//           如果整数A 的全部约数（包括1，不包括A 本身）之和等于B，且整数B 的全部约数
+//          （包括1，不包括B 本身）之和等于A，则称整数A和B是一对亲密数。
+//            求3000 以内的全部亲密数。
+
+          /*   function yueshu(a){
+             	var count=0;
+             	for (var i=1;i<a;i++) {
+             		if(a%i==0){
+             			count+=i;
+             		}
+             	}
+             		return count;
+             }
+             function yueshu2(b){
+             	var count2=0;
+             	for (var j=1;j<b;j++) {
+             		if(b%j==0){
+             			count2+=j;
+             		}
+             	}
+             	return count2;
+             }
+             for(var z=1;z<=3000;z++){
+             	if (yueshu(z)==yueshu2(z)) {
+             		console.log(z);
+             	}
+             }     错误*/
+             function yueshu(a){
+             	var count=0;
+             	for (var i=1;i<a;i++) {
+             		if(a%i==0){
+             			count+=i;
+             		}
+             	}
+             		return count;
+             }
+             for(var i =1;i<=3000;i++){
+            var j =yueshu(i);
+            if(i == yueshu(j)&&i>j){
+                console.log(i+"和"+j)
+            }
+        }
+		</script>
+	</body>
+</html>

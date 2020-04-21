@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin: 0;
+			}
+			#catch{
+				width:200px;
+				height:10px;
+				border-radius: 10px;
+				background-color: yellow;
+				position: relative;
+				margin-top: 500px;
+			}
+			p{
+				position: absolute;
+				width:30px;
+				height:30px;
+				background-color: mediumpurple;
+				border-radius:50%;
+				top:100px;
+				left:100px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1></h1>
+		<h2></h2>
+		<div id="catch"></div>
+		<script type="text/javascript">
+			var catch=document.getElementById("catch");
+			var h1=document.getElementsByTagName("h1")[0];
+			var h2=document.getElementsByTagName("h2")[0];
+			function ball(top,left){
+				this.d=30;
+				this.left=left;
+				this.top=top;
+				this.deltaX=parseInt(Math.random()*2);
+				this.deltaY=parseInt(Math.random()*2);
+				this.init();
+				this.move();
+			}
+			ball.prototype.init=function(){
+				this.dom=document.create("p");
+				body.appendChild(this.dom);
+			}
+			ball.prototype,render=function(){
+				this.dom.style.left = this.left + "px";
+				this.dom.style.top = this.top + "px";
+			}
+			ball.prototype.move=function(){
+				var self=this;
+				this.timer=setInterval(function(){
+					self.left += self.deltaX;
+					self.top += self.deltaY;
+					if(self.top >=window.clientHeight-self.d){
+						
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

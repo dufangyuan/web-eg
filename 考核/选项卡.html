@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.box{
+				margin: 100px auto;
+				width:611px;
+				border-top:2px solid #ccc;
+			}
+			.top{
+				overflow: hidden;
+			}
+			.top span{
+				width:121px;
+				float: left;
+				line-height:40px;
+				text-align:center;
+				cursorv :pointer;
+				border-right: 1px solid #ccc;
+				border-bottom:1px solid #ccc;
+			}
+			.top span a{
+				text-decoration: none;
+				color: gray;
+			}
+			.top span.nav a{
+				color:black;
+				font-weight: bold;
+			}
+			.top span.nav{
+				border-left: 1px solid #ccc;
+			}
+			.content ul{
+				list-style: none;
+			}
+			.content ul li{
+				float: left;
+				margin-left:1px ;
+			}
+			.content div{
+				display: none;
+			}
+			.content div.img0{
+				color: black;
+			}
+			.xianshi{
+				color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="top">
+				<span class="nav">
+					<a href="#">第一只猫</a>
+				</span>
+				<span>
+					<a href="#">第二只猫</a>
+				</span>
+				<span>
+					<a href="#">第三只猫</a>
+				</span>
+				<span>
+					<a href="#">第四只猫</a>
+				</span>
+				<span>
+					<a href="#">第五只猫</a>
+				</span>
+			</div>
+			<div class="content">
+				<div class="img0">
+					<ul>
+						<li>
+							<a href="#"><img src="img/cat1.jpg"/></li></a>
+					</ul>
+				</div>
+				<div class="img1">
+					<ul>
+						<li>
+							<a href="#"><img src="img/cat2.jpg"/></li></a>
+					</ul>
+				</div>
+				<div class="img2">
+					<ul>
+						<li>
+							<a href="#"><img src="img/cat3.jpg"/></li></a>
+					</ul>
+				</div>
+				<div class="img3">
+					<ul>
+						<li>
+							<a href="#"><img src="img/cat4.jpg"/></li></a>
+					</ul>
+				</div>
+				<div class="img4">
+					<ul>
+						<li>
+							<a href="#"><img src="img/cat5.jpg"/></li></a>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(".top span").each(function(i){
+				$(this).mouseenter(function(){
+					$(this).addClass("xianshi");
+					$(this).siblings().removeClass("xianshi");
+					$(".content div").eq(i).css("display":"block");
+					$(".content div").eq(i).siblings().css("display":"none");
+				})
+			})
+		</script>
+	</body>
+</html>

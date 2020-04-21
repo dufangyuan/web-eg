@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.left{
+				width: 234px;
+				height:460px;
+				background-color: #98989C;
+				text-align: left;
+				float:left;
+				position:relative;/*相对定位用于父级*/
+			}
+			ul{
+				width: 200px;
+				height:440px;
+				text-indent:2em;
+				/*border: 1px solid red;*/
+			}
+			ul li{
+				width:233px;
+				height:42px;
+				line-height: 42px;
+				list-style:none;
+				/*border: 1px solid red;*/
+				float:left;
+			}
+			ul li:nth-child(1){
+				margin-top: 15px;
+			}
+			ul li img{
+				display:block;
+				float:right;
+				/*border: 1px solid red;*/
+				margin-top:7px;
+				margin-right:5px;
+			}
+			ul li a{
+				text-decoration: none;
+				color:white;
+				font-size:14px;
+			}
+			ul li:hover{
+				background-color: #FF6700;
+				cursor:pointer;/*加小手*/
+				/*cursor:no-drop;*//*禁止图标*/
+			}
+			.right{
+				width:1100px;
+				height:458px;
+				overflow: hidden;
+				border: 1px solid gainsboro;
+				display: none;
+				position:absolute;/*决定定位用于子集*/
+				top:0px;
+				left:234px;
+			}
+			ul li:hover .right{
+				display: block;
+			}
+			.shouji{
+				width:270px;
+				height:60px;
+				float:left;
+				margin-bottom: 15px;
+				/*border: 1px solid red;*/
+			}
+			.shouji img{
+				/*border: 1px solid red;*/
+				float:left;
+			}
+			.shouji a{
+				display: block;/*将行内元素转化为块级元素*/
+				height: 20px;
+				/*border: 1px solid red;*/
+				text-decoration: none;/*去掉下划线*/
+				line-height:60px;
+				float:left;
+				margin-top:15px;
+				/*margin-left: 10px;*/
+				color:gray;
+			}
+			.shouji a:hover{
+				color: #FF6700;
+			}
+			.right1{
+				width:1100px;
+				height:458px;
+				overflow: hidden;
+				border: 1px solid gainsboro;
+				display: none;/*隐藏*/
+				position:absolute;
+				top:0px;
+				left:234px;
+			}
+			ul li:hover .right1{
+				display: block;/*显示*/
+			}
+			.right2{
+				width:900px;
+				height:458px;
+				overflow: hidden;/*超出隐藏*/
+				border: 1px solid gainsboro;
+				display: none;
+				position:absolute;
+				top:0px;
+				left:234px;
+			}
+			ul li:hover .right2{
+				display: block;
+			}
+			.right3{
+				width:1200px;
+				height:458px;
+				overflow: hidden;
+				border: 1px solid gainsboro;
+				display: none;
+				position:absolute;
+				top:0px;
+				left:234px;
+			}
+			ul li:hover .right3{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="left">
+			<ul>
+				<li>
+					<a href="#">手机  电话卡</a>
+					<img src="img/111.png" width="25" height="25"/>
+					<div class="right">
+			<div class="shouji">
+				<img src="img/1.jpg" width="60" height="60"/>
+				<a href="#">Redmi K30 4G</a>
+			</div>
+			<div class="shouji">
+				<img src="img/1.jpg" width="60" height="60"/>
+				<a href="#">小米9Pro 5G</a>
+			</div>
+			<div class="shouji">
+				<img src="img/1.jpg" width="60" height="60"/>
+				<a href="#">小米MIX 3</a>
+			</div>
+			<div class="shouji">
+				<img src="img/1.jpg" width="60" height="60"/>
+				<a href="#">小米移动 电话卡</a>
+			</div>
+			<div class="shouji">
+				<img src="img/1.jpg" width="60" height="60"/>
+				<a href="#">Redmi K30 5G</a>
+			</div>
+			<div class="shouji">
+				<img src="img/1.jpg" width="60" height="60"/>
+				<a href="#">Redmi Note 8 Pro</a>
+			</div>
+			<div class="shouji">
+				<img src="img/1.jpg" width="60" height="60"/>
+				<a href="#">黑鲨手机2 Pro</a>
+			</div>
+			<div class="shouji">
+				<img src="img/1.jpg" width="60" height="60"/>
+				<a href="#">手机上门维修</a>
+			</div>
+			<div class="shouji">
+				<img src="img/1.jpg" width="60" height="60"/>
+				<a href="#">小米 CC9 Pro</a>
+			</div>
+			<div class="shouji">
+				<img src="img/1.jpg" width="60" height="60"/>
+				<a href="#">Renmi Note 8</a>
+			</div>
+			<div class="shouji">
+				<img src="img/1.jpg" width="60" height="60"/>
+				<a href="#">Renmi 7A</a>
+			</div>
+			<div class="shouji">
+				<img src="img/1.jpg" width="60" height="60"/>
+				<a href="#">云服务空间月卡</a>
+			</div>
+			<div class="shouji">
+				<img src="img/1.jpg" width="60" height="60"/>
+				<a href="#">Redmi 8A</a>
+			</div>
+			<div class="shouji">
+				<img src="img/1.jpg" width="60" height="60"/>
+				<a href="#">小米 CC9</a>
+			</div>
+			<div class="shouji">
+				<img src="img/1.jpg" width="60" height="60"/>
+				<a href="#">Renmi 7</a>
+			</div>
+			<div class="shouji">
+				<img src="img/1.jpg" width="60" height="60"/>
+				<a href="#">米粉卡 日租卡</a>
+			</div>
+			<div class="shouji">
+				<img src="img/1.jpg" width="60" height="60"/>
+				<a href="#">Redmi 8</a>
+			</div>
+			<div class="shouji">
+				<img src="img/1.jpg" width="60" height="60"/>
+				<a href="#">小米CC美图定制版</a>
+			</div>
+			<div class="shouji">
+				<img src="img/1.jpg" width="60" height="60"/>
+				<a href="#">Redmi Note 7Pro</a>
+			</div>
+			<div class="shouji">
+				<img src="img/1.jpg" width="60" height="60"/>
+				<a href="#">小米MIX Alpha</a>
+			</div>
+			<div class="shouji">
+				<img src="img/1.jpg" width="60" height="60"/>
+				<a href="#">小米CC9e</a>
+			</div>
+			<div class="shouji">
+				<a href="#">4G+ 移动4G+专区</a>
+			</div>
+		</div>
+				</li>
+				<li>
+					<a href="#">电脑  盒子</a>
+					<img src="img/111.png" width="25" height="25"/>
+					<div class="right1">
+					<div class="shouji">
+				    <img src="img/234.webp" width="60" height="60"/>
+				    <a href="#">小米电视5 55英寸</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/234.webp" width="60" height="60"/>
+				    <a href="#">Renmi 红米电视 70英寸</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/234.webp" width="60" height="60"/>
+				    <a href="#">小米电视4A 43英寸青春版</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/234.webp" width="60" height="60"/>
+				    <a href="#">小米电视4C 32英寸</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/234.webp" width="60" height="60"/>
+				    <a href="#">小米电视5 65英寸</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/234.webp" width="60" height="60"/>
+				    <a href="#">全面屏电视Pro 65英寸</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/234.webp" width="60" height="60"/>
+				    <a href="#">小米电视4A 49英寸</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/234.webp" width="60" height="60"/>
+				    <a href="#">小米电视4C 40英寸</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/234.webp" width="60" height="60"/>
+				    <a href="#">小米电视5 75英寸</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/234.webp" width="60" height="60"/>
+				    <a href="#">全面屏电视Pro 55英寸</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/234.webp" width="60" height="60"/>
+				    <a href="#">小米电视4A 50英寸</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/234.webp" width="60" height="60"/>
+				    <a href="#">小米电视4C 43英寸</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/234.webp" width="60" height="60"/>
+				    <a href="#">小米电视5 Pro 55英寸</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/234.webp" width="60" height="60"/>
+				    <a href="#">小米壁画电视 65英寸</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/234.webp" width="60" height="60"/>
+				    <a href="#">小米电视4A 55英寸</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/234.webp" width="60" height="60"/>
+				    <a href="#">小米电视4C 50英寸</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/234.webp" width="60" height="60"/>
+				    <a href="#">小米电视5 Pro 65英寸</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/234.webp" width="60" height="60"/>
+				    <a href="#">小米全面屏电视</a>
+			        </div>
+			         <div class="shouji">
+			        <img src="img/234.webp" width="60" height="60"/>
+				    <a href="#">小米电视4A 58英寸</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/234.webp" width="60" height="60"/>
+				    <a href="#">小米电视4C 55英寸</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/234.webp" width="60" height="60"/>
+				    <a href="#">小米电视5 Pro 75英寸</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/234.webp" width="60" height="60"/>
+				    <a href="#">小米电视4A 32英寸</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/234.webp" width="60" height="60"/>
+				    <a href="#">小米电视4A 65英寸</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/234.webp" width="60" height="60"/>
+				    <a href="#">小米电视4X 43英寸</a>
+			        </div>
+					</div>
+				</li>
+				<li>
+					<a href="#">笔记本  显示器  平板</a>
+					<img src="img/111.png" width="25" height="25"/>
+					<div class="right2">
+					<div class="shouji">
+			        <img src="img/44.webp" width="60" height="60"/>
+				    <a href="#">RedmiBook 13</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/44.webp" width="60" height="60"/>
+				    <a href="#">显示器</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/44.webp" width="60" height="60"/>
+				    <a href="#">笔记本双肩包</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/44.webp" width="60" height="60"/>
+				    <a href="#">小米笔记本 15.6“</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/44.webp" width="60" height="60"/>
+				    <a href="#">小米平板4</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/44.webp" width="60" height="60"/>
+				    <a href="#">小米笔记本内胆包</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/44.webp" width="60" height="60"/>
+				    <a href="#">小米笔记本 13.3“</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/44.webp" width="60" height="60"/>
+				    <a href="#">键盘</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/44.webp" width="60" height="60"/>
+				    <a href="#">小米笔记本 12.5“</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/44.webp" width="60" height="60"/>
+				    <a href="#">鼠标/鼠标垫</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/44.webp" width="60" height="60"/>
+				    <a href="#">RedmiBook 14</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/44.webp" width="60" height="60"/>
+				    <a href="#">连接器</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/44.webp" width="60" height="60"/>
+				    <a href="#">小米游戏本</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/44.webp" width="60" height="60"/>
+				    <a href="#">平板配件</a>
+			        </div>
+					</div>
+				</li>
+				<li>
+					<a href="#">家电  插线板</a>
+					<img src="img/111.png" width="25" height="25"/>
+					<div class="right3">
+					<div class="shouji">
+			        <img src="img/5.webp" width="60" height="60"/>
+				    <a href="#">冰箱</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/5.webp" width="60" height="60"/>
+				    <a href="#">微波炉</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/5.webp" width="60" height="60"/>
+				    <a href="#">电磁炉</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/5.webp" width="60" height="60"/>
+				    <a href="#">插线板</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/5.webp" width="60" height="60"/>
+				    <a href="#">立式空调</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/5.webp" width="60" height="60"/>
+				    <a href="#">电烤箱</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/5.webp" width="60" height="60"/>
+				    <a href="#">电水壶</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/5.webp" width="60" height="60"/>
+				    <a href="#">新风机</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/5.webp" width="60" height="60"/>
+				    <a href="#">壁挂空调</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/5.webp" width="60" height="60"/>
+				    <a href="#">扫地机器人</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/5.webp" width="60" height="60"/>
+				    <a href="#">滤水壶</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/5.webp" width="60" height="60"/>
+				    <a href="#">电暖器</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/5.webp" width="60" height="60"/>
+				    <a href="#">滚筒洗衣机</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/5.webp" width="60" height="60"/>
+				    <a href="#">吸尘器</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/5.webp" width="60" height="60"/>
+				    <a href="#">落地风扇</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/5.webp" width="60" height="60"/>
+				    <a href="#">电压力锅</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/5.webp" width="60" height="60"/>
+				    <a href="#">Redmi全自动波轮洗衣机</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/5.webp" width="60" height="60"/>
+				    <a href="#">空气净化器</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/5.webp" width="60" height="60"/>
+				    <a href="#">投影仪</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/5.webp" width="60" height="60"/>
+				    <a href="#">料理机</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/5.webp" width="60" height="60"/>
+				    <a href="#">净水器</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/5.webp" width="60" height="60"/>
+				    <a href="#">电饭煲</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/5.webp" width="60" height="60"/>
+				    <a href="#">灯具</a>
+			        </div>
+			        <div class="shouji">
+			        <img src="img/5.webp" width="60" height="60"/>
+				    <a href="#">电煮壶</a>
+			        </div>
+					</div>
+				</li>
+				<li>
+					<a href="#">出行  穿戴</a>
+				    <img src="img/111.png" width="25" height="25"/>
+				</li>
+				<li>
+					<a href="#">智能  路由器</a>
+					<img src="img/111.png" width="25" height="25"/>
+				</li>
+				<li>
+					<a href="#">电源  配件</a>
+					<img src="img/111.png" width="25" height="25"/>
+				</li>
+				<li>
+					<a href="#">健康  儿童</a>
+					<img src="img/111.png" width="25" height="25"/>
+				</li>
+				<li>
+					<a href="#">耳机  音响</a>
+					<img src="img/111.png" width="25" height="25"/>
+				</li>
+				<li>
+					<a href="#">生活  箱包</a>
+					<img src="img/111.png" width="25" height="25"/>
+				</li>
+			</ul>
+		</div>
+		
+	</body>
+</html>

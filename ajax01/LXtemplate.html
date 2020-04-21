@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//模板
+			var str="昨天的天气是%tianqi%,我的心情是%xinqing%";
+			var divt={
+				"tianqi":"艳阳高照",
+				"xinqing":"美哒哒"
+			}
+			function compile(templateString,dictionary){
+				return templateString.replace(/\%([a-z]+)\%/g,function(match,$1,index,string){
+					return dictionary[$1];
+				})
+			}
+			console.log(compile(str,divt));
+		</script>
+	</body>
+</html>

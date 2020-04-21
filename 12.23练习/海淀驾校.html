@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.box{
+				width:1000px;
+				height:140px;
+				background-image: url(img/bg_02.jpg);
+				margin: 20px auto;
+				display:flex;
+				position: relative;
+				flex-direction:row;
+			}
+			.bigone{
+				width:107px;
+				height:107px;
+				float: left;
+			}
+			.one{
+				width:107px;
+				height:107px;
+				margin: 16px 47px;
+				background-image: url(img/a_1.png);
+				background-repeat: no-repeat;
+				/*border:1px solid red;*/
+				
+			}
+			.one-wz{
+				width:76px;
+				height:73px;
+				position: absolute;
+				top:30px;
+				left:62px;
+				/*border:1px solid red;*/
+				}
+			.tb1{
+				width:46px;
+				height:42px;
+				margin: 0px 14px;
+				/*border:1px solid red;*/
+			}
+			.one-wz p{
+				width:64px;
+				height:23px;
+				font-size:16px;
+				color: white;
+				margin: 0px 5px;
+				/*border:1px solid red;*/
+			}
+			.bigone:hover .one{
+				background-image: url(img/a_1_h1.png);
+				background-repeat: no-repeat;
+				transition: all 2s;
+				animation: one 1s;
+			}
+			@keyframes one{
+				from{
+					transform: rotate(0deg);
+				}
+				to{
+					transform: rotate(360deg);
+				}
+			}
+			.bigtwo{
+				position:relative;
+				width:107px;
+				height:107px;
+				float: left;
+				margin-top: 16px;
+				margin-left: 130px;
+				/*border: 1px solid red;*/
+				}
+			.two{
+				width:107px;
+				height:107px;
+				/*margin: 16px 47px;*/
+				background-image: url(img/a_2.png);
+				background-repeat: no-repeat;
+				/*border:1px solid red;*/
+				
+			}
+			.two-wz{
+				width:76px;
+				height:73px;
+				position: absolute;
+				top:16px;
+				left:15px;
+				/*border:1px solid red;*/
+				}
+			.tb2{
+				width:46px;
+				height:42px;
+				margin: 0px 14px;
+				/*border:1px solid red;*/
+			}
+			.two-wz p{
+				width:64px;
+				height:23px;
+				font-size:16px;
+				color: white;
+				margin: 0px 5px;
+				/*border:1px solid red;*/
+			}
+			.bigtwo:hover .two{
+				background-image: url(img/a_2_h1.png);
+				background-repeat: no-repeat;
+				transition: all 2s;
+				animation: two 1s;
+			}
+			@keyframes two{
+				from{
+					transform: rotate(0deg);
+				}
+				to{
+					transform: rotate(360deg);
+				}
+			}
+			.bigthree{
+				position:relative;
+				width:107px;
+				height:107px;
+				margin-top: 16px;
+				margin-left: 90px;
+				/*border: 1px solid red;*/
+				}
+			.three{
+				width:107px;
+				height:107px;
+				/*margin: 16px 47px;*/
+				background-image: url(img/a_3.png);
+				background-repeat: no-repeat;
+				/*border:1px solid red;*/
+				
+			}
+			.three-wz{
+				width:76px;
+				height:73px;
+				position: absolute;
+				top:16px;
+				left:15px;
+				/*border:1px solid red;*/
+				}
+			.tb3{
+				width:46px;
+				height:42px;
+				margin: 0px 14px;
+				/*border:1px solid red;*/
+			}
+			.three-wz p{
+				width:64px;
+				height:23px;
+				font-size:16px;
+				color: white;
+				margin: 0px 5px;
+				/*border:1px solid red;*/
+			}
+			.bigthree:hover .three{
+				background-image: url(img/a_3_h1.png);
+				background-repeat: no-repeat;
+				transition: all 2s;
+				animation: three 1s;
+			}
+			@keyframes three{
+				from{
+					transform: rotate(0deg);
+				}
+				to{
+					transform: rotate(360deg);
+				}
+			}	
+			.bigfour{
+				position:relative;
+				width:107px;
+				height:107px;
+				margin-top: 16px;
+				margin-left: 90px;
+				/*border: 1px solid red;*/
+				}
+			.four{
+				width:107px;
+				height:107px;
+				background-image: url(img/a_4.png);
+				background-repeat: no-repeat;
+				/*border:1px solid red;*/
+				
+			}
+			.four-wz{
+				width:76px;
+				height:73px;
+				position: absolute;
+				top:16px;
+				left:15px;
+				/*border:1px solid red;*/
+				}
+			.tb4{
+				width:46px;
+				height:42px;
+				margin: 0px 14px;
+				/*border:1px solid red;*/
+			}
+			.four-wz p{
+				width:64px;
+				height:23px;
+				font-size:16px;
+				color: white;
+				margin: 0px 5px;
+				/*border:1px solid red;*/
+			}
+			.bigfour:hover .four{
+				background-image: url(img/a_4_h1.png);
+				background-repeat: no-repeat;
+				transition: all 2s;
+				animation: four 1s;
+			}
+			@keyframes four{
+				from{
+					transform: rotate(0deg);
+				}
+				to{
+					transform: rotate(360deg);
+				}
+			}
+			.bigfive{
+				position:relative;
+				width:107px;
+				height:107px;
+				margin-top: 16px;
+				margin-left: 90px;
+				/*border: 1px solid red;*/
+				}
+			.five{
+				width:107px;
+				height:107px;
+				background-image: url(img/a_5.png);
+				background-repeat: no-repeat;
+				/*border:1px solid red;*/
+				
+			}
+			.five-wz{
+				width:76px;
+				height:73px;
+				position: absolute;
+				top:16px;
+				left:15px;
+				/*border:1px solid red;*/
+				}
+			.tb5{
+				width:46px;
+				height:42px;
+				margin: 0px 14px;
+				/*border:1px solid red;*/
+			}
+			.five-wz p{
+				width:64px;
+				height:23px;
+				font-size:16px;
+				color: white;
+				margin: 0px 5px;
+				/*border:1px solid red;*/
+			}
+			.bigfive:hover .five{
+				background-image: url(img/a_5_h1.png);
+				background-repeat: no-repeat;
+				transition: all 2s;
+				animation: five 1s;
+			}
+			@keyframes five{
+				from{
+					transform: rotate(0deg);
+				}
+				to{
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="bigone">
+				<div class="one"></div>
+				<div class="one-wz">
+					<img src="img/tb_1.png" class="tb1"/>
+				    <p>我要陪练</p>
+				</div>
+			</div>
+			<div class="bigtwo">
+				<div class="two"></div>
+			<div class="two-wz">
+				<img src="img/tb_2.png" class="tb2"/>
+				<p>班型介绍</p>
+			</div>
+			</div>
+			<div class="bigthree">
+				<div class="three"></div>
+			<div class="three-wz">
+				<img src="img/tb_3.png" class="tb3"/>
+				<p>班车服务</p>
+			</div>
+				</div>
+			<div class="bigfour">
+				<div class="four"></div>
+				<div class="four-wz">
+					<img src="img/tb_4.png" class="tb4"/>
+				<p>在线法培</p>
+				</div>
+			</div>
+			<div class="bigfive">
+				<div class="five"></div>
+				<div class="five-wz">
+					<img src="img/tb_5.png" class="tb5"/>
+				<p>网上约车</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				position: absolute;
+				top:0;
+				left: 0;
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<script type="text/javascript">
+			var oDiv=document.getElementsByTagName("div")[0];
+			//监听里面放监听    js的奇淫技巧
+			oDiv.onmousedown=function(event){
+				//鼠标按下的时候，要记录一下鼠标在盒子的位置，这个位置就是误差
+				var deX=event.clientX-oDiv.offsetLeft;
+				var deY=event.clientY-oDiv.offsetTop;
+//				console.log(deltalX,deltalY)
+				document.onmousemove=function(event){
+					oDiv.style.left=event.clientX-deX+"px";
+					oDiv.style.top=event.clientY-deY+"px";
+				}
+			}
+			//鼠标抬起
+			document.onmouseup=function(event){
+				document.onmousemove=null;//document的监听设置为null,删除监听
+			}
+		</script>
+	</body>
+</html>

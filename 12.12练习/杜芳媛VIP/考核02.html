@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="img/捕获.PNG"/>
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.top{
+				width:100%;
+				height:100px;
+				overflow: hidden;
+			}
+			.top_left{
+				width:130px;
+				height:100px;
+				margin-left:175px;
+				float: left;
+				background-image: url(img/xbt.png);
+				background-repeat: no-repeat;
+				background-position: -305px -57px;
+			}
+			.top_right{
+				width:305px;
+				height:100px;
+				margin-right:175px;
+				float: right;
+				background-image: url(img/xbt.png);
+				background-repeat: no-repeat;
+				background-position: ;
+			}
+			.center{
+				width:100%;
+				height:650px;
+				background-image: url(img/11.jpg);
+				background-repeat: no-repeat;
+				background-position: -290px 0;
+				position:relative;
+			}
+			form{
+				width:360px;
+				height:510px;
+				margin: 50px 800px;
+				border-radius: 2px;
+				background-color: white;
+				position:absolute;
+				top:0px;
+				left:20px;
+			}
+			.center-top{
+				width:360px;
+				height:50px;
+				border: none;
+				border-bottom: 1px solid #E0E0E0;
+			}
+			h3{
+				float:left;
+				margin: 10px 25px;
+				color: #666666;;
+			}
+			.center-top p{
+				float:right;
+				margin: 14px 30px;
+				font-size: 14px;
+				color: #666666;
+			}
+			.center-top a{
+				text-decoration: none;
+				color: #F10180;
+			}
+			.center2{
+				width: 300px;
+				height:45px;
+				margin-top: 40px;
+				margin-left:30px;
+				border-radius: 3px;
+			}
+			.center2-top{
+				width: 300px;
+				height:45px;
+				border-radius: 3px;
+				border: 1px solid #B2B2B2;
+			}
+			.center2-top input{
+				width: 250px;
+				height: 30px;
+				float: left;
+				margin-top: 9px;
+				outline: none;
+				border: none;
+				text-indent: 1em;
+			}
+			.center2-top::before{
+				content: '';
+				display: block;
+				width: 25px;
+				height: 25px;
+				margin-top:10px;
+				background-image: url(img/xbt.png);
+				background-repeat: no-repeat;
+				background-position: -564px -157px;
+				float: left;
+			}
+			.center2-center{
+				width:300px;
+				height:43px;
+				margin: 25px 30px;
+				border-radius: 3px;
+			}
+			.center2-center1{
+				width:150px;
+				height:43px;
+				float: left;
+				border-radius: 3px;
+				border: 1px solid #B2B2B2;
+			}
+			.input2{
+				width:110px;
+				height:35px;
+				border:none;
+				margin-top:4px;
+				text-indent: 1em;
+				outline:none;
+			}	
+			.center2-center1::before{
+				content: '';
+				display: block;
+				width: 25px;
+				height: 25px;
+				margin-top:10px;
+				background-image: url(img/xbt.png);
+				background-repeat: no-repeat;
+				background-position: -588px -157px;
+				float: left;
+			}
+			.button1 input{
+				width:130px;
+				height:43px;
+				float:right;
+			}
+		    .center3{
+				width: 300px;
+				height:45px;
+				margin-top: 25px;
+				margin-left:30px;
+				border-radius: 3px;
+				border: 1px solid #B2B2B2;
+			}
+			.center3::before{
+				content: '';
+				display: block;
+				width: 25px;
+				height: 25px;
+				margin-top:10px;
+				background-image: url(img/xbt.png);
+				background-repeat: no-repeat;
+				background-position:-540px -158px;
+				float: left;
+			}
+			.center3 input{
+				width: 250px;
+				height: 30px;
+				float: left;
+				margin-top: 9px;
+				outline: none;
+				border: none;
+				text-indent: 1em;
+			}
+			.center4{
+				width: 300px;
+				height:45px;
+				margin-top: 25px;
+				margin-left:30px;
+				border-radius: 3px;
+				border: 1px solid #B2B2B2;
+			}
+			.center4::before{
+				content: '';
+				display: block;
+				width: 25px;
+				height: 25px;
+				margin-top:10px;
+				background-image: url(img/xbt.png);
+				background-repeat: no-repeat;
+				background-position:-540px -158px;
+				float: left;
+			}
+			.center4 input{
+				width: 250px;
+				height: 30px;
+				float: left;
+				margin-top: 9px;
+				outline: none;
+				border: none;
+				text-indent: 1em;
+			}
+			.bottom{
+				width: 310px;
+				height:45px;
+				margin-top: 20px;
+				margin-left:30px;
+				font-size: 12px;
+			}
+			.bottom input{
+				width:18px;
+				height:18px;
+				float:left;
+			}
+			.bottom a{
+				color:#1DB1E6;
+				text-decoration: none;
+			}
+			.wenzi{
+				display:block;
+				width:285px;
+				float:left;
+			}
+			.but input{
+				width:300px;
+				height:46px;
+				margin: 8px 30px;
+				background-color: #F10180;
+				color: white;
+				cursor: pointer;
+				border-radius: 5px;
+				border: 1px solid #F10180;
+				font-size:18px;
+			}
+			.bottom2{
+				width:100%;
+				height:70px;
+				text-align: center;
+				line-height: 70px;
+				font-size:12px;
+				color:#666666;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div class="top">
+				<div class="top_left"></div>
+				<div class="top_right"></div>
+			</div>
+			<div class="center">
+					<form action="">
+						<div class="center-top">
+							<h3>会员注册</h3>
+							<p>已注册可<a href="考核01.html">直接登录</a></p>
+						</div>
+						<div class="center2">
+							<div class="center2-top">
+							<input type="text" name="" class="input1" value="" placeholder="请输入手机号"/>
+							</div>
+							</div>
+							<div class="center2-center">
+								<div class="center2-center1">
+									<input type="text" name="" class="input2" value="" placeholder="请输入验证码"/>
+								</div>
+							<div class="button1">
+							<input type="button" name="" class="input3" value="获取验证码" required />
+							</div>
+							</div>
+						<div class="center3">
+							<input type="password" name="" class="input4" value="" placeholder="密码由6-20位字母，数字和符号组成"/>
+							</div>
+							<div class="center4">
+							<input type="password" name="" class="input5" value="" placeholder="请再次输入上面的密码"/>
+							</div>
+							<div class="bottom">
+								<input type="checkbox"  id="xz" value="1" /><label for="xz" class="wenzi">&nbsp;&nbsp;我已阅读并接受以下条款：<a href="#">《唯品会服务条款》《隐私条款》《唯品支付用户服务协议》</a></label>
+							</div>
+							<div class="but">
+								<input type="reset" name="" id="" value="立即注册" />
+							</div>
+				</form>
+			</div>
+			<div class="bottom2">
+				<p>Copyright 2008-2019 vip.com，All Rights Reserved ICP证：粤 B2-20080329</p>
+			</div>
+		</div>
+	</body>
+</html>

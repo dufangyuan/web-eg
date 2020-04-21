@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		水电费水电费都是
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$.ajax({
+				type:"post",
+				url:"http://w5.eydata.net/e3f304dcf0988873",
+				async:true,
+//				dataType: "jsonp",
+				data:{
+					"UserName":"zhangsan",
+					"UserPwd":"123",
+					"Version":"",
+					"Mac":"",
+					"MacTwo":""
+				},
+				success:function(res){
+					console.log(res);
+				}
+			});
+		</script>
+	</body>
+</html>

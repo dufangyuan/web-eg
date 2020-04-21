@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var obj={
+				a:1,
+				b:2,
+				c:3,
+				d:false
+			}
+			Object.prototype.f=12;
+			
+			obj.__proto__={
+				e:"xiaoming"
+			}
+			console.log(obj);
+			console.log(obj.hasOwnProperty("a"));//t
+			console.log(obj.hasOwnProperty("b"));//t
+			console.log(obj.hasOwnProperty("c"));//t
+			console.log(obj.hasOwnProperty("d"));//t
+			console.log(obj.hasOwnProperty("e"));//false
+			console.log(obj.hasOwnProperty("f"));//false
+			for (var k in obj) {
+//				obj.hasOwnProperty(k)&&console.log(k);
+				console.log(k);
+			}
+		</script>
+	</body>
+</html>

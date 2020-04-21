@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon"  href="img/标题图.PNG"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="js/jquery-1.12.3.min.js"></script>
+		<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<title>天天购，天天都想购</title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.nav{
+				margin-left:100px;
+			}
+			.navbar li:nth-child(5){
+				float:right;
+				margin-right:100px;
+			}
+			.navbar li:nth-child(6){
+				float:right;
+			}
+			.container{
+				position: relative;
+			}
+			.logo input{
+				width:350px;
+				height:35px;
+				border-radius: 2px;
+				border:1px solid #ccc;
+				outline: none;
+				float: right;
+				margin-top: 30px;
+				margin-right: 40px;
+			}
+			.logo button{
+				outline: none;
+				float: right;
+				margin-top: 30px;
+			}
+			#ss{
+				position: absolute;
+				top:0px;
+				left:711px;
+			}
+			.conter{
+				/*border: 1px solid red;*/
+				overflow: hidden;
+			}
+			.conter h3{
+				color: #E5000C;
+			}
+			.imglist{
+				position: relative;
+				width:222px;
+				height:260px;
+				margin: 20px 30px;
+				float: left;
+				box-shadow: 0 0 5px #ccc;
+				/*border: 1px solid red;*/
+			}
+			.imglist:hover{
+				border: 1px solid red;
+			}
+			.imglist:hover .span{
+				display: block;
+			}
+			.imglist img{
+				width:220px;
+				height:220px;
+				
+				/*margin: 20px 32px;*/
+				
+			}
+			.imglist h5{
+				width:220px;
+				height:40px;
+				/*border:1px solid red;*/
+				color: #E5000C;
+				position: absolute;
+				top:215px;
+				font-weight: bold;
+				left:4px;
+			}
+			.imglist span{
+				position: absolute;
+				left:0px;
+				top:218px;
+				width:220px;
+				height:40px;
+				line-height: 40px;
+				font-size: 20px;
+				color: white;
+				text-align: center;
+				background-color: rgba(0,0,0,0.5);
+				display: none;
+			}
+			.bottom{
+				margin: 10px 35px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="navbar navbar-default">
+			  <ul class="nav nav-tabs">
+				  <li role="presentation" class="active"><a href="首页.html">首页</a></li>
+				  <li role="presentation"><a href="9.9.html" target="_blank">9.9包邮</a></li>
+				  <li role="presentation"><a href="19.9.html">19.9好货</a></li>
+				  <li role="presentation"><a href="今日新品.html">今日新品</a></li>
+				  <li role="presentation"><a href="登录.html">登录</a></li>
+				  <li role="presentation"><a href="注册.html">注册</a></li>
+			  </ul>
+		</div>
+		<div class="container">
+			<div class="logo">
+		     	<img src="../img/logo.jpg"/>
+		     	<input type="text" name="" id="" value="" placeholder="请输入搜索内容"/>
+		     	<button type="button" class="btn btn-danger" id="ss">搜索</button>
+		     </div>
+		     <div class="conter">
+		     	<h3>今日新品</h3>
+		     	<div class="imgs">
+		     		<div class="imglist">
+		     			<a href="javascript:;"><img src="img/今日新品/0.webp"/></a>
+		     			<h5>原创新款绣花单鞋新款女秀禾服中国风新娘鞋红色尖头细跟复古独家</h5>
+		     		    <span class="span">￥330</span>
+		     		</div>
+		     		<div class="imglist">
+			     		<a href="javascript:;"><img src="img/今日新品/1.webp"/></a>
+			     		<h5>创意狐红色宴会晚礼服2020新款主持晚宴礼服长款改良旗袍年会礼服</h5>
+			     		<span class="span">￥1129</span>
+		     		</div>
+		     		<div class="imglist">
+			     		<a href="javascript:;"><img src="img/今日新品/2.webp"/></a>
+			     		<h5>部分现货【王小毒】念想 一双鞋 尖头中空女皮鞋一字扣尖头高跟鞋</h5>
+			     		<span class="span">￥218</span>
+		     		</div>
+		     		<div class="imglist">
+			     		<a href="javascript:;"><img src="img/今日新品/3.webp"/></a>
+			     		<h5>骆驼正品女鞋2018秋冬新款中老年平跟平底妈妈鞋真皮休闲女士皮鞋</h5>
+			     		<span class="span">￥133</span>
+		     		</div>
+		     		<div class="imglist">
+			     		<a href="javascript:;"><img src="img/今日新品/4.webp"/></a>
+			     		<h5>GOUDINRQC古典黑色丝绒小礼服性感显瘦长款派对晚礼服连衣裙</h5>
+			     		<span class="span">￥358</span>
+		     		</div>
+		     		<div class="imglist">
+			     		<a href="javascript:;"><img src="img/今日新品/5.webp"/></a>
+			     		<h5>敬酒服新娘2020春新款结婚新款婚礼酒红色修身显瘦短款中式礼服女</h5>
+			     		<span class="span">￥228</span>
+		     		</div>
+		     		<div class="imglist">
+			     		<a href="javascript:;"><img src="img/今日新品/6.webp"/></a>
+			     		<h5>叙旧学院风日系复古玛丽珍鞋小皮鞋平底学生文艺浅口女单鞋圆头</h5>
+			     		<span class="span">￥92</span>
+		     		</div>
+		     		<div class="imglist">
+			     		<a href="javascript:;"><img src="img/今日新品/7.webp"/></a>
+			     		<h5>香槟色晚礼服女2020新款宴会高贵优雅长鱼尾性感气质名媛大合唱团</h5>
+			     		<span class="span">￥298</span>
+		     		</div>
+		     		<div class="imglist">
+			     		<a href="javascript:;"><img src="img/今日新品/8.webp"/></a>
+			     		<h5>尖头软皮平跟单鞋</h5>
+			     		<span class="span">￥78</span>
+		     		</div>
+		     		<div class="imglist">
+			     		<a href="javascript:;"><img src="img/今日新品/9.webp"/></a>
+			     		<h5>男童短袖T恤夏季装中大童儿童男孩打底衫</h5>
+			     		<span class="span">￥39.9</span>
+		     		</div>
+		     		<div class="imglist">
+			     		<a href="javascript:;"><img src="img/今日新品/10.webp"/></a>
+			     		<h5>大圣归来 黑化五金防辐射 全顶盖台式游戏电脑中小机箱  USB2.0</h5>
+			     		<span class="span">￥66</span>
+		     		</div>
+		     		<div class="imglist">
+			     		<a href="javascript:;"><img src="img/今日新品/11.webp"/></a>
+			     		<h5>睿登春夏新款运动休闲厚底增高网面镂空透气摇摇鞋女鞋妈妈旅游鞋</h5>
+			     		<span class="span">￥59</span>
+		     		</div>
+		     		<div class="imglist">
+			     		<a href="javascript:;"><img src="img/今日新品/12.webp"/></a>
+			     		<h5>韩国爱智贞智能坐便盖马桶盖全自动家用电动</h5>
+			     		<span class="span">￥1599</span>
+		     		</div>
+		     		<div class="imglist">
+			     		<a href="javascript:;"><img src="img/今日新品/13.webp"/></a>
+			     		<h5>雅戈尔秋季男士免烫长袖衬衫官方商务休闲纯</h5>
+			     		<span class="span">￥389</span>
+		     		</div>
+		     		<div class="imglist">
+			     		<a href="javascript:;"><img src="img/今日新品/14.webp"/></a>
+			     		<h5>男童防晒衣2020新款防晒服中大童儿童装春夏</h5>
+			     		<span class="span">￥39.9</span>
+		     		</div>
+		     		<div class="imglist">
+			     		<a href="javascript:;"><img src="img/今日新品/15.webp"/></a>
+			     		<h5>松下浴霸灯卫生间取暖风暖浴霸排气扇照明一体浴室集成吊顶暖风机</h5>
+			     		<span class="span">￥2399</span>
+		     		</div>
+		     	</div>
+		     </div>
+		     <div class="bottom">
+		     	<img src="img/底部.png"/>
+		     </div>
+		</div>
+	</body>
+</html>

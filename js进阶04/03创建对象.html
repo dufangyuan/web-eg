@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//k:v
+			//创建对象字面量的方法,一般k值不需要加引号
+			/**/var obj={
+				name:"张三",
+				age:18,
+				sex:"男",
+				'hello world':"早上好"
+			}
+			console.log(obj["hello world"]);
+			console.log(obj["a"+"ge"]);
+			console.log(obj.name);
+			console.log(obj['name']);
+			console.log(obj.age);
+			//特殊k,我们需要加引号,检索属性的时候。必须用放括号
+			/*var obj={
+				"23#$%@@@!":"什么鬼",
+				"aa bb":"星期四",
+				"++++%%%":"哈哈",
+				"var":"who",
+				"function":"嘻嘻呵呵呵",
+			}
+			console.log(obj["23#$%@@@!"]);
+			console.log(obj["aa bb"]);
+			console.log(obj["++++%%%"]);*/
+		</script>
+	</body>
+</html>

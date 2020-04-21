@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*for (var i=1;i<=48;i++) {
+				if(48%i==0)
+				console.log(i)
+			}*/
+			/*
+			for (var i=2;i<50;i++) {
+				var cound=0;
+				for (var j=1;j<=i;j++) {
+					if(i%j==0){
+						cound++;
+					}
+				}
+				if(cound==2){
+					console.log(i);
+				}
+			}*/
+			/*
+			for (var i=1;i<=50;i++) {
+				if(i%3==0){
+					console.log(i);
+				}
+			}*/
+			/*
+			for (i=1;i<=9;i++) {
+				for (j=1;j<=i;j++) {
+					document.write(j+"*"+i+"="+i*j+"&nbsp;&nbsp;&nbsp;");
+				}
+				document.write("<br>")
+			}*/
+			for (i=100;i<1000;i++) {
+				var ge=parseInt(i%10);
+				var shi=parseInt(i/10%10);
+				var bai=parseInt(i/100);
+				if (Math.pow(ge,3)+Math.pow(shi,3)+Math.pow(bai,3)==i) {
+					console.log(i+"是水仙花数")
+				}
+			}
+		</script>
+	</body>
+</html>

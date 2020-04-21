@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="img/捕获.PNG"/>
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.top{
+				width:100%;
+				height:100px;
+				overflow: hidden;
+			}
+			.top_left{
+				width:130px;
+				height:100px;
+				margin-left:175px;
+				float: left;
+				cursor:pointer;
+				background-image: url(img/xbt.png);
+				background-repeat: no-repeat;
+				background-position: -305px -57px;
+			}
+			.top_right{
+				width:305px;
+				height:100px;
+				margin-right:175px;
+				float: right;
+				background-image: url(img/xbt.png);
+				background-repeat: no-repeat;
+			}
+			.center{
+				width:100%;
+				height:600px;
+				background-image: url(img/11.jpg);
+				background-repeat: no-repeat;
+				background-position: -290px 0;
+				position: relative;
+			}
+			form{
+				width:360px;
+				height:440px;
+				margin-left: 800px;
+				border-radius: 2px;
+				background-color: white;
+				position:absolute;
+				top:50px;
+				right:180px;
+			}
+			.center1{
+				width:360px;
+				height:50px;
+				margin: auto;
+				text-align: center;
+				border-bottom: 1px solid #E0E0E0;
+			}
+			.center1 a{
+				text-decoration: none;
+				font-size:18px;
+				font-weight: bold;
+			}
+			.a1 a{
+				width:178px;
+				height:20px;
+				float:left;
+				margin-top: 15px;
+				color:#666666;
+				text-align: center;
+				border-right: 1px solid #E0E0E0;
+			}
+			.a1 a:hover{
+				color:#F10180 ;
+			}
+			.a2 a{
+				width:178px;
+				height:50px;
+				float:left;
+				color:#F10180;
+				padding-top: 15px;
+				text-align: center;
+			}
+			.center2{
+				width:360px;
+				height:130px;
+			}
+			.center2-top{
+				width: 300px;
+				height:45px;
+				margin-top: 40px;
+				margin-left:30px;
+				border-radius: 3px;
+				border: 1px solid #B2B2B2;
+			}
+			.center2-bottom{
+				width: 300px;
+				height:45px;
+				border-radius: 3px;
+				margin: 25px 30px;
+				border: 1px solid #B2B2B2;
+			}
+			.center2-top input{
+				width: 250px;
+				height: 30px;
+				float: left;
+				margin-top: 9px;
+				outline: none;
+				border: none;
+				text-indent: 1em;
+			}
+			.center2-top::before{
+				content: '';
+				display: block;
+				width: 25px;
+				height: 25px;
+				margin-top:10px;
+				background-image: url(img/xbt.png);
+				background-repeat: no-repeat;
+				background-position: -576px -120px;
+				float: left;
+			}
+			.center2-bottom input{
+				width: 250px;
+				height: 30px;
+				float: left;
+				border: none;
+				margin-top: 9px;
+				outline: none;
+				text-indent: 1em;
+			}
+	        .center2-bottom::before{
+				content: '';
+				display: block;
+				width: 25px;
+				height: 25px;
+				margin-top:10px;
+				background-image: url(img/xbt.png);
+				background-repeat: no-repeat;
+				background-position:-542px -158px;
+				float: left;
+			}
+			.bottom{
+				width: 360px;
+				height: 30px;
+			}
+			.bottom a{
+				color: black;
+				text-decoration: none;
+			}
+			.bottom a:hover{
+				color: #F10180;
+			}
+			.bottom-left{
+				width: 130px;
+				height: 20px;
+				font-size: 14px;
+				float: left;
+				margin-left: 15px;
+				text-align: center;
+			}
+			.bottom-right{
+				width: 130px;
+				height: 20px;
+				font-size: 12px;
+				float: right;
+				text-align: center;
+			}
+			.button input{
+				width:300px;
+				height:46px;
+				margin: 8px 30px;
+				background-color: #F10180;
+				color: white;
+				cursor: pointer;
+				border-radius: 5px;
+				border: 1px solid #F10180;
+				font-size:18px;
+				
+			}
+			.button input:hover{
+				opacity: 0.8;
+			}
+			fieldset{
+				width:300px;
+				height:40px;
+				margin: auto;
+				border: none;
+				border-top:1px solid #E0E0E0;
+			}
+			.wt{
+				width:45px;
+				height:45px;
+				margin: 0 10px;
+				cursor: pointer;
+				background-image: url(img/xbt.png);
+				background-repeat: no-repeat;
+				background-position: -398px -160px;
+				text-align: center;
+			}
+			.bottom1{
+				font-size:12px;
+				margin: 20px 30px;
+			}
+			.span{
+				color: #999999;
+				cursor: pointer;
+			}
+			.span1:hover{
+				color: #F10180;
+				cursor: pointer;
+			}
+			.bottom1 span:nth-child(5){
+				font-size: 14px;
+			}
+			.bottom1 a{
+				color: black;
+				text-decoration: none;
+			}
+			.bottom1 a:hover{
+				color:#F10180;
+			}
+			.bottom2{
+				width:100%;
+				height:70px;
+				text-align: center;
+				line-height: 70px;
+				font-size:12px;
+				color:#666666;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div class="top">
+				<div class="top_left"></div>
+				<div class="top_right"></div>
+			</div>
+			<div class="center">
+					<form action="">
+					<div class="center1">
+					<div class="a1"><a href="#">扫码登录</a></div>
+					<div class="a2"><a href="#">账户登录</a></div>
+					</div>
+					<div class="center2">
+						<div class="center2-top">
+							<input type="text" name="" class="input1" value="" placeholder="手机号/用户名/邮箱"/>
+						</div>
+						<div class="center2-bottom">
+							<input type="password" name="" class="input2" value="" placeholder="密码" />
+						</div>
+					</div>
+					<div class="bottom">
+						<div class="bottom-left">
+							<a href="#">短信验证登录</a>
+						</div>
+						<div class="bottom-right"> 
+							<a href="#">忘记密码</a>
+						</div>
+					</div>
+					<div class="button">
+						<input type="submit" value="登录" />
+					</div>
+					<fieldset id="">
+						<legend align="center">
+							<div class="wt"></div>
+						</legend>
+					</fieldset>
+					<div class="bottom1">
+						<span class="span">&nbsp;新浪微博&nbsp;</span>|
+						<span class="span1 sp1">&nbsp;QQ&nbsp;&nbsp;</span>|
+						<span class="span1">&nbsp;支付宝&nbsp;</span>
+						<span class="span">&nbsp;&nbsp;&nbsp;&nbsp;更多&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+						<span>
+							<a href="考核02.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;免费注册</a>
+						</span>
+					</div>
+				</form>
+			</div>
+			<div class="bottom2">
+				<p>Copyright 2008-2019 vip.com，All Rights Reserved ICP证：粤 B2-20080329</p>
+			</div>
+		</div>
+	</body>
+</html>

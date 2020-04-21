@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width:100px;
+				height:100px;
+				background-color: orange;
+				margin:50px 200px;
+				position: absolute;
+				top:0px;
+				left:0px;
+			}
+			.box2{
+				top:150px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<script src="js/jquery1.12.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(".box1").animate({"left":700},3000);
+			$(".box2").animate({"left":1000},2000);
+		</script>
+	</body>
+</html>

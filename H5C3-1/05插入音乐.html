@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<embed src="img/Camila Cabello _ Young Thug - Havana.mp3"></embed>-->
+		<!--<video src="img/许巍 - 小鱼的理想.MP3" autoplay controls></video>-->
+		<!--<object data="img/Camila Cabello _ Young Thug - Havana.mp3"></object>-->
+		<audio controls class="audioPlay">
+			<source src="img/Camila Cabello _ Young Thug - Havana.mp3"></source>
+		</audio>
+		<input type="button" id="play" value="播放" />
+		<input type="button" id="muted" value="静音" />
+		<script type="text/javascript">
+			var audioPlay=document.querySelector(".audioPlay");
+			var Play=document.querySelector("#play");
+			var muted=document.querySelector("#muted");
+			Play.onclick=function(){
+				if (Play.value=="播放") {
+					this.value="暂停";
+					audioPlay.play();
+				}else{
+					this.value="播放";
+					audioPlay.pause();
+				}
+			}
+		</script>
+	</body>
+</html>

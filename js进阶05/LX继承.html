@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//People类 Student类
+			//Student继承People,student就能够拥有所有people的属性,方法,还可以自己添加属性和方法(丰富)
+			function People(name,age,sex){
+				this.name=name;
+				this.age=age;
+				this.sex=sex;
+			}
+			People.prototype.sayhello=function(){
+				alert("你好，我是人，名字是"+this.name);
+			}
+			People.prototype.chifan=function(){
+				alert("好饿！该吃饭！");
+			}
+			/*var daming=new People("大明",35,"男");
+			daming.sayhello();*/
+			function Student(name,age,sex,xuehao,xiaohonghuageshu){
+				//console.log(People(this));
+				//this.constructor.apply(this,arguments);
+				this.xuehao=xuehao;
+				this.xiaohonghuageshu=xiaohonghuageshu;
+			}
+			//核心，继承的实现就靠这条语句
+			//Student.prototype=People.prototype;
+			Student.prototype=new People();
+			
+			Student.prototype.sayhello=function(){
+				alert("我是学生，我的学号是"+this.xuehao);
+			}
+			Student.prototype.study=function(){
+				alert("好好学习，天天向上");
+			}
+			Student.prototype.lol=function(){
+				alert("喜欢玩英雄联盟");
+			}
+			
+			var xiaoming=new Student("小明",18,"男",1232434,2);
+			/*console.log(xiaoming);
+			console.log(xiaoming.constructor);
+			xiaoming.chifan();
+			xiaoming.sayhello();*/
+			/**/
+			var daming=new People("大明",35,"男");
+			daming.sayhello();
+		</script>
+	
+	</body>
+</html>

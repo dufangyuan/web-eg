@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}					
+			/*div{
+				width:500px;
+				height:500px;
+				margin: 30px auto;
+				border: 2px solid red;
+				background-image: url(img/1.PNG);
+				background-repeat: no-repeat;
+				background-size:100% 100%;
+			}*/
+			/*div{
+				width:100px;
+				height:100px;
+				margin: 30px auto;
+				border: 2px solid red;
+				background-image:url(img/2.PNG);
+				background-repeat: no-repeat;
+				background-size:100% 100%;
+			}*/
+			div{
+				width:300px;
+				height:300px;
+				background-color:red;
+				margin:30px auto;
+				overflow:hidden;/*超出隐藏，直接隐藏*/
+			}
+			p{
+				width:100px;
+				height:100px;
+				background-color:aqua;
+				float:left;
+			}
+			div p:nth-child(2)/*:为伪类,此意思是div标签下的第二个P标签*/
+			{
+				width:100px;
+				height:100px;
+				background-color:blue;
+				float:left;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+	</body>
+</html>

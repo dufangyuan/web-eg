@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				height: 5000px;
+			}
+			h1{
+				position: fixed;
+			}
+		</style>
+	</head>
+	<body>
+		<h1></h1>
+		<script type="text/javascript">
+			var h1=document.getElementsByTagName("h1")[0];
+			//当窗口卷动的时候触发这个事件
+			window.onscroll=function(){
+				h1.innerHTML=document.body.scrollTop||document.documentElement.scrollTop;
+			}
+		</script>
+	</body>
+</html>

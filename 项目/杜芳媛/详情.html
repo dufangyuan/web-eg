@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon"  href="img/标题图.PNG"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="js/jquery-1.12.3.min.js"></script>
+		<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<title>天天购，天天都想购</title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.nav{
+				margin-left:100px;
+			}
+			.navbar li:nth-child(5){
+				float:right;
+				margin-right:100px;
+			}
+			.navbar li:nth-child(6){
+				float:right;
+			}
+			.container{
+				position: relative;
+			}
+			.logo input{
+				width:350px;
+				height:35px;
+				border-radius: 2px;
+				border:1px solid #ccc;
+				outline: none;
+				float: right;
+				margin-top: 30px;
+			}
+			.logo button{
+				outline: none;
+				float: right;
+				margin-top: 30px;
+			}
+			#ss{
+				position: absolute;
+				top:0px;
+				left:752px;
+			}
+			.box{
+				width:900px;
+				height:430px;
+				/*border: 1px solid #ccc;*/
+				position: relative;
+			}
+			.small_pic{
+				width:350px;
+				height:350px;
+				border:1px solid #ccc;
+			}
+			.mask{
+				width:175px;
+				height:175px;
+				position: absolute;
+				top:0;
+				left: 0;
+				background-color: goldenrod;
+				opacity: .5;
+				cursor: move;
+				display: none;
+			}
+			.big{
+				width:450px;
+				height:450px;
+				/*border:1px solid red;*/
+				position: absolute;
+				top:0;
+				left:350px;
+				z-index: 999;
+			}
+			.big img{
+				display: none;
+			}
+			.box_right{
+				position: absolute;
+				top:0;
+				left:400px;
+				
+			}
+			.price{
+				width:500px;
+				height:80px;
+				background-color: #F3F3F3;
+				padding-top: 15px;
+				padding-left: 10px;
+			}
+			.price p:nth-child(2){
+				color: red;
+			}
+			.small_title{
+				margin: 15px 0;
+			}
+			.small_title img{
+				width:80px;
+				height:80px;
+				margin-right: 20px;
+			}
+			.small_title img:hover{
+				border: 1px solid red;
+				cursor: pointer;
+			}
+			.arrive{
+				margin: 10px 0;
+				outline: none;
+			}
+			.num{
+				width:50px;
+				height:30px;
+			}
+			.btn{
+				position: absolute;
+				left:0;
+				top:360px;
+			}
+			.btn input{
+				width:100px;
+				height:40px;
+				background-color: #E5000C;
+				color: white;
+				border: 1px solid #E5000C;
+				margin-right: 20px;
+				font-size: 16px;
+				font-weight: bold;
+			}
+			.logos{
+				width:245px;
+				height:340px;
+				float: right;
+				position: absolute;
+				top:109px;
+				right:16px;
+				/*border: 1px solid red;*/
+			}
+			.logos img{
+				/*border: 1px solid red;*/
+				display: block;
+				margin: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="navbar navbar-default">
+			  <ul class="nav nav-tabs">
+				  <li role="presentation" class="active"><a href="首页.html">首页</a></li>
+				  <li role="presentation"><a href="9.9.html" target="_blank">9.9包邮</a></li>
+				  <li role="presentation"><a href="19.9.html" target="_blank">19.9好货</a></li>
+				  <li role="presentation"><a href="今日新品.html" target="_blank">今日新品</a></li>
+				  <li role="presentation"><a href="登录.html">登录</a></li>
+				  <li role="presentation"><a href="注册.html">注册</a></li>
+			  </ul>
+		</div>
+		<div class="container">
+			<div class="logo">
+		     	<img src="../img/logo.jpg"/>
+		     	<input type="text" name="" id="" value="" placeholder="请输入搜索内容"/>
+		     	<button type="button" class="btn btn-danger" id="ss">搜索</button>
+		     </div>
+		     <div class="box">
+		     	<!--<div class="small">
+		     		<img src="../img/logo.jpg" class="small_pic"/>
+		     	</div>
+		     	<div class="big"></div>
+		     	<div class="box_right">
+		     		<h3>标题</h3>
+		     		<p>reserve_price</p>
+		     		<p>zk_final_price</p>
+		     		<div class="small_title">
+		     			<img src="../img/logo.jpg"/>
+			     		<img src="../img/logo.jpg"/>
+			     		<img src="../img/logo.jpg"/>
+			     		<img src="../img/logo.jpg"/>
+		     		</div>
+		     		<label>配送至：</label><input type="text" name="" id="" value="陕西省西安市雁塔区" />
+		     		<p>发源地：provcity</p>
+		     		<input type="text" name="" id="" value="请输入需要数量" />
+		     		<div class="btn">
+		     			<input type="button" name="" id="" value="加入购物车" />
+		     		    <input type="button" name="" id="" value="立即购买" />
+		     		</div>
+		     	</div>-->
+		     </div>
+		     <div class="logos">
+				<img src="img/淘宝.png"/>
+				<img src="img/VIP.png"/>
+				<img src="img/天猫.png"/>
+				<img src="img/京东.png"/>
+			</div>
+			<div class="bottom">
+			<img src="img/底部.png"/>
+		</div>
+		</div>
+		<script type="text/javascript">
+			var str=location.search.substr(1).split("=")[1];
+			console.log(str);
+			$.ajax({
+				type:"get",
+				url:"http://127.0.0.1/w/website/findGoodsDetail",
+				async:true,
+				data:{
+					info:str,
+				},
+				success:function(res){
+//				console.log(res);
+				var obj=res.data.detail.tbk_item_info_get_response.results.n_tbk_item[0];
+				console.log(obj);
+				$(".box").append(
+					    `<div class="small">
+				     	<img src="${obj.pict_url}" class="small_pic" id="small_pic"/>
+				     	<div class="mask" id="mask"></div>
+				     	<div class="big" id="big">
+				     	<img src="${obj.pict_url}"/>
+				     	</div>
+				     	</div>
+				     	<div class="box_right">
+				     		<h4>${obj.title}</h4>
+				     		<div class="price">
+				     		<p><s>原价:￥${obj.reserve_price}</s></p>
+				     		<p>促销价:￥${obj.zk_final_price}</p>
+				     		</div>
+				     		<div class="small_title">
+				     			<img src="${obj.small_images.string[0]}"/>
+					     		<img src="${obj.small_images.string[1]}"/>
+					     		<img src="${obj.small_images.string[2]}"/>
+					     		<img src="${obj.small_images.string[3]}"/>
+				     		</div>
+				     		<label>配送至：</label><input type="text" name="" id="" value="陕西省西安市雁塔区" class="arrive"/>
+				     		<p>发源地：${obj.provcity}</p>
+				     		<label>所需数量：</label>
+				     		<span class="glyphicon glyphicon-plus"></span>
+				     		<input type="text" name="" id="" value="1" class="num"/>
+				     		<span class="glyphicon glyphicon-minus"></span>
+				     		<div class="btn">
+				     			<input type="button" name="" id="" value="加入购物车" />
+				     		    <input type="button" name="" id="" value="立即购买" />
+				     		</div>
+				     	</div>`
+				)
+				}
+			})
+		</script>
+		<script type="text/javascript">
+			var smallP=document.getElementById("small_pic");
+			var mask=document.getElementById("mask");
+			var big=document.getElementById("big");
+			smallP.onmouseover=function(){
+				mask.style.dispaly="block";
+				big.style.dispaly="block";
+			}
+			smallP.onmouseout=function(){
+				mask.style.dispaly="none";
+				big.style.dispaly="none";
+			}
+		</script>
+	</body>
+</html>

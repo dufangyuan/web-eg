@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin:0;
+			}
+			form{
+				width:500px;
+				/*height:500px;*/
+				border:1px solid red;
+				margin: 30px auto;
+			}
+			legend{
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+			<fieldset><!--fieldset和legend同时使用-->
+				<legend>输入性控件</legend>
+			    <p>
+			    	<label>用户名：</label><input type="text" />	
+			    </p>
+				<p>
+					<label>密码：</label><input type="password" />
+				</p>
+				<p>
+					<label>自定义时间：</label><input type="datetime" />
+				</p>
+				<p>
+					<label>email:</label><input type="text" />
+				</p>
+				<p>
+					<label>数字：</label><input type="number" />
+				</p>
+				<p>
+					<label>电话：</label><input type="tel" />
+				</p>
+				<p>
+					<label>网址：</label><input type="url" />
+				</p>
+				<p>
+					<label>文本域</label><!--文本域应该是双标签-->
+					<textarea name="" id="" cols="40" rows="5"></textarea>
+				</p>
+			</fieldset>
+			<fieldset>
+				<legend>选择型控件</legend>
+				<p>
+					<label>爱好：</label>
+				<input type="checkbox" id="lanqiu"value="蓝球"/><label for="lanqiu">篮球</label>
+				<input type="checkbox" id="zuqiu" value="足球"/><label for="zuqiu">足球</label>
+				<input type="checkbox" id="paiqiu" value="排球"/><label for="paiqiu">排球</label>
+				<input type="checkbox" id="wangqiu" value="网球"/><label for="wangqiu">网球</label>
+				</p>
+				<p>
+					<label>颜色：</label><input type="color" />
+				</p>
+				<p>
+					<label>日期：</label><input type="date" name="" id="" value="" />
+				</p>
+				<p>
+					<label>时间：</label><input type="datetime-local" name="" id="" value="" />
+				</p>
+				<p>
+					<label>月份：</label><input type="month" name="" id="" value="" />
+				</p>
+				<p>
+					<label>时间：</label><input type="time" name="" id="" value="" />
+				</p>
+				<p>
+					<label>周：</label><input type="week" name="" id="" value="" />
+				</p>
+				<p>
+					<label>性别：</label><input type="radio" name="sex" id="" value="女" />女
+					<input type="radio" name="sex" id="" value="男" />男
+				</p>
+				<p>
+					<label>范围：</label><input type="range" name="" id="" value="0" />
+				</p>
+				<p>
+					<label>区域：</label>
+					<select>	
+					<option value="">陕西县</option>
+					<option value="">山西县</option>
+					<option value="">四川县</option>
+					<option value="">河南县</option>
+					</select>
+				</p>
+			</fieldset>
+			<fieldset>
+				<legend>事件性控件</legend>
+				<p>
+					<label>普通按钮</label>
+					<input type="button" value="普通按钮"/>
+				</p>
+				<p>
+					<label>提交按钮</label>
+				<input type="submit" value="提交按钮"/>
+				</p>
+				<p>
+					<label>重置按钮</label>
+				<input type="reset" value="重置按钮"/>
+				</p>
+				<p>
+					<label>文件按钮</label>
+				<input type="file" value=""/>
+				</p>
+				<p>
+					<label>图片按钮</label>
+				<input type="image" value="" src="img/2.PNG" border="1"/>
+				</p>
+			</fieldset>
+		</form>
+	</body>
+</html>

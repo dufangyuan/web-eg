@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				width: 40px;
+				height: 40px;
+				background-color: #CCCCCC;
+			}
+			h3{
+				width: 40px;
+				height: 40px;
+				background-color: #CCCCCC;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			哈哈哈
+			<h3></h3>
+			<h3></h3>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			
+		</div>
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>-->
+		<script type="text/javascript">
+			//$("#box").children("h3").css("background-color","red");
+			//$("#box").children(":odd").css("background-color","red");
+			//alert($("#box").children().size()); //8
+//			$("#box").children().eq(0).css("background-color","red");
+			//$("#box").find("p").css("background-color","yellow")
+			//alert($("#box").find("*").length); //8
+			$("#box").find("*").eq(2).css("background-color","red");
+		</script>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var xiaoming={
+				name:'小明',
+				age:18,
+				sex:"男",
+				sayhello:function(){
+					alert("你好，我叫"+this.name);
+					alert("我今年"+this.age+"岁了");
+					alert("我是一个"+this.sex+"生");
+				},
+				zhangda:function(){
+					this.age++;
+				},
+				bianxing:function(){
+					if (this.sex=="男") {
+						this.sex="女"
+					}else{
+						this.sex=="男";
+					}
+				}
+			}
+			xiaoming.zhangda();
+			xiaoming.zhangda();
+			xiaoming.zhangda();
+			xiaoming.zhangda();
+			xiaoming.zhangda();
+			xiaoming.bianxing();
+			xiaoming.bianxing();
+			xiaoming.bianxing();
+			xiaoming.bianxing();
+			xiaoming.sayhello();
+		</script>
+	</body>
+</html>

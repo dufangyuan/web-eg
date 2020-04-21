@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				position: absolute;
+				top:0;
+				left: 0;
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<script type="text/javascript">
+			var oDiv=document.getElementsByTagName("div")[0];
+			//监听里面放监听    js的奇淫技巧
+			oDiv.onmousedown=function(){
+				document.onmousemove=function(){
+					oDiv.style.left=event.clientX+"px";
+					oDiv.style.top=event.clientY+"px";
+				}
+			}
+		</script>
+	</body>
+</html>

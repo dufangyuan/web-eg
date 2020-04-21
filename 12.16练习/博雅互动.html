@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="img/121.PNG"/>
+		<title>博雅互动</title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			table{
+				width:100%;
+				overflow: hidden;
+			}
+			.back{
+				width:80px;
+				height:30px;
+				border-radius: 5px;
+				background-color: gainsboro;
+				position:fixed;
+				bottom:50px;
+				right:50px;
+				text-align: center;
+				line-height:30px;
+			}
+			.back a{
+				text-decoration: none;
+				color: white;
+			}
+			.back:hover{
+				background-color: #38B774;
+				color: white;
+			}
+			.logo{
+				width:300px;
+				text-align: right;
+			}
+			tr th{
+				background-color: #191D3A;
+				height:58px;
+				width:110px;
+				cursor:pointer;
+			}
+			th a{
+				text-decoration: none;
+				color: #818496;
+				font-size:14px;
+			}
+			.jiaru a{
+				width:110px;
+				height:30px;
+				padding: 8px;
+				background-color: #38B774;
+				/*border: 1px solid red;*/
+				border-radius: 5px;
+				color: white;
+			}
+			.jiaru a:hover{
+				/*opacity: 0.7;*/
+				background: rgba(0,194,116,0.8);
+			}
+			.top th a:hover{
+				color: white;
+			}
+			.chinese{
+				color: #38B774;
+				font-weight: 400;
+			}
+			/*.english:hover{
+				color: #38B774;
+			}*/
+			.english{
+				font-weight:400;
+			}
+			.content img{
+				margin: 20px 30px 0;
+			}
+			.content2 p:hover{
+				width:218px;
+				height:50px;
+				background-color: #38B774;
+			}
+			.img1{
+				width:255px;
+				height:200px;
+				float: left;
+				margin-left:120px ;
+				cursor:pointer;
+				/*border: 1px solid red;*/
+			}
+			.img2{
+				width:255px;
+				height:200px;
+				float: left;
+				cursor:pointer;
+				/*border: 1px solid red;*/
+			}
+			.img3{
+				width:255px;
+				height:200px;
+				float: left;
+				cursor:pointer;
+				/*border: 1px solid red;*/
+			}
+			.img4{
+				width:255px;
+				height:200px;
+				float: left;
+				cursor:pointer;
+				/*border: 1px solid red;*/
+			}
+			.img-one{
+				width:210px;
+			}
+			.img-one:hover{
+				background-color: #38B774;
+				color: white;
+			}
+			h4{
+				color: #47476D;
+				font-size: 14px;
+			}
+			.rdo{
+				font-size: 12px;
+				color: #38B774;
+			}
+			.list1{
+				width:520px;
+				margin-left: 150px;
+				/*border: 1px solid red;*/
+				position:relative;
+			}
+			.smalltu{
+				position:absolute;
+				top:30px;
+			}
+			.bigtu{
+				width:520px;
+			}
+			h2{
+				position:absolute;
+				top:30px;
+				left:60px;
+				color: #47476D;
+				/*border: 1px solid red;*/
+			}
+			h6{
+				position:absolute;
+				top:60px;
+				left:60px;
+				color: #B4BCC7;
+				font-weight:400;
+				/*border: 1px solid red;*/
+			}
+			.more{
+				position:absolute;
+				top:35px;
+				left:180px;
+				color: #38B774;
+				padding: 5px;
+				border-radius: 5px;
+				border: 1px solid #38B774;
+			}
+			.more:hover{
+				background-color: #38B774;
+				color: white;
+			}
+			.nav1{
+				width:480px;
+				line-height:50px;
+				margin-left:20px ;
+				/*border: 1px solid red;*/
+			}
+			.nav1 li{
+				list-style:none;
+				color: #444866;
+				font-size:14px;
+				cursor:pointer;
+				border-bottom:1px solid #B4BCC7;
+			}
+			.nav1 li:hover{
+				color: #38B774;
+			}
+			/*.nav1 li:nth-child(4){
+				overflow: auto;
+			}*/
+			.nav2{
+				width:100px;
+				line-height:50px;
+				position:absolute;
+				top:100px;
+				right:0;
+				/*border: 1px solid red;*/
+			}
+			.nav2 li{
+				list-style:none;
+				color: #444866;
+				font-size:14px;
+				/*cursor:pointer;*/
+				/*border-bottom:1px solid #B4BCC7;*/
+			}
+			.list2{
+				width:520px;
+				margin-right: 160px;
+				background-image: url(img/222.jpg);
+				/*border: 1px solid red;*/
+				position:relative;
+			}
+			.toubu{
+				height:113px;
+				padding-left: 20px;
+			}
+			.h2{
+				position:absolute;
+				top:40px;
+				left:80px;
+				color: #47476D;
+				/*border: 1px solid red;*/
+			}
+			.h6{
+				position:absolute;
+				top:70px;
+				left:80px;
+				color: #B4BCC7;
+				font-weight:400;
+				/*border: 1px solid red;*/
+			}
+			.more1{
+				position:absolute;
+				top:45px;
+				left:190px;
+				color:white;
+				padding: 5px;
+				border-radius: 5px;
+				border: 1px solid white;
+			}
+			.more1:hover{
+				background-color: white;
+				color: #38B774;
+			}
+			.nav3{
+				width:300px;
+				line-height:47px;
+				margin-left:20px ;
+				/*border: 1px solid red;*/
+			}
+			.nav3 li{
+				list-style:none;
+				color:white;
+				font-size:14px;
+				cursor:pointer;
+				border-bottom:1px solid #B4BCC7;
+			}
+			h5{
+				margin-left: 20px;
+				color: white;
+			}
+			.bottom{
+				width:100%;
+				height:180px;
+				line-height: 45px;
+				padding-top: 30px;
+				/*padding-left: 120px;*/
+				/*border:1px solid red;*/
+				font-size: 12px;
+				color: #818496;
+				background-color: #191D3A;
+			}
+			.a a{
+				text-decoration: none;
+				color: #818496;
+			}
+			.bottom a:hover{
+				color: white;
+			}
+			.p1 img{
+				width:30px;
+				height:35px;
+				/*border: 1px solid red;*/
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="back">
+			<a href="#">Top</a>
+		</div>
+		<table border="0" cellspacing="0" cellpadding="">
+			<tr class="top">
+				<th class="logo">
+					<img src="img/1.png" width="157" height="35"/>
+				</th>
+				<th>
+					<a href="#">首页</a>
+				</th>
+				<th>
+					<a href="#">博雅游戏</a>
+				</th>
+				<th>
+					<a href="#">博雅新闻</a>
+				</th>
+				<th>
+					<a href="#">关于我们</a>
+				</th>
+				<th>
+					<a href="#">客服中心</a>
+				</th>
+				<th>
+					<a href="#">投票者关系</a>
+				</th>
+				<th class="jiaru">
+					<a href="#">加入我们</a>
+				</th>
+				<th colspan="2" style="width:200px">
+					<div class="yuyan" style="width:200px">
+						<a href="#" class="chinese">中文</a>
+					<a href="#" class="english">EN</a>
+					</div>
+				</th>
+				<!--<th></th>-->
+			</tr>
+			<tr>
+				<td colspan="10">
+					<img src="img/2.jpg" width="100%"/>
+				</td>
+			</tr>
+			<tr align="center">
+				<td colspan="10" class="content">
+					<div class="img1">
+						<img src="img/3.png" width="218" height="128"/>
+						<div class="img-one">
+					    <h4>成都麻将采访</h4>
+						<p class="rdo">点击播放</p>
+						</div>
+					</div>
+					<div class="img2">
+						<img src="img/4.png" width="218" height="128"/>
+						<div class="img-one">
+						<h4>成都麻将公益赛回顾</h4>
+						<p class="rdo">点击播放</p>
+						</div>
+					</div>
+					<div class="img3">
+						<img src="img/5.jpg" width="218" height="128"/>
+						<div class="img-one">
+						<h4>博雅工艺</h4>
+						<p class="rdo">点击播放</p>
+						</div>
+					</div>
+					<div class="img4">
+						<img src="img/6.jpg" width="218" height="128"/>
+						<div class="img-one">
+						<h4>“博雅杯”象棋公益赛回顾</h4>
+						<p class="rdo">点击播放</p>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="5">
+					<div class="list1">
+						<img src="img/12.png" class="smalltu"/>
+						<h2>博雅新闻</h2>
+						<h6>BOYAA NEWS</h6>
+						<p class="more">MORE+</p>
+						<img src="img/11.png" class="bigtu"/>
+						<ul class="nav1">
+							<li>2019 BPT欧洲赛总决赛完美收官，德国选手逆袭夺冠</li>
+							<li>2019云南九大高校象棋联赛系列活动预告</li>
+							<li>博雅互动旗下游戏荣获“2019年度绿色应用”</li>
+							<li>博雅互动公布2019年第三季度业绩 全力打造棋牌赛事品牌，</li>
+						</ul>
+						<ul class="nav2">
+							<li>12/13</li>
+							<li>12/11</li>
+							<li>12/04</li>
+							<li>11/28</li>
+						</ul>
+					</div>
+				</td>
+				<td colspan="5">
+					<div class="list2">
+						<div class="toubu">
+						<h2 class="h2">社会招聘</h2>
+						<h6 class="h6">BOYAA JOBS</h6>
+						<p class="more1">MORE+</p>
+						</div>
+						<h5>社会招聘岗位:</h5>
+						<ul class="nav3">
+							<li>PHP开发工程师</li>
+							<li>C++开发工程师</li>
+							<li>LUA开发工程师</li>
+							<li>LUA开发工程师</li>
+						</ul>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="10">
+					<div class="bottom">
+					<p class="a">
+						<a href="#">网站地图 &ensp;</a>|
+						<a href="#">&ensp;免责声明&ensp;</a>|
+						<a href="#">&ensp;监督举报</a>
+					</p>
+					<p class="p1">Copyright © 2004 - 2019 博雅互动(Boyaa Interactive)
+						粤ICP备05062536号
+					</p>
+					<p class="p1">网络文化经营许可证：粤网文[2015]1991-405号 | 互联网出版许可证：
+						新出网证（粤）字062号 | 增值电信业务经营许可证：粤B2-20110513 
+						<img src="img/34.gif" width="30" height="40"/>
+					</p>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
+				

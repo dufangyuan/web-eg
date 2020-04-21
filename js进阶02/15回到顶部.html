@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				height: 5000px;
+				/*background-color: pink;*/
+			}
+			.back{
+				position: fixed;
+				right: 10px;
+				bottom: 30px;
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				line-height: 100px;
+				box-shadow: 0px 0px 5px #000;
+				display: none;
+				cursor: pointer;
+				border-radius: 5px
+			}
+		</style>
+	</head>
+	<body>
+		<div class="back" id="btn">
+			回到顶部
+		</div>
+		<!--<script src="js/animate-2.0.1.js" type="text/javascript" charset="utf-8"></script>-->
+		<script type="text/javascript" charset="utf-8">
+			var btn=document.getElementById("btn");
+			window.onscroll=function(){
+				var jd=document.body.scrollTop||document.documentElement.scrollTop;
+				if (jd>500) {
+					btn.style.display="block";
+				}else{
+					btn.style.display="none";
+				}
+			}
+			btn.onclick=function(){
+				var dh=document.body.scrollTop||document.documentElement.scrollTop;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.yixing{
+				width: 670px;
+				height: 221px;
+				background: url(img/pic_bg.gif);
+				margin: 100px auto;
+				border: 1px solid #000;
+				position: relative; 
+			}
+			.yixing ul{
+				list-style: none;
+			}
+			.yixing ul li{
+				position: absolute;
+			}
+			.yixing ul li img{
+				height: 100%;
+				width: 100%;
+			}
+			.yixing ul li.stateA{width: 55px;height: 37px;left: -55px;top: 84px;}
+			
+			.yixing ul li.stateB{width: 71px;height: 54px;left: 16px;top: 67px;}
+
+			.yixing ul li.stateC{width: 122px;height: 86px;left: 104px;top: 35px;}
+			.yixing ul li.stateD{width: 161px;height: 112px;left: 247px;top: 16px;}
+			.yixing ul li.stateE{width: 122px;height: 86px;left: 436px;top: 35px;}
+			.yixing ul li.stateF{width: 71px;height: 54px;left: 583px;top: 67px;}
+			.yixing ul li.stateG{width: 55px;height: 37px;left: 678px;top: 84px;}
+			.rightBtn{
+				position: absolute;
+				top: 151px;
+				right: 20px;
+				width: 40px;
+				height: 40px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="yixing">
+			<ul>
+				<li class="stateA"><img src="img/0.png"/></li>
+				<li class="stateB"><img src="img/1.png"/></li>
+				<li class="stateC"><img src="img/2.png"/></li>
+				<li class="stateD"><img src="img/3.png"/></li>
+				<li class="stateE"><img src="img/4.png"/></li>
+				<li class="stateF"><img src="img/5.png"/></li>
+				<li class="stateG"><img src="img/6.png"/></li>
+			</ul>
+			<div class="btns">
+				<a href="#" id="rightBtn" class="rightBtn"></a>
+			</div>
+		</div>
+		<script src="js/animate-2.0.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/fetchComputedStyle.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var lis=document.getElementsByTagName("li");
+			var rightBtn=document.getElementById("rightBtn");
+			
+			/*var JC={"width": 122,"height": 86,"left": 104,"top": 35};
+			var JD={"width": 161,"height": 112,"left": 247,"top": 16};
+			rightBtn.onclick=function(){
+				console.log(111)
+				animate(lis[3],JC,1000,"BounceEaseOut");
+				animate(lis[4],JD,1000,"BounceEaseOut");
+			}*/
+			var JSONarr=[];
+			//fetchComputedStyle(obj,”padding-left”); 这个函数返回的是这个属性值的计算后的样式。
+			//吧所有的状态都推数组
+			for(var i=0;i<lis.length;i++){
+				JSONarr.push({
+					"width":parseInt(fetchComputedStyle(lis[i],"width")),
+					"height":parseInt(fetchComputedStyle(lis[i],"height")),
+					"left":parseInt(fetchComputedStyle(lis[i],"left")),
+					"top":parseInt(fetchComputedStyle(lis[i],"top")),
+				})
+			}
+			console.log(JSONarr)
+			rightBtn.onclick=function(){
+				for (var i=1;i<=6;i++) {
+					animate(lis[i],JSONarr[i-1],600,"BounceEaseOut");
+				}
+			}
+		</script>
+	</body>
+</html>

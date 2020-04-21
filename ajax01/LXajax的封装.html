@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var $={
+				ajax:function(options){
+					var url=options.url;
+					if(url===undefined){
+						throw new Error("ajax必须要写url");
+						return;
+					}
+					var type=options.type||"get";
+					var datatype=options.datatype||"string";
+					var xhr=null;
+					if(window.XMLHttpRequest){
+						xhr=new XMLHttpRequest();
+					}else{
+						xhr=new ActiveXObject("Microsoft.XMLHTTP");
+						
+					}
+					xhr.onreadystatechange=function(){
+						if(xhr.readyState==4){
+							if(xhr.status>=200&&xhr.status<300||xhr.status==304){
+								if((typeof options.success)==="function"){
+									var response="";
+									if(datatype=="string"){
+										response=xhr.responseText;
+									}else if(datatype=="json"){
+										response=JSON.parse(xhr.responseText);
+									}
+									options.success(response);
+								}
+							}
+						}
+					}
+					xhr.open(type,url,true);
+					xhr.send(null);
+				}
+			}
+			$.ajax({
+				"type":"get",
+				"url":"json/caijing.json",
+				"datatype":"json",
+				"success":function(response){
+					console.log(response);
+				}
+			});
+		</script>
+	</body>
+</html>

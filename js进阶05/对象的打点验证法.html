@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var obj={
+				a:1,
+				b:2,
+				c:3,
+				d:false
+			}
+			Object.prototype.f=12;
+			
+			obj.__proto__={
+				e:"xiaoming"
+			}
+			console.log(obj.d);
+			console.log(obj.e);
+			console.log(obj.a);
+			console.log(obj.h);
+		</script>
+	</body>
+</html>

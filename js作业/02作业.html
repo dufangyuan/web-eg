@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			1.用户输入一个数字，然后判断这个数字能否被5、6整除的情况，根据情况弹出下面4种警告框：
+			var shu=parseInt(prompt("请输入一个数："));
+			if(shu%5==0&&shu%6==0){
+				alert("这个数既能被5整除也能被6整除");
+			}else if(shu%5==0&&shu%6!=0){
+				alert("这个数能被5整除但是不能被6整除");
+			}else if(shu%5!=0&&shu%6==0){
+				alert("这个数不能被5整除但是能被6整除");
+			}else if(shu%5!=0&&shu%6!=0){
+				alert("这个数既不能被5整除也不能被6整除");
+			}else{
+				alert("请输入正确的数");
+			}
+//			2
+            var a=parseInt(prompt("请输入一个数"));
+            var b=parseInt(prompt("请再输入一个数"));
+            if (a%2==0&&b%2==0) {
+            	alert("这两个数的奇偶性相同");
+            } else if(a%2!=0&&b%2!=0){
+            	alert("这两个数的奇偶性相同");
+            } else if(a%2==0&&b%2!=0){
+            	alert("这两个数的奇偶性不相同");
+            }
+            else if(a%2!=0&&b%2==0){
+            	alert("这两个数的奇偶性不相同");
+            }else{
+            	alert("请输入正确的数字");
+            }
+           /*3用户输入一个年份，判断这个年是否是闰年。
+			判断闰年条件：
+			① 非整百年数除以4，无余为闰，有余不闰；
+			② 整百年数除以400，无余为闰，有余不闰。*/
+			var year=parseInt(prompt("请输入一个年份"));
+			if (year%4==0&&year%100!=0||year%400==0) {
+				alert("这年是闰年");
+			} else{
+				alert("这年不是润年");
+			}
+			/*4某个公司要给员工发年终奖，为了奖励老员工，所以工作时间越长，发的越多，规则如下：
+				工作满0年	 发月薪的1倍月薪年终奖，如果月薪大于8000，那么就是发1.2倍
+				工作满1年	 发月薪的1.5倍月薪年终奖，如果月薪大于10000，那么就是发1.7倍
+				工作满2年，甚至更多 发月薪的3倍月薪年终奖，如果月薪大于12000，那么就是发3.2倍*/
+				var age=parseInt(prompt("请输入你的工作时间："));
+				var money=parseInt(prompt("请输入你的工资："));
+				if (age<1&&money<=8000) {
+					alert("你的奖金为："+money*1);
+				} else if(age<1&&money>8000){
+					alert("你的奖金为："+money*1.2);
+				}else if(age>=1&&money<=10000){
+					alert("你的奖金为："+money*1.5);
+				}else if(age>=1&&money>10000){
+					alert("你的奖金为："+money*1.7);
+				}else if(age>2&&money<=12000){
+					alert("你的奖金为："+money*3);
+				}else if(age>2&&money>12000){
+					alert("你的奖金为："+money*3.2);
+				}else{
+					alert("请输入正确的信息")
+				}
+		</script>
+	</body>
+</html>

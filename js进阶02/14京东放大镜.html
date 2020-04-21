@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				
+			}
+			.smallPic{
+				width: 350px;
+				height: 350px;
+				border: 1px solid #ccc;
+				position: relative;
+				margin: 100px;
+			}
+			.zoom{
+				position: absolute;
+				top:100px;
+				left: 100px;
+				width: 175px;
+				height: 157px;
+				background-color: #fede4f;
+				display: none;
+				opacity: 0.7;
+			}
+			.bigPic{
+				width: 400px;
+				height: 400px;
+				background: url(img/da.jpg) no-repeat;
+				position: absolute;
+				top:100px;
+				left: 500px;
+				border: 1px solid #000;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="smallPic" id="smallPic">
+			<img src="img/xiao.jpg"/>
+			<div class="zoom" id="zoom"></div>
+		</div>
+		<div class="bigPic" id="bigPic"></div>
+		<script type="text/javascript">
+			var smallPic=document.getElementById("smallPic");
+			var zoom=document.getElementById("zoom");
+			var bigPic=document.getElementById("bigPic");
+			/*比例:大图800*800 大图的盒子400*400
+			小盒子350*350 放大镜175*175
+			所以放大镜总行程175, 大图的总行程400*/
+			var rate=400/175;
+			smallPic.onmouseover=function(){
+				zoom.style.display="block";
+				bigPic.style.display="block";
+			}
+			smallPic.onmouseout=function(){
+				zoom.style.display="none";
+				bigPic.style.display="none";
+			}
+			smallPic.onmousemove=function(event){
+				event=event||window.event;
+				var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+				var scrollLeft=document.body.scrollLeft||document.documentElement.scrollLeft;
+				var x=event.clientX-(getAllLeft(smallPic)-scrollLeft)-87;
+				var y=event.clientY-(getAllTop(smallPic)-scrollTop)-87;
+				if(x<0){
+					x=0
+				}else if(x>175){
+					x=175;
+				}
+				if (y<0) {
+					y=0;
+				}else if(y>175){
+					y=175;
+				}
+				//移动放大镜
+				zoom.style.left=x+"px";
+				zoom.style.top=y+"px";
+				bigPic.style.backgroundPosition=-x*rate+"px "+-y*rate+"px";
+			}
+			function getAllTop(obj){
+				//累加器  offsettop的值
+				var allTop=obj.offsetTop;
+				//当前正在计算高度的元素
+				var currentObj=obj;
+				while (currentObj==currentObj.offsetParent){
+					allTop+=currentObj.offsetTop;
+				}
+				return allTop;
+			}
+			function getAllLeft(obj){
+				//累加器  offsettop的值
+				var allLeft=obj.offsetLeft;
+				//当前正在计算高度的元素
+				var currentObj=obj;
+				while (currentObj==currentObj.offsetParent){
+					allLeft+=currentObj.offsetLeft;
+				}
+				return allLeft;
+			}
+		</script>
+	</body>
+</html>

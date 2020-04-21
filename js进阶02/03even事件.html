@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="txt" value="" />
+		<script type="text/javascript">
+			var txt=document.getElementById("txt");
+			//当键按下的时候
+			txt.onkeydown=function(event){
+//				console.log(event)
+				alert("键码："+event.keyCode)
+			}
+		</script>
+	</body>
+</html>
