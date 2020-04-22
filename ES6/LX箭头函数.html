@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 2, 3, 4];
+        /*arr.forEach(function(k) {
+                console.log(k);
+            }) */
+        // 箭头函数的使用：省略function（如果是一个参数会省略小括号，多个参数要保留小括号）可以省略大括号
+        //一个参数，一条语句
+        // arr.forEach(k => console.log(k));
+        //多个参数，多条语句
+        /* arr.forEach((k, v) => {
+            console.log(k);
+            console.log(v);
+        }) */
+        // 函数：x参数，不用写return
+        /* var fn=function(x){
+            return x*x;
+        } */
+        /*  var fn = x => x * x;
+         console.log(fn(3)); //9 */
+        //不传参数，默认为return
+        /*  var fn1 = () => 10;
+         console.log(fn1()); //10 */
+        var obj = {
+            brith: 1995,
+            getAge: function() {
+                // console.log(this.brith);
+                var self = this;
+                /* var fn = function() {
+                    return new Date().getFullYear() - self.brith;
+                } */
+                var fn = () => new Date().getFullYear() - this.brith;
+                return fn();
+            }
+        }
+        console.log(obj.getAge());
+    </script>
+</body>
+
+</html>
