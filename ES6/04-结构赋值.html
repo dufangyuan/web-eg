@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1
+        /* var {
+            a,
+            b
+        } = {
+            a: "小狗",
+            b: "小猫"
+        }
+        console.log(a, b); */
+        // 2
+        /* function fun() {
+            return {
+                name: "小张"
+            }
+        }
+        // console.log(fun().name);
+        var {
+            name
+        } = fun();
+        console.log(name); */
+        var [name, age] = ["张三", 20];
+        console.log(name, age);
+        var [a, b, c, d] = ["上", "下", "左", "右"];
+        console.log(a, b, c, d);
+        console.log({
+            a,
+            b,
+            c,
+            d
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function Point(x, y) {
+        //     this.x = x;
+        //     this.y = y;
+        // }
+        // Point.prototype.fun = function() {
+        //     return "(" + this.x + "," + this.y + ")";
+        // }
+        // var ponit = new Point(20, 30);
+        // console.log(ponit.fun());
+
+        class DiyPoint {
+            //里面添加属性
+            // 构造方法：不是自定义的在new的时候回自动调用方法
+            // 初始化，通常会赋初值，开始
+            constructor(x, y) {
+                this.x = x;
+                this.y = y
+            }
+            fun() {
+                return "(" + this.x + "," + this.y + ")"
+            }
+
+        }
+        var diy = new DiyPoint(20, 30);
+        console.log(diy.fun());
+    </script>
+</body>
+
+</html>
