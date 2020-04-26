@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="javascript/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="box">
+        <ul v-for="k in shige">
+            <li>{{k}}</li>
+        </ul>
+        <!-- 在做项目中v-for会报错，解决办法如下 -->
+        <ul v-for="(k,x) in shige" :key="x">
+            <li>{{k}}</li>
+        </ul>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: "#box",
+            data: {
+                shige: ["花香入室春风霭", "瑞气盈门淑景新", "喜迁新居喜洋洋", "福星高照福满堂"]
+            }
+        })
+    </script>
+</body>
+
+</html>

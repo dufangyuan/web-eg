@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="javascript/vue.js"></script>
+
+</head>
+
+<body>
+    <!-- <div id="box">
+        <hello>
+            <div>2222222222</div>
+            <div>2222222222</div>
+        </hello>
+    </div>
+    <template id="content">
+        <div>
+            <h2>开始部分</h2>
+            <slot></slot>
+            <h2>结束部分</h2>
+        </div>
+    </template>
+    <script>
+        let vm = new Vue({
+            el: "#box",
+            data: {
+                message: '开始扣水电费看电视',
+            },
+            components: {
+                'hello': {
+                    template: "#content",
+                }
+            }
+        })
+    </script> -->
+    <div id="box">
+        <hello>
+            <div>2222222222</div>
+            <div>2222222222</div>
+        </hello>
+    </div>
+    <template id="content">
+        <div>
+            <h2>开始部分</h2>
+            <slot></slot>
+            <h2>结束部分</h2>
+        </div>
+    </template>
+    <script>
+        let vm = new Vue({
+            el: "#box",
+            data: {
+                message: '开始扣水电费看电视',
+            },
+            components: {
+                'hello': {
+                    template: "#content",
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

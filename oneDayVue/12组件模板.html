@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="javascript/vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <hello>
+            <div slot="three">我替换slot第三个位置</div>
+            <div slot="one">我替换slot第一个位置</div>
+            <div slot="two">我替换slot第二个位置</div>
+            <h1>瓦尔以为分离式精灵盛典</h1>
+        </hello>
+    </div>
+    <!-- <template id="content">
+        <div>
+            <span>首页</span>
+            <slot name="two">
+                <h3>我是第二个位置</h3>
+            </slot>
+            <slot name="one">
+                <h3>我是第一个位置</h3>
+            </slot>
+            <slot name="three">
+                <h3>我是第三个位置</h3>
+            </slot>
+            <h1>瓦尔以为分离式精灵盛典</h1>
+        </div>
+    </template> -->
+    <script type="x-template" id="content">
+        <div>
+            <span>首页</span>
+            <slot name="two">
+                <h3>我是第二个位置</h3>
+            </slot>
+            <slot name="one">
+                <h3>我是第一个位置</h3>
+            </slot>
+            <slot name="three">
+                <h3>我是第三个位置</h3>
+            </slot>
+            <h1>瓦尔以为分离式精灵盛典</h1>
+        </div>
+    </script>
+    <script>
+        Vue.component('hello', {
+            template: "#content",
+        })
+        new Vue({
+            el: "#box",
+        })
+    </script>
+</body>
+
+</html>

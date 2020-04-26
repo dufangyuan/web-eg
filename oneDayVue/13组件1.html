@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="javascript/vue.js"></script>
+
+</head>
+
+<body>
+    <!-- <div id="box">
+        <hello-world></hello-world>
+        <hello-world></hello-world>
+        <hello-world></hello-world>
+        <hello-world></hello-world>
+        <hello-world></hello-world>
+        <hello-world></hello-world>
+    </div>
+    <template id="hezi">
+        <div>
+            <h1>大名：<font color="yellogreen" @click="go"> {{name}}</font></h1>
+            <ul v-for="(item,index) in shige" :key="index">
+               <li>{{item}}</li> 
+            </ul>
+        </div>
+    </template>
+    <script>
+        let vm = new Vue({
+            el: "#box",
+            data: {
+                message: '开始扣水电费看电视',
+            },
+            components: {
+                "HelloWorld": {
+                    template: "#hezi",
+                    data() {
+                        return {
+                            name: "这是我的大名",
+                            shige: ["花香入室春风霭", "瑞气盈门淑景新", "喜迁新居喜洋洋", "福星高照福满堂"]
+                        }
+                    },
+                    methods: {
+                        go() {
+                            this.name = "中文名"
+                        }
+                    },
+                }
+            }
+        })
+    </script> -->
+    <div id="box">
+        <hello-world></hello-world>
+        <hello-world></hello-world>
+        <hello-world></hello-world>
+        <hello-world></hello-world>
+        <hello-world></hello-world>
+        <hello-world></hello-world>
+    </div>
+    <template id="hezi">
+        <div>
+            <h1>大名：<font color="yellogreen" @click="go"> {{name}}</font></h1>
+            <ul v-for="(item,index) in shige" :key="index">
+               <li>{{item}}</li> 
+            </ul>
+        </div>
+    </template>
+    <script>
+        let vm = new Vue({
+            el: "#box",
+            data: {
+                message: '开始扣水电费看电视',
+            },
+            components: {
+                "HelloWorld": {
+                    template: "#hezi",
+                    data() {
+                        return {
+                            name: "这是我的大名",
+                            shige: ["花香入室春风霭", "瑞气盈门淑景新", "喜迁新居喜洋洋", "福星高照福满堂"]
+                        }
+                    },
+                    methods: {
+                        go() {
+                            this.name = "中文名"
+                        }
+                    },
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

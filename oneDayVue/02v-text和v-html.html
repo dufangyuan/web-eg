@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="javascript/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- js:innerhtml(解析标签) innertext（不解析标签）
+    jq:html() text() -->
+    <!-- <div id="box">
+        <p v-text="news"></p>
+        <p v-html="news"></p>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: "#box",
+            data: {
+                news: '<h1>知否知否，应是绿肥红瘦！！</h1>'
+            }
+        })
+    </script> -->
+    <div id="box">
+        <p v-text="news"></p>
+        <p v-html="news"></p>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: "#box",
+            data: {
+                news: '<h1>知否知否，应是绿肥红瘦！！</h1>'
+            }
+        })
+    </script>
+</body>
+
+</html>

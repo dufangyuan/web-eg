@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="javascript/vue.js"></script>
+
+</head>
+
+<body>
+    <!-- <div id="box">
+        <input type="button" value="我是第一个组件" @click="name='frist'" />
+        <input type="button" value="我是第二个组件" @click="name='second'" />
+        <keep-alive>
+            <component :is="name"></component>
+        </keep-alive>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: "#box",
+            data: {
+                name: "frist",
+            },
+            components: {
+                "frist": {
+                    template: `<h1>我是第一个组件对应的内容</h1> `
+                },
+                "second": {
+                    template: `<h1>我是第二个组件对应的内容</h1> `
+                }
+            }
+        })
+    </script> -->
+    <div id="box">
+        <input type="button" value="我是第一个组件" @click="name='frist'" />
+        <input type="button" value="我是第二个组件" @click="name='second'" />
+        <keep-alive>
+            <component :is="name"></component>
+        </keep-alive>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: "#box",
+            data: {
+                name: "frist",
+            },
+            components: {
+                "frist": {
+                    template: `<h1>我是第一个组件对应的内容</h1> `
+                },
+                "second": {
+                    template: `<h1>我是第二个组件对应的内容</h1> `
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

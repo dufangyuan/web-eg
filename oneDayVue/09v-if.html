@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="javascript/vue.js"></script>
+
+</head>
+
+<body>
+    <!-- <div id="box">
+        <div v-if="seen">我们又见面了</div>
+        <div v-else>好久不见</div>
+        <h2 v-if="type==='A'">我是A老大</h2>
+        <h2 v-else-if="type==='B'">我是B老二</h2>
+        <h2 v-else-if="type==='C'">我是C老三</h2>
+        <h2 v-else>
+            我是人中龙凤
+        </h2>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: "#box",
+            data: {
+                message: '',
+                seen: true,
+                type: 'H',
+            },
+        })
+    </script> -->
+    <div id="box">
+        <div v-if="seen">我们又见面了</div>
+        <div v-else>好久不见</div>
+        <h2 v-if="type==='A'">我是A老大</h2>
+        <h2 v-else-if="type==='B'">我是B老二</h2>
+        <h2 v-else-if="type==='C'">我是C老三</h2>
+        <h2 v-else>
+            我是人中龙凤
+        </h2>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: "#box",
+            data: {
+                message: '',
+                seen: true,
+                type: 'H',
+            },
+        })
+    </script>
+</body>
+
+</html>
