@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="javascript/vue.js"></script>
+</head>
+
+<body>
+    <!-- prop:主要作用是传入数据的时候对传入的值进行判断 -->
+    <!-- <div id="box">
+        <hello-world name="张三" hobby="吃喝玩乐" obj="{aa:'abcde'}"></hello-world>
+    </div>
+    <template id="content">
+        <div>
+            <h1>{{name}}</h1>
+            <h2>{{hobby}}</h2>
+            <h1>{{obj}}</h1>
+        </div>
+    </template>
+    <script>
+        Vue.component('HelloWorld', {
+            props: ["name", "hobby", "obj"],
+            template: "#content",
+        })
+        new Vue({
+            el: "#box"
+        })
+    </script> -->
+    <div id="box">
+        <hello-world name="张三" hobby="吃喝玩乐" obj="{aa:'abcde'}"></hello-world>
+    </div>
+    <template id="content">
+        <div>
+            <h1>{{name}}</h1>
+            <h2>{{hobby}}</h2>
+            <h1>{{obj}}</h1>
+        </div>
+    </template>
+    <script>
+        Vue.component('HelloWorld', {
+            props: ["name", "hobby", "obj"],
+            template: "#content",
+        })
+        new Vue({
+            el: "#box"
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="javascript/vue.js"></script>
+
+    <title>Document</title>
+    <style>
+        .hezi {
+            font-size: 32px;
+        }
+        
+        .box {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="box">
+        <a href="javascript:;" class="hezi" :class='{box:addclass}'>hello world今天是星期一</a>
+        <a href="javascript:;"></a>
+    </div> -->
+    <!-- <script>
+        let vm = new Vue({
+            el: "#box",
+            data: {
+                addclass: false
+            }
+        })
+    </script> -->
+    <div id="box">
+        <a href="javascript:;" class="hezi" :class='{box:addclass}'>hello world今天是星期一</a>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: "#box",
+            data: {
+                addclass: false
+            }
+        })
+    </script>
+</body>
+
+</html>

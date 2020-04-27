@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="javascript/vue.js"></script>
+    <style>
+        .hello {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="box">
+        <div class="hello" v-red> </div>
+    </div>
+    <script>
+        Vue.directive('red', function(el) {
+            el.style.position = 'absolute'
+            el.onmousedown = function(e) {
+                // e = e || window.e;
+                var deltaX = e.clientX - el.offsetLeft;
+                var deltaY = e.clientY - el.offsetTop;
+                document.onmousemove = function(e) {
+                    // e = e || window.e;
+                    var x = e.clientX - deltaX;
+                    var y = e.clientY - deltaY;
+                    el.style.left = x + "px";
+                    el.style.top = y + "px";
+                }
+
+                document.onmouseup = function(e) {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+
+                }
+            }
+        })
+        let vm = new Vue({
+            el: "#box",
+            data: {
+                name: "看见荆轲山东附近",
+            }
+        })
+    </script> -->
+    <div id="box">
+        <div class="hello" v-red> </div>
+    </div>
+    <script>
+        Vue.directive('red', function(el) {
+            el.style.position = 'absolute'
+            el.onmousedown = function(e) {
+                // e = e || window.e;
+                var deltaX = e.clientX - el.offsetLeft;
+                var deltaY = e.clientY - el.offsetTop;
+                document.onmousemove = function(e) {
+                    // e = e || window.e;
+                    var x = e.clientX - deltaX;
+                    var y = e.clientY - deltaY;
+                    el.style.left = x + "px";
+                    el.style.top = y + "px";
+                }
+
+                document.onmouseup = function(e) {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+
+                }
+            }
+        })
+        let vm = new Vue({
+            el: "#box",
+            data: {
+                name: "看见荆轲山东附近",
+            }
+        })
+    </script>
+</body>
+
+</html>

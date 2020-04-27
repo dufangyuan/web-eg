@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="javascript/vue.js"></script>
+</head>
+
+<body>
+    <!-- <div id="box">
+        {{dataTime|date}}
+    </div>
+
+    <script>
+        Vue.filter('date', function(val) {
+            let OTime = new Date(val);
+            return OTime.getFullYear() + "-" + (OTime.getMonth() + 1) + "星期" + OTime.getDay() + ' ' +
+                OTime.getHours() + ":" + OTime.getMinutes() + ":" + OTime.getSeconds();
+        })
+        let vm = new Vue({
+            el: "#box",
+            data: {
+                dataTime: Date.now()
+            }
+        })
+    </script> -->
+    <div id="box">
+        {{dataTime|date}}
+    </div>
+
+    <script>
+        Vue.filter('date', function(val) {
+            let OTime = new Date(val);
+            return OTime.getFullYear() + "-" + (OTime.getMonth() + 1) + "星期" + OTime.getDay() + ' ' +
+                OTime.getHours() + ":" + OTime.getMinutes() + ":" + OTime.getSeconds();
+        })
+        let vm = new Vue({
+            el: "#box",
+            data: {
+                dataTime: Date.now()
+            }
+        })
+    </script>
+</body>
+
+</html>

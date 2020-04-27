@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="javascript/vue.js"></script>
+</head>
+
+<body>
+    <!-- <div id="box">
+        {{number|num}}
+    </div>
+    <script>
+        Vue.filter('num', function(val) {
+            return val < 10 ? '0' + val : 'o' + val;
+        })
+        let vm = new Vue({
+            el: "#box",
+            data: {
+                number: 2
+            }
+        })
+    </script> -->
+    <div id="box">
+        {{number|num}}
+    </div>
+    <script>
+        Vue.filter('num', function(val) {
+            return val < 10 ? '0' + val : 'o' + val;
+        })
+        let vm = new Vue({
+            el: "#box",
+            data: {
+                number: 2
+            }
+        })
+    </script>
+</body>
+
+</html>

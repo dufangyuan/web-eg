@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="javascript/vue.js"></script>
+</head>
+
+<body>
+    <!-- <div id="box">
+        <h2>{{aa}}</h2>
+        <h2>{{bb}}</h2>
+        <h2>{{people.name}}</h2>
+    </div>
+    <script>
+        let vm = new Vue({
+                el: "#box",
+                data: {
+                    aa: 1111,
+                    bb: 2222,
+                    people: {
+                        name: '耿帅'
+                    }
+                }
+            })
+            // 监听的是对象，不出现弹框，对象必须进行深度监听
+        vm.$watch("people", function() {
+            alert(this.people.name + "的值发生了改变");
+        }, {
+            deep: true
+        })
+        document.onclick = function() {
+            vm.people.name = "张三";
+        }
+    </script> -->
+    <div id="box">
+        <h2>{{aa}}</h2>
+        <h2>{{bb}}</h2>
+        <h2>{{people.name}}</h2>
+    </div>
+    <script>
+        let vm = new Vue({
+                el: "#box",
+                data: {
+                    aa: 1111,
+                    bb: 2222,
+                    people: {
+                        name: '耿帅'
+                    }
+                }
+            })
+            // 监听的是对象，不出现弹框，对象必须进行深度监听
+        vm.$watch("people", function() {
+            alert(this.people.name + "的值发生了改变");
+        }, {
+            deep: true
+        })
+        document.onclick = function() {
+            vm.people.name = "张三";
+        }
+    </script>
+</body>
+
+</html>

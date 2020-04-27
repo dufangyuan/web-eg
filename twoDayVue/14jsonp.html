@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="javascript/vue.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue-resource/1.5.1/vue-resource.min.js"></script>
+</head>
+
+<body>
+    <!-- <div id="box">
+        {{news}}
+        <input type="text" name="" v-model="Bdata" @keyup="getbddata()">
+        <ul v-for="(item,index) in BdListdata" :key="index">
+            <li>{{item}}</li>
+        </ul>
+    </div>
+    <script>
+        // Promise
+        new Vue({
+            el: "#box",
+            data: {
+                news: "天气不错~",
+                Bdata: '',
+                BdListdata: [],
+            },
+            methods: {
+                getbddata() {
+                    this.$http.jsonp("https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su", {
+                        params: {
+                            wd: this.Bdata
+                        },
+                        jsonp: 'cb'
+                    }).then(res => {
+                        this.BdListdata = res.body.s;
+                    })
+                }
+            },
+        })
+    </script> -->
+    <div id="box">
+        {{news}}
+        <input type="text" name="" v-model="Bdata" @keyup="getbddata()">
+        <ul v-for="(item,index) in BdListdata" :key="index">
+            <li>{{item}}</li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: "#box",
+            data: {
+                news: "天气不错~",
+                Bdata: '',
+                BdListdata: [],
+            },
+            methods: {
+                getbddata() {
+                    this.$http.jsonp("https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su", {
+                        params: {
+                            wd: this.Bdata
+                        },
+                        jsonp: 'cb'
+                    }).then(res => {
+                        this.BdListdata = res.body.s;
+                    })
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

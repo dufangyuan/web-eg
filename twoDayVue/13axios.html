@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="javascript/vue.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <style>
+        li {
+            list-style: none;
+            margin: 15px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <input type="button" name="" value="获取数据" @click="getdata()">
+        <ul class="box">
+            <li v-for="(item,index) in datalist">
+                <h3>
+                    <font color="red">{{item.chinese}}</font>
+                </h3>
+                <h4>
+                    <font color="yellow">{{item.english}}</font>
+                </h4>
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: "#box",
+            data: {
+                datalist: []
+            },
+            methods: {
+                getdata() {
+                    /* $.ajax({
+                        type:"get",
+                        url:"地址",
+                        async:true,
+                        data:{}
+                        success:function(res){
+                            console.log(res)
+                        }
+                    }) */
+                    /* let formdata = new FormData();
+                    formdata.append('showapi_appid', '46452')
+                    formdata.append('count', 10)
+                    formdata.append('showapi_sign', 'c3bc2247155b4219bffb60cac4fd315c')
+                    axios({
+                        method: "post",
+                        url: "http://route.showapi.com/1211-1",
+                        responseType: 'json',
+                        data: formdata
+                    }).then(res => {
+                        console.log(res);
+                    }) */
+                    // $.get("url",function(res){})
+                    axios.get("http://route.showapi.com/1211-1", {
+                        params: {
+                            showapi_appid: '46452',
+                            count: 15,
+                            showapi_sign: 'c3bc2247155b4219bffb60cac4fd315c'
+                        }
+                    }).then(res => {
+                        // console.log(res);
+                        this.datalist = res.data.showapi_res_body.data;
+                        console.log(this.datalist);
+                    })
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

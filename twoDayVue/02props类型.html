@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="javascript/vue.js"></script>
+</head>
+
+<body>
+    <!-- prop:主要作用是传入数据的时候对传入的值进行判断 -->
+    <!-- <div id="box">
+        <hello-world :title="proplist.title" :nums="proplist.nums" :callback="55" :is-likes="proplist.isLikes" :obj="proplist.obj">
+        </hello-world>
+    </div>
+    <template id="content">
+        <div>
+            <h1>{{title}}</h1>
+            <h2>{{nums}}</h2>
+            <h1>{{isLikes}}</h1>
+            <h1>{{obj}}</h1>
+            <h1>{{callback}}</h1>
+        </div>
+    </template>
+    <script>
+        Vue.component('HelloWorld', {
+            props: {
+                title: String,
+                nums: Number,
+                isLikes: false,
+                moreApple: Array,
+                obj: Object,
+                callback: {
+                    validator: function(val) {
+                        return val;
+                    }
+                }
+            },
+            template: "#content",
+        })
+        new Vue({
+            el: "#box",
+            data: {
+                proplist: {
+                    title: "今天是星期一",
+                    nums: 100,
+                    isLikes: true,
+                    obj: {
+                        a: '123'
+                    },
+                }
+            }
+        })
+    </script> -->
+    <div id="box">
+        <hello-world :title="proplist.title" :nums="proplist.nums" :callback="55" :is-likes="proplist.isLikes" :obj="proplist.obj">
+        </hello-world>
+    </div>
+    <template id="content">
+        <div>
+            <h1>{{title}}</h1>
+            <h2>{{nums}}</h2>
+            <h1>{{isLikes}}</h1>
+            <h1>{{obj}}</h1>
+            <h1>{{callback}}</h1>
+        </div>
+    </template>
+    <script>
+        Vue.component('HelloWorld', {
+            props: {
+                title: String,
+                nums: Number,
+                isLikes: false,
+                moreApple: Array,
+                obj: Object,
+                callback: {
+                    validator: function(val) {
+                        return val;
+                    }
+                }
+            },
+            template: "#content",
+        })
+        new Vue({
+            el: "#box",
+            data: {
+                proplist: {
+                    title: "今天是星期一",
+                    nums: 100,
+                    isLikes: true,
+                    obj: {
+                        a: '123'
+                    },
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

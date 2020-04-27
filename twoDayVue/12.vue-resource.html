@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="javascript/vue.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue-resource/1.5.1/vue-resource.min.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        {{news}}
+        <input type="button" name="" value="获取数据" @click="getdata()">
+    </div>
+    <script>
+        // Promise
+        new Vue({
+            el: "#box",
+            data: {
+                news: "天气不错~"
+            },
+            methods: {
+                getdata() {
+                    // promise.then(箭头函数) 模板引擎class类......es6的新特性
+                    // promise.then(function(res){console.log(res)})
+                    // promise.then((res)=>{console.log(res)})
+                    // get请求：参数写在{params:{参数}}
+                    /* this.$http.get("http://route.showapi.com/1211-1", {
+                        params: {
+                            showapi_appid: '46452',
+                            count: 15,
+                            showapi_sign: 'c3bc2247155b4219bffb60cac4fd315c'
+                        }
+                    }).then(res => {
+                        console.log(res);
+                    }) */
+                    // post请求：参数写在{参数}
+                    this.$http.post("http://route.showapi.com/1211-1?showapi_appid=46452&count=10&showapi_sign=c3bc2247155b4219bffb60cac4fd315c").then(res => {
+                        console.log(res);
+                    })
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
