@@ -1,6 +1,5 @@
 <template>
     <div>
-      <h1>考试开始{{ this.canshu }}</h1>
     </div>
 </template>
  <script>
